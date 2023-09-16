@@ -102,16 +102,15 @@
 
 	.footer {
 		width: 100%;
-		border-top: 1px solid hsla(0, 0%, 0%, 0.2);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: hsl(0, 0%, 100%);
 
 		& > div {
 			width: 100%;
 			max-width: 1024px;
 			padding: 0.75rem /* 12px */;
+			border-top: 1px solid hsla(0, 0%, 0%, 0.2);
 		}
 	}
 </style>

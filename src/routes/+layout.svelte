@@ -72,7 +72,7 @@
 	.nav-wrapper {
 		max-width: 100%;
 		overflow: hidden;
-		padding: 0.5rem /* 8px */;
+		padding: 0.25rem /* 4px */;
 		border-radius: 1.25rem /* 20px */;
 		border: 1px solid hsla(0, 0%, 0%, 0.1);
 		background: hsla(0, 0%, 100%, 0.6);
@@ -82,6 +82,7 @@
 	.navigation {
 		width: 100%;
 		max-width: 100%;
+		padding: 0.25rem /* 4px */;
 		overflow-x: auto;
 
 		& > ul {
@@ -96,6 +97,10 @@
 		& > .button {
 			&:hover {
 				background: hsla(0, 0%, 0%, 0.1);
+			}
+
+			&:focus {
+				outline-color: hsla(0, 0%, 0%, 0.1);
 			}
 		}
 	}

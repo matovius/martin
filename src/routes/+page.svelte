@@ -1,4 +1,8 @@
 <script lang="ts">
+	import GitHub from '$lib/components/icons/GitHub.svelte';
+	import Mastodon from '$lib/components/icons/Mastodon.svelte';
+	import ReadCv from '$lib/components/icons/ReadCV.svelte';
+	import Threads from '$lib/components/icons/Threads.svelte';
 </script>
 
 <svelte:head>
@@ -32,26 +36,34 @@
 			</article>
 			<div class="socials">
 				<article class="card github">
-					<div class="logo" />
+					<div class="logo" style="background: hsl(0, 0%, 0%); color: hsl(0, 0%, 100%);">
+						<GitHub />
+					</div>
 					<h5 class="h5">Github</h5>
 					<span class="p3">github.com/matovius</span>
 					<button class="button">Take a look <span class="arrow">&rarr;</span></button>
 				</article>
 				<article class="card mastodon">
-					<div class="logo" />
+					<div class="logo" style="background: hsl(278, 89%, 47%); color: hsl(0, 0%, 100%);">
+						<Mastodon />
+					</div>
 					<h5 class="h5">Mastodon</h5>
 					<span class="p3">mastodon.social/matovius</span>
 					<button class="button">Follow Me <span class="arrow">&rarr;</span></button>
 				</article>
 				<div class="additional">
 					<article class="card threads">
-						<div class="logo" />
+						<div class="logo" style="background: hsl(0, 0%, 0%); color: hsl(0, 0%, 100%);">
+							<Threads />
+						</div>
 						<h5 class="h5">Threads</h5>
-						<span class="p3">threads.net/@matovuis_</span>
+						<span class="p3">threads.net/@matovius_</span>
 						<button class="button">Follow Me<span class="arrow">&rarr;</span></button>
 					</article>
 					<article class="card read-cv">
-						<div class="logo" />
+						<div class="logo" style="background: hsl(0, 0%, 100%); color: hsl(0, 0%, 0%);">
+							<ReadCv />
+						</div>
 						<h5 class="h5">Read.cv</h5>
 						<span class="p3">read.cv/matovius</span>
 						<button class="button">Check it out<span class="arrow">&rarr;</span></button>
@@ -178,13 +190,16 @@
 			& > .logo {
 				height: 100%;
 				aspect-ratio: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				background: hsla(0, 0%, 0%, 0.2);
 				position: absolute;
 				right: 0;
 				top: 0;
 				bottom: 0;
 				z-index: -1;
-				mask: linear-gradient(90deg, transparent, hsl(0, 0%, 100%) 30%);
+				mask: radial-gradient(circle at 100% 50%, hsl(0, 0%, 100%) 30%, transparent 70%);
 			}
 
 			& .button {
@@ -217,7 +232,7 @@
 					top: 0;
 					bottom: 0;
 					z-index: -1;
-					mask: linear-gradient(90deg, transparent, hsl(0, 0%, 100%) 30%);
+					mask: radial-gradient(circle at 100% 50%, hsl(0, 0%, 100%) 10%, transparent 60%);
 				}
 			}
 		}
@@ -230,10 +245,10 @@
 		& .button {
 			margin-top: 1.5rem /* 24px */;
 			color: hsl(0, 0%, 100%);
-			background: hsla(0, 0%, 0%, 0.9);
+			background: hsl(0, 0%, 0%, 0.9);
 
 			&:hover {
-				background: hsla(0, 0%, 0%, 0.7);
+				background: hsl(0, 0%, 0%, 0.7);
 			}
 		}
 	}
@@ -245,10 +260,10 @@
 		& .button {
 			margin-top: 1.5rem /* 24px */;
 			color: hsl(0, 0%, 100%);
-			background: hsla(278, 89%, 47%, 0.9);
+			background: hsl(278, 89%, 47%, 0.9);
 
 			&:hover {
-				background: hsla(278, 89%, 47%, 0.7);
+				background: hsl(278, 89%, 47%, 0.7);
 			}
 		}
 	}
@@ -258,23 +273,26 @@
 		& .button {
 			margin-top: 1.5rem /* 24px */;
 			color: hsl(0, 0%, 100%);
-			background: hsla(0, 0%, 0%, 1);
+			background: hsl(0, 0%, 0%, 1);
 
 			&:hover {
-				background: hsla(0, 0%, 0%, 0.8);
+				background: hsl(0, 0%, 0%, 0.8);
 			}
 		}
 	}
 
 	.heart {
-		width: 32px;
+		width: 60px;
 		aspect-ratio: 1;
 		border-radius: 8px;
 		background: hsl(349, 83%, 51%);
+		filter: blur(12px);
 		position: absolute;
-		bottom: 90%;
+		bottom: 10%;
+		right: 5%;
 		transform: rotate(-30deg) scale(100%);
 		/*animation: heartbeat 0.8s linear infinite;*/
+		z-index: -1;
 
 		&::before {
 			content: '';
@@ -282,7 +300,7 @@
 			width: 100%;
 			aspect-ratio: 1;
 			border-radius: 50%;
-			background: hsl(349, 83%, 51%);
+			background: inherit;
 			transform: translateY(-50%);
 			position: absolute;
 		}
@@ -293,7 +311,7 @@
 			width: 100%;
 			aspect-ratio: 1;
 			border-radius: 50%;
-			background: hsl(349, 83%, 51%);
+			background: inherit;
 			transform: translateX(50%);
 			position: absolute;
 		}

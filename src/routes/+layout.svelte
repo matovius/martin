@@ -26,6 +26,11 @@
 		</div>
 	</header>
 	<slot />
+	<footer class="footer">
+		<div>
+			<span class="p3 copyright-statement">Made by me with Svelte and CSS Nesting.</span>
+		</div>
+	</footer>
 </div>
 
 <style>
@@ -92,6 +97,21 @@
 			&:hover {
 				background: hsla(0, 0%, 0%, 0.1);
 			}
+		}
+	}
+
+	.footer {
+		width: 100%;
+		border-top: 1px solid hsla(0, 0%, 0%, 0.2);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: hsl(0, 0%, 100%);
+
+		& > div {
+			width: 100%;
+			max-width: 1024px;
+			padding: 0.75rem /* 12px */;
 		}
 	}
 </style>

@@ -238,7 +238,9 @@
 		}
 	}
 
-	.github {
+	.github,
+	.threads,
+	.read-cv {
 		width: 100%;
 		max-width: 100%;
 
@@ -249,6 +251,10 @@
 
 			&:hover {
 				background: hsl(0, 0%, 0%, 0.7);
+			}
+
+			&:focus {
+				outline-color: hsl(0, 0%, 0%, 0.9);
 			}
 		}
 	}
@@ -265,18 +271,9 @@
 			&:hover {
 				background: hsl(278, 89%, 47%, 0.7);
 			}
-		}
-	}
 
-	.threads,
-	.read-cv {
-		& .button {
-			margin-top: 1.5rem /* 24px */;
-			color: hsl(0, 0%, 100%);
-			background: hsl(0, 0%, 0%, 1);
-
-			&:hover {
-				background: hsl(0, 0%, 0%, 0.8);
+			&:focus {
+				outline-color: hsl(279, 89%, 47%, 0.9);
 			}
 		}
 	}

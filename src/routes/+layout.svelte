@@ -2,6 +2,11 @@
 	import '../app.css';
 	import '@fontsource-variable/inter';
 	import '@fontsource-variable/rubik';
+	import { page } from '$app/stores';
+
+	import Home from '$lib/components/icons/Home.svelte';
+	import MicroBuilds from '$lib/components/icons/MicroBuilds.svelte';
+	import Projects from '$lib/components/icons/Projects.svelte';
 </script>
 
 <div id="root" class="app">
@@ -12,13 +17,40 @@
 				<nav class="navigation">
 					<ul>
 						<li class="nav-item">
-							<button class="button font-inter">Home</button>
+							<a
+								href="/"
+								class="button font-inter"
+								title="Home"
+								data-current-route={$page.url.pathname === '/' ? 'current' : null}
+							>
+								<div class="nav-icon-wrapper">
+									<Home />
+								</div>
+							</a>
 						</li>
 						<li class="nav-item">
-							<button class="button font-inter">Micro Builds</button>
+							<a
+								href="/micro-works"
+								class="button font-inter"
+								title="Micro Works"
+								data-current-route={$page.url.pathname === '/micro-works' ? 'current' : null}
+							>
+								<div class="nav-icon-wrapper">
+									<MicroBuilds />
+								</div>
+							</a>
 						</li>
 						<li class="nav-item">
-							<button class="button font-inter">Projects</button>
+							<a
+								href="/projects"
+								class="button font-inter"
+								title="Projects"
+								data-current-route={$page.url.pathname === '/projects' ? 'current' : null}
+							>
+								<div class="nav-icon-wrapper">
+									<Projects />
+								</div>
+							</a>
 						</li>
 					</ul>
 				</nav>
@@ -95,14 +127,33 @@
 
 	.nav-item {
 		& > .button {
+			padding: 0.75rem /* 12px */;
+			color: hsl(0, 0%, 0%, 0.8);
 			&:hover {
-				background: hsla(0, 0%, 0%, 0.1);
+				background: hsl(0, 0%, 0%, 0.1);
 			}
 
 			&:focus {
-				outline-color: hsla(0, 0%, 0%, 0.1);
+				outline-color: hsl(0, 0%, 0%, 0.1);
 			}
 		}
+
+		&:is(:nth-child(1)) > .button[data-current-route='current'] {
+			color: hsl(216, 90%, 46%);
+		}
+
+		&:is(:nth-child(2)) > .button[data-current-route='current'] {
+			color: hsl(315, 90%, 46%);
+		}
+
+		&:is(:nth-child(3)) > .button[data-current-route='current'] {
+			color: hsl(133, 90%, 46%);
+		}
+	}
+
+	.nav-icon-wrapper {
+		width: 1.5rem /* 24px */;
+		height: 1.5rem /* 24px */;
 	}
 
 	.footer {

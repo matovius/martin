@@ -22,7 +22,10 @@
 					<hr />
 					<span class="p1">API Whisperer</span>
 				</div>
-				<p class="p1">Commonly known as a <strong>web developer</strong>.</p>
+				<p class="p1">
+					Commonly known as a
+					<strong style="color: hsl(216, 90%, 46%);">web developer</strong>.
+				</p>
 			</div>
 			<div class="profile-image" />
 		</div>
@@ -110,6 +113,7 @@
 		}
 
 		& .h1 {
+			color: hsl(216, 90%, 46%);
 			font-size: 3rem /* 48px */;
 			padding-top: 1.5rem /* 24px */;
 			padding-bottom: 1.5rem /* 24px */;
@@ -134,12 +138,12 @@
 			width: 1px;
 			height: 24px;
 			border: none;
-			background: hsla(0, 0%, 0%, 0.2);
+			background: hsl(216, 90%, 46%, 0.6);
 			mask: linear-gradient(
 				0deg,
 				transparent,
-				hsl(0, 0%, 100%) 6px,
-				hsl(0, 0%, 100%) calc(100% - 6px),
+				hsl(0, 0%, 100%) 8px,
+				hsl(0, 0%, 100%) calc(100% - 8px),
 				transparent
 			);
 		}

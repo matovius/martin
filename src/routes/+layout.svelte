@@ -7,12 +7,24 @@
 	import Home from '$lib/components/icons/Home.svelte';
 	import MicroBuilds from '$lib/components/icons/MicroBuilds.svelte';
 	import Projects from '$lib/components/icons/Projects.svelte';
+	import MyLogo from '$lib/components/icons/MyLogo.svelte';
 </script>
 
 <div id="root" class="app">
 	<header class="header">
 		<div>
-			<div class="logo-wrapper" />
+			<div
+				class="logo-wrapper"
+				data-route={$page.url.pathname === '/'
+					? '/'
+					: $page.url.pathname.includes('/micro-works')
+					? '/micro-works'
+					: $page.url.pathname.includes('/projects')
+					? '/projects'
+					: null}
+			>
+				<MyLogo />
+			</div>
 			<div class="nav-wrapper">
 				<nav class="navigation">
 					<ul>
@@ -93,12 +105,25 @@
 	}
 
 	.logo-wrapper {
+		color: hsl(0, 0%, 0%, 0.5);
 		width: 2.25rem /* 36px */;
 		min-width: 2.25rem;
 		height: 2.25rem;
 		min-height: 2.25rem;
-		background: hsla(0, 0%, 0%, 0.4);
+		background: hsl(0, 0%, 100%);
 		border-radius: 9999rem;
+
+		&[data-route='/'] {
+			color: hsl(216, 90%, 46%);
+		}
+
+		&[data-route='/micro-works'] {
+			color: hsl(315, 90%, 46%);
+		}
+
+		&[data-route='/projects'] {
+			color: hsl(133, 90%, 46%);
+		}
 	}
 
 	.nav-wrapper {

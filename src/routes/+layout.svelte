@@ -196,7 +196,7 @@
 		}
 
 		&:is(:nth-child(3)) > .button[data-current-route='current'] {
-			color: hsl(133, 90%, 46%);
+			color: hsl(133, 90%, 33%);
 		}
 	}
 

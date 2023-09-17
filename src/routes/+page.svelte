@@ -167,9 +167,6 @@
 		gap: 1.5rem /* 24px */;
 
 		& > .card {
-			position: relative;
-			overflow: hidden;
-
 			& > .logo {
 				height: 100%;
 				aspect-ratio: 1;

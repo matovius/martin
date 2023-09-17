@@ -186,6 +186,7 @@ h6 {
 	background: hsla(0, 0%, 100%, 0.2);
 	backdrop-filter: blur(8px);
 	position: relative;
+	overflow: hidden;
 	isolation: isolate;
 }
 

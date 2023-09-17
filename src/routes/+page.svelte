@@ -146,13 +146,6 @@
 		gap: 1.5rem /* 24px */;
 	}
 
-	.card {
-		border-color: hsla(0, 0%, 0%, 0.1);
-		background: hsla(0, 0%, 100%, 0.2);
-		backdrop-filter: blur(4px);
-		position: relative;
-	}
-
 	.personal-blurb {
 		width: 100%;
 		max-width: 30rem /* 480px */;
@@ -160,6 +153,8 @@
 		justify-content: center;
 		align-items: center;
 		gap: 36px;
+		border-color: hsl(216, 90%, 46%, 0.2);
+		background: hsl(216, 90%, 46%, 0.05);
 	}
 
 	.socials {

@@ -27,12 +27,11 @@
 			<div class="profile-image" />
 		</div>
 		<div class="about">
-			<article class="card">
+			<article class="card personal-blurb">
 				<p class="p1">
 					I love making beautiful websites, learning about the world around us, and doing the most
 					amateur photography you've ever seen.
 				</p>
-				<div class="heart" />
 			</article>
 			<div class="socials">
 				<article class="card github">
@@ -161,10 +160,6 @@
 		justify-content: start;
 		align-items: center;
 		gap: 1.5rem /* 24px */;
-
-		& p.p1 {
-			max-width: 40ch;
-		}
 	}
 
 	.card {
@@ -174,9 +169,18 @@
 		position: relative;
 	}
 
+	.personal-blurb {
+		width: 100%;
+		max-width: 30rem /* 480px */;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 36px;
+	}
+
 	.socials {
 		width: 100%;
-		max-width: 480px;
+		max-width: 30rem /* 480px */;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -278,18 +282,15 @@
 		}
 	}
 
+	/*
 	.heart {
-		width: 60px;
+		width: 100%;
 		aspect-ratio: 1;
 		border-radius: 8px;
 		background: hsl(349, 83%, 51%);
-		filter: blur(12px);
-		position: absolute;
-		bottom: 10%;
-		right: 5%;
-		transform: rotate(-30deg) scale(100%);
-		/*animation: heartbeat 0.8s linear infinite;*/
-		z-index: -1;
+		transform: rotate(-45deg) scale(100%);
+		transform-origin: center;
+		animation: heartbeat 0.8s linear infinite;
 
 		&::before {
 			content: '';
@@ -328,4 +329,5 @@
 			transform: rotate(-30deg) scale(110%);
 		}
 	}
+	*/
 </style>

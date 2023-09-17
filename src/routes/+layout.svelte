@@ -119,7 +119,7 @@
 		min-width: 3rem;
 		height: 3rem;
 		min-height: 3rem;
-		padding: 0.5rem /* 8px */;
+		padding: 0.25rem /* 4px */;
 		background: hsl(0, 0%, 100%, 0.2);
 		backdrop-filter: blur(8px);
 		border-radius: 9999rem;

@@ -43,15 +43,25 @@
 					</div>
 					<h5 class="h5">Github</h5>
 					<span class="p3">github.com/matovius</span>
-					<button class="button">Take a look <span class="arrow">&rarr;</span></button>
+					<a
+						href="https://github.com/matovius"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button">Take a look</a
+					>
 				</article>
 				<article class="card mastodon">
 					<div class="logo" style="background: hsl(278, 89%, 47%); color: hsl(0, 0%, 100%);">
 						<Mastodon />
 					</div>
 					<h5 class="h5">Mastodon</h5>
-					<span class="p3">mastodon.social/matovius</span>
-					<button class="button">Follow Me <span class="arrow">&rarr;</span></button>
+					<span class="p3">mastodon.social/@matovius</span>
+					<a
+						href="https://mastodon.social/@matovius"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button">Follow me</a
+					>
 				</article>
 				<div class="additional">
 					<article class="card threads">
@@ -60,7 +70,12 @@
 						</div>
 						<h5 class="h5">Threads</h5>
 						<span class="p3">threads.net/@matovius_</span>
-						<button class="button">Follow Me<span class="arrow">&rarr;</span></button>
+						<a
+							href="https://threads.net/@matovius_"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button">Follow me</a
+						>
 					</article>
 					<article class="card read-cv">
 						<div class="logo" style="background: hsl(0, 0%, 100%); color: hsl(0, 0%, 0%);">
@@ -68,7 +83,12 @@
 						</div>
 						<h5 class="h5">Read.cv</h5>
 						<span class="p3">read.cv/matovius</span>
-						<button class="button">Check it out<span class="arrow">&rarr;</span></button>
+						<a
+							href="https://read.cv/matovius"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button">Check it out</a
+						>
 					</article>
 				</div>
 			</div>
@@ -179,16 +199,12 @@
 				top: 0;
 				bottom: 0;
 				z-index: -1;
-				mask: radial-gradient(circle at 100% 50%, hsl(0, 0%, 100%) 30%, transparent 70%);
-			}
-
-			& .button {
-				padding-left: 1.5rem /* 24px */;
-				padding-right: 1.5rem /* 24px */;
+				mask: radial-gradient(circle at 100% 100%, hsl(0, 0%, 100%) 20%, transparent 70%);
 			}
 		}
 
 		& > .additional {
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -212,7 +228,7 @@
 					top: 0;
 					bottom: 0;
 					z-index: -1;
-					mask: radial-gradient(circle at 100% 50%, hsl(0, 0%, 100%) 10%, transparent 60%);
+					mask: radial-gradient(circle at 100% 100%, hsl(0, 0%, 100%) 20%, transparent 70%);
 				}
 			}
 		}
@@ -223,6 +239,8 @@
 	.read-cv {
 		width: 100%;
 		max-width: 100%;
+		background: hsl(0, 0%, 0%, 0.05);
+		border-color: hsl(0, 0%, 0%, 0.2);
 
 		& .button {
 			margin-top: 1.5rem /* 24px */;
@@ -242,6 +260,8 @@
 	.mastodon {
 		width: 100%;
 		max-width: 100%;
+		background: hsl(278, 89%, 47%, 0.05);
+		border-color: hsl(278, 89%, 47%, 0.2);
 
 		& .button {
 			margin-top: 1.5rem /* 24px */;

@@ -25,7 +25,16 @@
 			>
 				<MyLogo />
 			</div>
-			<div class="nav-wrapper">
+			<div
+				class="nav-wrapper"
+				data-route={$page.url.pathname === '/'
+					? '/'
+					: $page.url.pathname.includes('/micro-works')
+					? '/micro-works'
+					: $page.url.pathname.includes('/projects')
+					? '/projects'
+					: null}
+			>
 				<nav class="navigation">
 					<ul>
 						<li class="nav-item">
@@ -122,7 +131,7 @@
 		}
 
 		&[data-route='/projects'] {
-			color: hsl(133, 90%, 46%);
+			color: hsl(133, 90%, 33%);
 		}
 	}
 
@@ -133,7 +142,22 @@
 		border-radius: 1.25rem /* 20px */;
 		border: 1px solid hsla(0, 0%, 0%, 0.1);
 		background: hsla(0, 0%, 100%, 0.6);
-		backdrop-filter: blur(4px);
+		backdrop-filter: blur(8px);
+
+		&[data-route='/'] {
+			border-color: hsl(216, 90%, 46%, 0.2);
+			background: hsl(216, 90%, 46%, 0.05);
+		}
+
+		&[data-route='/micro-works'] {
+			border-color: hsl(315, 90%, 46%, 0.2);
+			background: hsl(315, 90%, 46%, 0.05);
+		}
+
+		&[data-route='/projects'] {
+			border-color: hsl(133, 90%, 33%, 0.2);
+			background: hsl(133, 90%, 33%, 0.05);
+		}
 	}
 
 	.navigation {

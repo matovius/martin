@@ -115,12 +115,15 @@
 
 	.logo-wrapper {
 		color: hsl(0, 0%, 0%, 0.5);
-		width: 2.25rem /* 36px */;
-		min-width: 2.25rem;
-		height: 2.25rem;
-		min-height: 2.25rem;
-		background: hsl(0, 0%, 100%);
+		width: 3rem /* 48px */;
+		min-width: 3rem;
+		height: 3rem;
+		min-height: 3rem;
+		padding: 0.5rem /* 8px */;
+		background: hsl(0, 0%, 100%, 0.2);
+		backdrop-filter: blur(8px);
 		border-radius: 9999rem;
+		box-shadow: 1px 1px 2px hsl(0, 0%, 0%, 0.1), 2px 2px 4px hsl(0, 0%, 0%, 0.1);
 
 		&[data-route='/'] {
 			color: hsl(216, 90%, 46%);

@@ -90,10 +90,6 @@
 			padding-top: 2.25rem /* 36px */;
 			padding-left: 1.5rem /* 24px */;
 			padding-right: 1.5rem /* 24px */;
-
-			& > p.p1 {
-				padding-top: 2.25rem /* 36px */;
-			}
 		}
 	}
 

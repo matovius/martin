@@ -77,22 +77,6 @@
 </main>
 
 <style>
-	.main {
-		width: 100%;
-		padding-bottom: 2.25rem /* 36px */;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		& > div {
-			width: 100%;
-			max-width: 53.75rem /* 860px */;
-			padding-top: 2.25rem /* 36px */;
-			padding-left: 1.5rem /* 24px */;
-			padding-right: 1.5rem /* 24px */;
-		}
-	}
-
 	.profile {
 		width: 100%;
 		display: flex;

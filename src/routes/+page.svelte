@@ -91,6 +91,17 @@
 						>
 					</article>
 				</div>
+				<article class="card hashnode">
+					<div class="logo" />
+					<h5 class="h5">Hashnode</h5>
+					<span class="p3">hashnode.com/matovius</span>
+					<a
+						href="http://hashnode.com/matovius"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button">Read some</a
+					>
+				</article>
 			</div>
 		</div>
 	</div>
@@ -187,6 +198,7 @@
 		gap: 1.5rem /* 24px */;
 
 		& > .card {
+			width: 100%;
 			& > .logo {
 				height: 100%;
 				aspect-ratio: 1;
@@ -216,8 +228,7 @@
 			}
 
 			& > .card {
-				position: relative;
-				overflow: hidden;
+				width: 100%;
 
 				& > .logo {
 					height: 100%;
@@ -237,7 +248,6 @@
 	.github,
 	.threads,
 	.read-cv {
-		width: 100%;
 		max-width: 100%;
 		background: hsl(0, 0%, 0%, 0.05);
 		border-color: hsl(0, 0%, 0%, 0.2);
@@ -258,7 +268,6 @@
 	}
 
 	.mastodon {
-		width: 100%;
 		max-width: 100%;
 		background: hsl(278, 89%, 47%, 0.05);
 		border-color: hsl(278, 89%, 47%, 0.2);

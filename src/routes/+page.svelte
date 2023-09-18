@@ -1,5 +1,6 @@
 <script lang="ts">
 	import GitHub from '$lib/components/icons/GitHub.svelte';
+	import Hashnode from '$lib/components/icons/Hashnode.svelte';
 	import Mastodon from '$lib/components/icons/Mastodon.svelte';
 	import ReadCv from '$lib/components/icons/ReadCV.svelte';
 	import Threads from '$lib/components/icons/Threads.svelte';
@@ -34,74 +35,73 @@
 				<p class="p1">
 					I love making beautiful websites, learning about the world around us, and doing the most
 					amateur photography you've ever seen.
+					<br /><br />
+					<i class="p2">Side Note: The cards below are clickable links.</i>
 				</p>
 			</article>
 			<div class="socials">
-				<article class="card github">
-					<div class="logo" style="background: hsl(0, 0%, 0%); color: hsl(0, 0%, 100%);">
+				<a
+					href="https://github.com/matovius"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="card github"
+				>
+					<div class="logo" style="background: hsl(0, 0%, 0%);">
 						<GitHub />
 					</div>
 					<h5 class="h5">Github</h5>
 					<span class="p3">github.com/matovius</span>
-					<a
-						href="https://github.com/matovius"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button">Take a look</a
-					>
-				</article>
-				<article class="card mastodon">
-					<div class="logo" style="background: hsl(278, 89%, 47%); color: hsl(0, 0%, 100%);">
+				</a>
+				<a
+					href="https://mastodon.social/@matovius"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="card mastodon"
+				>
+					<div class="logo" style="background: hsl(278, 89%, 47%);">
 						<Mastodon />
 					</div>
 					<h5 class="h5">Mastodon</h5>
 					<span class="p3">mastodon.social/@matovius</span>
+				</a>
+				<div class="additional">
 					<a
-						href="https://mastodon.social/@matovius"
+						href="https://threads.net/@matovius_"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="button">Follow me</a
+						class="card threads"
 					>
-				</article>
-				<div class="additional">
-					<article class="card threads">
 						<div class="logo" style="background: hsl(0, 0%, 0%); color: hsl(0, 0%, 100%);">
 							<Threads />
 						</div>
 						<h5 class="h5">Threads</h5>
 						<span class="p3">threads.net/@matovius_</span>
-						<a
-							href="https://threads.net/@matovius_"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="button">Follow me</a
-						>
-					</article>
-					<article class="card read-cv">
+					</a>
+					<a
+						href="https://read.cv/matovius"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="card read-cv"
+					>
 						<div class="logo" style="background: hsl(0, 0%, 100%); color: hsl(0, 0%, 0%);">
 							<ReadCv />
 						</div>
 						<h5 class="h5">Read.cv</h5>
 						<span class="p3">read.cv/matovius</span>
-						<a
-							href="https://read.cv/matovius"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="button">Check it out</a
-						>
-					</article>
+					</a>
 				</div>
-				<article class="card hashnode">
-					<div class="logo" />
+				<a
+					href="http://hashnode.com/matovius"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="card hashnode"
+				>
+					<div class="logo" style="background: hsl(224, 100%, 58%);">
+						<Hashnode />
+					</div>
 					<h5 class="h5">Hashnode</h5>
 					<span class="p3">hashnode.com/matovius</span>
-					<a
-						href="http://hashnode.com/matovius"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button">Read some</a
-					>
-				</article>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -197,10 +197,12 @@
 		align-items: center;
 		gap: 1.5rem /* 24px */;
 
-		& > .card {
+		& .card {
 			width: 100%;
 			max-width: 100%;
+			text-decoration: none;
 			& > .logo {
+				color: hsl(0, 0%, 100%);
 				height: 100%;
 				aspect-ratio: 1;
 				display: flex;
@@ -213,10 +215,6 @@
 				bottom: 0;
 				z-index: -1;
 				mask: radial-gradient(circle at 100% 100%, hsl(0, 0%, 100%) 20%, transparent 70%);
-			}
-
-			& > .button {
-				margin-top: 1.5rem /* 24px */;
 			}
 		}
 
@@ -231,83 +229,27 @@
 			@media (min-width: 480px) {
 				flex-direction: row;
 			}
-
-			& > .card {
-				width: 100%;
-				max-width: 100%;
-
-				& > .logo {
-					height: 100%;
-					aspect-ratio: 1;
-					background: hsla(0, 0%, 0%, 0.2);
-					position: absolute;
-					right: 0;
-					top: 0;
-					bottom: 0;
-					z-index: -1;
-					mask: radial-gradient(circle at 100% 100%, hsl(0, 0%, 100%) 20%, transparent 70%);
-				}
-
-				& > .button {
-					margin-top: 1.5rem /* 24px */;
-				}
-			}
 		}
 	}
 
 	.github,
 	.threads,
 	.read-cv {
+		color: hsl(0, 0%, 0%, 0.9);
 		background: hsl(0, 0%, 0%, 0.05);
 		border-color: hsl(0, 0%, 0%, 0.2);
-
-		& .button {
-			color: hsl(0, 0%, 100%);
-			background: hsl(0, 0%, 0%, 0.9);
-
-			&:hover {
-				background: hsl(0, 0%, 0%, 0.7);
-			}
-
-			&:focus {
-				outline-color: hsl(0, 0%, 0%, 0.9);
-			}
-		}
 	}
 
 	.mastodon {
+		color: hsl(278, 89%, 47%, 0.9);
 		background: hsl(278, 89%, 47%, 0.05);
 		border-color: hsl(278, 89%, 47%, 0.2);
-
-		& .button {
-			color: hsl(0, 0%, 100%);
-			background: hsl(278, 89%, 47%, 0.9);
-
-			&:hover {
-				background: hsl(278, 89%, 47%, 0.7);
-			}
-
-			&:focus {
-				outline-color: hsl(279, 89%, 47%, 0.9);
-			}
-		}
 	}
 
 	.hashnode {
-		background: hsla(231, 90%, 45%, 0.05);
-		border-color: hsl(231, 90%, 45%, 0.2);
-		& .button {
-			color: hsl(0, 0%, 100%);
-			background: hsl(231, 90%, 45%, 0.9);
-
-			&:hover {
-				background: hsl(231, 90%, 45%, 0.7);
-			}
-
-			&:focus {
-				outline-color: hsl(231, 90%, 45%, 0.9);
-			}
-		}
+		color: hsl(224, 100%, 58%, 0.9);
+		background: hsl(224, 100%, 58%, 0.05);
+		border-color: hsl(224, 100%, 58%, 0.2);
 	}
 
 	/*

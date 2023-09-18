@@ -120,7 +120,7 @@
 		height: 3rem;
 		min-height: 3rem;
 		padding: 0.25rem /* 4px */;
-		background: hsl(0, 0%, 100%, 0.2);
+		background: hsl(0, 0%, 100%);
 		backdrop-filter: blur(8px);
 		border-radius: 9999rem;
 		box-shadow: 1px 1px 2px hsl(0, 0%, 0%, 0.1), 2px 2px 4px hsl(0, 0%, 0%, 0.1);

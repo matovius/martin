@@ -199,6 +199,7 @@
 
 		& > .card {
 			width: 100%;
+			max-width: 100%;
 			& > .logo {
 				height: 100%;
 				aspect-ratio: 1;
@@ -212,6 +213,10 @@
 				bottom: 0;
 				z-index: -1;
 				mask: radial-gradient(circle at 100% 100%, hsl(0, 0%, 100%) 20%, transparent 70%);
+			}
+
+			& > .button {
+				margin-top: 1.5rem /* 24px */;
 			}
 		}
 
@@ -229,6 +234,7 @@
 
 			& > .card {
 				width: 100%;
+				max-width: 100%;
 
 				& > .logo {
 					height: 100%;
@@ -241,6 +247,10 @@
 					z-index: -1;
 					mask: radial-gradient(circle at 100% 100%, hsl(0, 0%, 100%) 20%, transparent 70%);
 				}
+
+				& > .button {
+					margin-top: 1.5rem /* 24px */;
+				}
 			}
 		}
 	}
@@ -248,12 +258,10 @@
 	.github,
 	.threads,
 	.read-cv {
-		max-width: 100%;
 		background: hsl(0, 0%, 0%, 0.05);
 		border-color: hsl(0, 0%, 0%, 0.2);
 
 		& .button {
-			margin-top: 1.5rem /* 24px */;
 			color: hsl(0, 0%, 100%);
 			background: hsl(0, 0%, 0%, 0.9);
 
@@ -268,12 +276,10 @@
 	}
 
 	.mastodon {
-		max-width: 100%;
 		background: hsl(278, 89%, 47%, 0.05);
 		border-color: hsl(278, 89%, 47%, 0.2);
 
 		& .button {
-			margin-top: 1.5rem /* 24px */;
 			color: hsl(0, 0%, 100%);
 			background: hsl(278, 89%, 47%, 0.9);
 
@@ -283,6 +289,23 @@
 
 			&:focus {
 				outline-color: hsl(279, 89%, 47%, 0.9);
+			}
+		}
+	}
+
+	.hashnode {
+		background: hsla(231, 90%, 45%, 0.05);
+		border-color: hsl(231, 90%, 45%, 0.2);
+		& .button {
+			color: hsl(0, 0%, 100%);
+			background: hsl(231, 90%, 45%, 0.9);
+
+			&:hover {
+				background: hsl(231, 90%, 45%, 0.7);
+			}
+
+			&:focus {
+				outline-color: hsl(231, 90%, 45%, 0.9);
 			}
 		}
 	}

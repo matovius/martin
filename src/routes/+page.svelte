@@ -4,6 +4,8 @@
 	import Mastodon from '$lib/components/icons/Mastodon.svelte';
 	import ReadCv from '$lib/components/icons/ReadCV.svelte';
 	import Threads from '$lib/components/icons/Threads.svelte';
+
+	import profileImage from '$lib/assets/profile-photo.png';
 </script>
 
 <svelte:head>
@@ -28,7 +30,9 @@
 					<strong style="color: hsl(216, 90%, 46%);">web developer</strong>.
 				</p>
 			</div>
-			<div class="profile-image" />
+			<div class="profile-image">
+				<img src={profileImage} alt="Me, Martin Matovu" />
+			</div>
 		</div>
 		<div class="about">
 			<article class="card personal-blurb">
@@ -174,7 +178,6 @@
 		width: 100%;
 		max-width: 15rem /* 240px */;
 		aspect-ratio: 1;
-		background: hsla(0, 0%, 0%, 0.4);
 	}
 
 	.about {

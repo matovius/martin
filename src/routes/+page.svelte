@@ -31,7 +31,7 @@
 				</p>
 			</div>
 			<div class="profile-image">
-				<img src={profileImage} alt="Me, Martin Matovu" />
+				<img src={profileImage} alt="Me, Martin Matovu" loading="lazy" />
 			</div>
 		</div>
 		<div class="about">
@@ -197,7 +197,7 @@
 		justify-content: center;
 		align-items: center;
 		gap: 36px;
-		border-color: hsl(216, 90%, 46%, 0.2);
+		border-color: hsl(216, 90%, 46%, 0.1);
 		background: hsl(216, 90%, 46%, 0.05);
 	}
 
@@ -251,6 +251,10 @@
 			background: hsl(0, 0%, 0%);
 			border-color: hsl(0, 0%, 0%);
 		}
+
+		&:focus {
+			outline-color: hsl(0, 0%, 0%);
+		}
 	}
 
 	.read-cv {
@@ -267,6 +271,10 @@
 			background: hsl(252, 59%, 51%);
 			border-color: hsl(252, 59%, 51%);
 		}
+
+		&:focus {
+			outline-color: hsl(252, 59%, 51%);
+		}
 	}
 
 	.hashnode {
@@ -278,6 +286,10 @@
 			color: hsl(0, 0%, 100%);
 			background: hsl(224, 100%, 58%);
 			border-color: hsl(224, 100%, 58%);
+		}
+
+		&:focus {
+			outline-color: hsl(224, 100%, 58%);
 		}
 
 		& .virtual-circle {

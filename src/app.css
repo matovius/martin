@@ -191,6 +191,8 @@ h6 {
 	position: relative;
 	overflow: hidden;
 	isolation: isolate;
+	outline: 1px solid transparent;
+	outline-offset: 4px;
 }
 
 .icon {

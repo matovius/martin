@@ -7,34 +7,12 @@
 	import Home from '$lib/components/icons/Home.svelte';
 	import MicroBuilds from '$lib/components/icons/MicroBuilds.svelte';
 	import Projects from '$lib/components/icons/Projects.svelte';
-	import MyLogo from '$lib/components/icons/MyLogo.svelte';
 </script>
 
 <div id="root" class="app">
 	<header class="header">
 		<div>
-			<div
-				class="logo-wrapper"
-				data-route={$page.url.pathname === '/'
-					? '/'
-					: $page.url.pathname.includes('/micro-works')
-					? '/micro-works'
-					: $page.url.pathname.includes('/projects')
-					? '/projects'
-					: null}
-			>
-				<MyLogo />
-			</div>
-			<div
-				class="nav-wrapper"
-				data-route={$page.url.pathname === '/'
-					? '/'
-					: $page.url.pathname.includes('/micro-works')
-					? '/micro-works'
-					: $page.url.pathname.includes('/projects')
-					? '/projects'
-					: null}
-			>
+			<div class="nav-wrapper">
 				<nav class="navigation">
 					<ul>
 						<li class="nav-item">
@@ -113,54 +91,14 @@
 		}
 	}
 
-	.logo-wrapper {
-		color: hsl(0, 0%, 0%, 0.5);
-		width: 3rem /* 48px */;
-		min-width: 3rem;
-		height: 3rem;
-		min-height: 3rem;
-		padding: 0.25rem /* 4px */;
-		background: hsl(0, 0%, 100%);
-		backdrop-filter: blur(8px);
-		border-radius: 9999rem;
-		box-shadow: 1px 1px 2px hsl(0, 0%, 0%, 0.1), 2px 2px 4px hsl(0, 0%, 0%, 0.1);
-
-		&[data-route='/'] {
-			color: hsl(216, 90%, 46%);
-		}
-
-		&[data-route='/micro-works'] {
-			color: hsl(315, 90%, 46%);
-		}
-
-		&[data-route='/projects'] {
-			color: hsl(133, 90%, 33%);
-		}
-	}
-
 	.nav-wrapper {
 		max-width: 100%;
 		overflow: hidden;
 		padding: 0.25rem /* 4px */;
 		border-radius: 1.25rem /* 20px */;
 		border: 1px solid hsla(0, 0%, 0%, 0.1);
-		background: hsla(0, 0%, 100%, 0.6);
+		background: hsla(0, 0%, 100%, 0.4);
 		backdrop-filter: blur(8px);
-
-		&[data-route='/'] {
-			border-color: hsl(216, 90%, 46%, 0.2);
-			background: hsl(216, 90%, 46%, 0.05);
-		}
-
-		&[data-route='/micro-works'] {
-			border-color: hsl(315, 90%, 46%, 0.2);
-			background: hsl(315, 90%, 46%, 0.05);
-		}
-
-		&[data-route='/projects'] {
-			border-color: hsl(133, 90%, 33%, 0.2);
-			background: hsl(133, 90%, 33%, 0.05);
-		}
 	}
 
 	.navigation {

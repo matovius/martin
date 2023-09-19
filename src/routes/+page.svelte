@@ -104,6 +104,7 @@
 					class="card hashnode"
 				>
 					<div class="bg-logo">
+						<div class="virtual-circle" />
 						<Hashnode />
 					</div>
 					<div class="content">
@@ -240,22 +241,53 @@
 	.read-cv {
 		color: hsl(0, 0%, 0%, 0.9);
 		background: hsl(0, 0%, 0%, 0.05);
-		border-color: hsl(0, 0%, 0%, 0.2);
+		border-color: hsl(0, 0%, 0%, 0.1);
+
+		&:hover {
+			color: hsl(0, 0%, 100%);
+			background: hsl(0, 0%, 0%);
+			border-color: hsl(0, 0%, 0%);
+		}
 	}
 
 	.read-cv {
-		background: hsl(0, 0%, 100%, 0.05);
+		background: hsl(0, 0%, 100%, 0.4);
 	}
 
 	.mastodon {
-		color: hsl(278, 89%, 47%, 0.9);
-		background: hsl(278, 89%, 47%, 0.05);
-		border-color: hsl(278, 89%, 47%, 0.2);
+		color: hsl(252, 59%, 51%, 0.9);
+		background: hsl(252, 59%, 51%, 0.05);
+		border-color: hsl(252, 59%, 51%, 0.1);
+
+		&:hover {
+			color: hsl(0, 0%, 100%);
+			background: hsl(252, 59%, 51%);
+			border-color: hsl(252, 59%, 51%);
+		}
 	}
 
 	.hashnode {
 		color: hsl(224, 100%, 58%, 0.9);
 		background: hsl(224, 100%, 58%, 0.05);
 		border-color: hsl(224, 100%, 58%, 0.2);
+
+		&:hover {
+			color: hsl(0, 0%, 100%);
+			background: hsl(224, 100%, 58%);
+			border-color: hsl(224, 100%, 58%);
+		}
+
+		& .virtual-circle {
+			width: 33%;
+			height: 33%;
+			aspect-ratio: 1;
+			border-radius: 9999rem;
+			background: hsl(0, 0%, 100%);
+			position: absolute;
+		}
+
+		&:hover .virtual-circle {
+			background: hsl(224, 100%, 58%);
+		}
 	}
 </style>

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon" viewBox="0 0 337 337">
-	<rect x="113" y="113" width="111" height="111" rx="55.5" fill="#2962FF" />
+	<rect x="113" y="113" width="111" height="111" rx="55.5" fill="white" />
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"

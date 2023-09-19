@@ -46,11 +46,13 @@
 					rel="noopener noreferrer"
 					class="card github"
 				>
-					<div class="logo" style="background: hsl(0, 0%, 0%);">
+					<div class="bg-logo">
 						<GitHub />
 					</div>
-					<h5 class="h5">Github</h5>
-					<span class="p3">github.com/matovius</span>
+					<div class="content">
+						<h5 class="h5">Github</h5>
+						<span class="p1">@matovius</span>
+					</div>
 				</a>
 				<a
 					href="https://mastodon.social/@matovius"
@@ -58,49 +60,56 @@
 					rel="noopener noreferrer"
 					class="card mastodon"
 				>
-					<div class="logo" style="background: hsl(278, 89%, 47%);">
+					<div class="bg-logo">
 						<Mastodon />
 					</div>
-					<h5 class="h5">Mastodon</h5>
-					<span class="p3">mastodon.social/@matovius</span>
+					<div class="content">
+						<h5 class="h5">Mastodon</h5>
+						<span class="p1">@matovius</span>
+					</div>
 				</a>
-				<div class="additional">
-					<a
-						href="https://threads.net/@matovius_"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="card threads"
-					>
-						<div class="logo" style="background: hsl(0, 0%, 0%); color: hsl(0, 0%, 100%);">
-							<Threads />
-						</div>
-						<h5 class="h5">Threads</h5>
-						<span class="p3">threads.net/@matovius_</span>
-					</a>
-					<a
-						href="https://read.cv/matovius"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="card read-cv"
-					>
-						<div class="logo" style="background: hsl(0, 0%, 100%); color: hsl(0, 0%, 0%);">
-							<ReadCv />
-						</div>
-						<h5 class="h5">Read.cv</h5>
-						<span class="p3">read.cv/matovius</span>
-					</a>
-				</div>
 				<a
-					href="http://hashnode.com/matovius"
+					href="https://threads.net/@matovius"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="card threads"
+				>
+					<div class="bg-logo">
+						<Threads />
+					</div>
+					<div class="content">
+						<h5 class="h5">Threads</h5>
+						<span class="p1">@matovius</span>
+					</div>
+				</a>
+
+				<a
+					href="https://read.cv/matovius"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="card read-cv"
+				>
+					<div class="bg-logo">
+						<ReadCv />
+					</div>
+					<div class="content">
+						<h5 class="h5">Read.cv</h5>
+						<span class="p1">@matovius</span>
+					</div>
+				</a>
+				<a
+					href="https://hashnode.com/matovius"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="card hashnode"
 				>
-					<div class="logo" style="background: hsl(224, 100%, 58%);">
+					<div class="bg-logo">
 						<Hashnode />
 					</div>
-					<h5 class="h5">Hashnode</h5>
-					<span class="p3">hashnode.com/matovius</span>
+					<div class="content">
+						<h5 class="h5">Hashnode</h5>
+						<span class="p1">@matovius</span>
+					</div>
 				</a>
 			</div>
 		</div>
@@ -179,7 +188,7 @@
 
 	.personal-blurb {
 		width: 100%;
-		max-width: 30rem /* 480px */;
+		/*max-width: 30rem /* 480px */
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -190,44 +199,38 @@
 
 	.socials {
 		width: 100%;
-		max-width: 30rem /* 480px */;
+		/*max-width: 30rem /* 480px */
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		gap: 1.5rem /* 24px */;
+		flex-wrap: wrap;
 
 		& .card {
 			width: 100%;
-			max-width: 100%;
+			max-width: 20rem /* 320px */;
 			text-decoration: none;
-			& > .logo {
-				color: hsl(0, 0%, 100%);
-				height: 100%;
-				aspect-ratio: 1;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background: hsla(0, 0%, 0%, 0.2);
-				position: absolute;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				z-index: -1;
-				mask: radial-gradient(circle at 100% 100%, hsl(0, 0%, 100%) 20%, transparent 70%);
-			}
-		}
-
-		& > .additional {
-			width: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			gap: 1.5rem /* 24px */;
+			& .bg-logo {
+				height: 150%;
+				aspect-ratio: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transform: rotate(-15deg);
+				position: absolute;
+				top: -25%;
+				bottom: -25%;
+				opacity: 0.2;
+				z-index: -1;
+			}
 
-			@media (min-width: 480px) {
-				flex-direction: row;
+			& > .content {
+				max-width: 100%;
 			}
 		}
 	}
@@ -238,6 +241,10 @@
 		color: hsl(0, 0%, 0%, 0.9);
 		background: hsl(0, 0%, 0%, 0.05);
 		border-color: hsl(0, 0%, 0%, 0.2);
+	}
+
+	.read-cv {
+		background: hsl(0, 0%, 100%, 0.05);
 	}
 
 	.mastodon {
@@ -251,53 +258,4 @@
 		background: hsl(224, 100%, 58%, 0.05);
 		border-color: hsl(224, 100%, 58%, 0.2);
 	}
-
-	/*
-	.heart {
-		width: 100%;
-		aspect-ratio: 1;
-		border-radius: 8px;
-		background: hsl(349, 83%, 51%);
-		transform: rotate(-45deg) scale(100%);
-		transform-origin: center;
-		animation: heartbeat 0.8s linear infinite;
-
-		&::before {
-			content: '';
-			display: block;
-			width: 100%;
-			aspect-ratio: 1;
-			border-radius: 50%;
-			background: inherit;
-			transform: translateY(-50%);
-			position: absolute;
-		}
-
-		&::after {
-			content: '';
-			display: block;
-			width: 100%;
-			aspect-ratio: 1;
-			border-radius: 50%;
-			background: inherit;
-			transform: translateX(50%);
-			position: absolute;
-		}
-	}
-
-	@keyframes heartbeat {
-		0%,
-		100% {
-			transform: rotate(-30deg) scale(100%);
-		}
-
-		30% {
-			transform: rotate(-30deg) scale(90%);
-		}
-
-		60% {
-			transform: rotate(-30deg) scale(110%);
-		}
-	}
-	*/
 </style>

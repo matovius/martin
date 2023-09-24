@@ -35,15 +35,33 @@
 			</div>
 		</div>
 		<div class="about">
-			<article class="card personal-blurb">
+			<article id="personal-blurb">
 				<p class="p1">
 					I love making beautiful websites, learning about the world around us, and doing the most
 					amateur photography you've ever seen.
 					<br /><br />
-					<i class="p2">Side Note: The cards below are clickable links.</i>
+					<small>
+						<em>Side Note: The cards below are clickable.</em>
+					</small>
 				</p>
 			</article>
-			<div class="socials">
+			<article id="projects-blurb">
+				<p class="p">
+					I've made a few projects so far. One of them is Monofont, a collection of monospaced
+					coding fonts for developers.
+				</p>
+				<br />
+				<p class="p">
+					A couple others include Distractible Stats, which I just made for fun for a podcast I
+					listen to, and Weathery, an <abbr data-title="Single Page Application">SPA</abbr> for
+					working with the OpenWeatherMap
+					<abbr data-title="Application Programming Interface">API</abbr>.
+				</p>
+				<br />
+				<p class="p">The one I'm working on right now is called Pagemark, a bookmarking web app.</p>
+			</article>
+			<section class="socials">
+				<h3 class="h3">Check me out on these websites</h3>
 				<a
 					href="https://github.com/matovius"
 					target="_blank"
@@ -116,7 +134,7 @@
 						<span class="p1">@matovius</span>
 					</div>
 				</a>
-			</div>
+			</section>
 		</div>
 	</div>
 </main>
@@ -188,17 +206,11 @@
 		justify-content: start;
 		align-items: center;
 		gap: 1.5rem /* 24px */;
-	}
 
-	.personal-blurb {
-		width: 100%;
-		/*max-width: 30rem /* 480px */
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 36px;
-		border-color: hsl(216, 90%, 46%, 0.1);
-		background: hsl(216, 90%, 46%, 0.05);
+		& > article {
+			width: 100%;
+			max-width: 30rem;
+		}
 	}
 
 	.socials {
@@ -292,6 +304,11 @@
 			outline-color: hsl(224, 100%, 58%);
 		}
 
+		/* 
+		This ".virtual-circle" element is just here to make the Hashnode logo
+		look as usual when it's hovered over. I don't have the energy to code
+		some way for the circle in the actual logo to change colors dynamically.
+		*/
 		& .virtual-circle {
 			width: 33%;
 			height: 33%;

@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		<div class="about">
-			<article id="personal-blurb">
+			<div id="personal" class="personal-blurb">
 				<p class="p1">
 					I love making beautiful websites, learning about the world around us, and doing the most
 					amateur photography you've ever seen.
@@ -44,12 +44,28 @@
 						<em>Side Note: The cards below are clickable.</em>
 					</small>
 				</p>
-			</article>
-			<article id="projects-blurb">
+			</div>
+			<div id="projects" class="projects-blurb">
 				<p class="p">
 					I've made a few projects so far. One of them is Monofont, a collection of monospaced
 					coding fonts for developers.
 				</p>
+				<br />
+				<div class="card monofont">
+					<div
+						class="card-image"
+						style="min-height: 8rem; aspect-ratio: 3/1; background: hsl(0, 0%, 0%, 0.1)"
+					/>
+					<div class="card-body">
+						<h5 class="h5">Monofont</h5>
+					</div>
+					<div class="card-footer">
+						<div>
+							<button class="button">Source Code</button>
+							<button class="button">Live Demo</button>
+						</div>
+					</div>
+				</div>
 				<br />
 				<p class="p">
 					A couple others include Distractible Stats, which I just made for fun for a podcast I
@@ -59,7 +75,7 @@
 				</p>
 				<br />
 				<p class="p">The one I'm working on right now is called Pagemark, a bookmarking web app.</p>
-			</article>
+			</div>
 			<section class="socials">
 				<h3 class="h3">Check me out on these websites</h3>
 				<a
@@ -71,7 +87,7 @@
 					<div class="bg-logo">
 						<GitHub />
 					</div>
-					<div class="content">
+					<div class="card-body content">
 						<h5 class="h5">Github</h5>
 						<span class="p1">@matovius</span>
 					</div>
@@ -85,7 +101,7 @@
 					<div class="bg-logo">
 						<Mastodon />
 					</div>
-					<div class="content">
+					<div class="card-body content">
 						<h5 class="h5">Mastodon</h5>
 						<span class="p1">@matovius</span>
 					</div>
@@ -99,7 +115,7 @@
 					<div class="bg-logo">
 						<Threads />
 					</div>
-					<div class="content">
+					<div class="card-body content">
 						<h5 class="h5">Threads</h5>
 						<span class="p1">@matovius</span>
 					</div>
@@ -114,7 +130,7 @@
 					<div class="bg-logo">
 						<ReadCv />
 					</div>
-					<div class="content">
+					<div class="card-body content">
 						<h5 class="h5">Read.cv</h5>
 						<span class="p1">@matovius</span>
 					</div>
@@ -129,7 +145,7 @@
 						<div class="virtual-circle" />
 						<Hashnode />
 					</div>
-					<div class="content">
+					<div class="card-body content">
 						<h5 class="h5">Hashnode</h5>
 						<span class="p1">@matovius</span>
 					</div>
@@ -207,9 +223,37 @@
 		align-items: center;
 		gap: 1.5rem /* 24px */;
 
-		& > article {
+		& > div {
 			width: 100%;
 			max-width: 30rem;
+		}
+	}
+
+	.projects-blurb {
+		& .card {
+			width: 100%;
+			border-color: hsl(0, 0%, 0%, 0.1);
+
+			& > .card-footer {
+				padding-top: 0;
+				& > div {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					gap: 1.5rem;
+
+					@media (min-width: 480px) {
+						flex-direction: row;
+					}
+
+					& > .button {
+						width: 100%;
+						background: hsl(0, 0%, 0%, 0.1);
+					}
+				}
+			}
 		}
 	}
 

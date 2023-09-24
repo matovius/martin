@@ -7,6 +7,9 @@
 	import Home from '$lib/components/icons/Home.svelte';
 	import MicroBuilds from '$lib/components/icons/MicroBuilds.svelte';
 	import Projects from '$lib/components/icons/Projects.svelte';
+
+	const date: Date = new Date();
+	let CurrentDate = date.getFullYear();
 </script>
 
 <div id="root" class="app">
@@ -59,7 +62,8 @@
 	<slot />
 	<footer class="footer">
 		<div>
-			<span class="p3 copyright-statement">Made by me with Svelte and CSS Nesting.</span>
+			<small class="small copyright-statement">Made by me with Svelte and CSS Nesting.</small>
+			<small class="small copyright-statement">&copy; Copyright {CurrentDate}</small>
 		</div>
 	</footer>
 </div>
@@ -156,7 +160,16 @@
 			width: 100%;
 			max-width: 1024px;
 			padding: 0.75rem /* 12px */;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: start;
 			border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+
+			@media (min-width: 480px) {
+				flex-direction: row;
+				justify-content: space-between;
+			}
 		}
 	}
 </style>

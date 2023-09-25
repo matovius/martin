@@ -14,7 +14,7 @@
 
 <main class="main">
 	<div>
-		<div class="profile">
+		<section class="profile">
 			<div>
 				<span class="p1">Hi, my name is</span>
 				<h1 class="h1 font-rubik">Martin Matovu</h1>
@@ -33,22 +33,102 @@
 			<div class="profile-image">
 				<img src={profileImage} alt="Me, Martin Matovu" loading="lazy" />
 			</div>
-		</div>
-		<div class="about">
+		</section>
+		<section class="socials">
+			<a
+				href="https://github.com/matovius"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="card social-button github"
+			>
+				<div class="card-body">
+					<div>
+						<div class="logo-wrapper">
+							<GitHub />
+						</div>
+						<div class="title">GitHub</div>
+					</div>
+				</div>
+			</a>
+			<a
+				href="https://mastodon.social/@matovius"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="card social-button mastodon"
+			>
+				<div class="card-body">
+					<div>
+						<div class="logo-wrapper">
+							<Mastodon />
+						</div>
+						<div class="title">Mastodon</div>
+					</div>
+				</div>
+			</a>
+			<a
+				href="https://threads.net/@matovius"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="card social-button threads"
+			>
+				<div class="card-body">
+					<div>
+						<div class="logo-wrapper">
+							<Threads />
+						</div>
+						<div class="title">Threads</div>
+					</div>
+				</div>
+			</a>
+			<a
+				href="https://read.cv/matovius"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="card social-button read-cv"
+			>
+				<div class="card-body">
+					<div>
+						<div class="logo-wrapper">
+							<ReadCv />
+						</div>
+						<div class="title">Read.cv</div>
+					</div>
+				</div>
+			</a>
+			<a
+				href="https://hashnode.com/matovius"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="card social-button hashnode"
+			>
+				<div class="card-body">
+					<div>
+						<div class="logo-wrapper">
+							<div class="virtual-circle" />
+							<Hashnode />
+						</div>
+						<div class="title">Hashnode</div>
+					</div>
+				</div>
+			</a>
+		</section>
+		<section class="about">
 			<div id="personal" class="personal-blurb">
 				<p class="p1">
 					I love making beautiful websites, learning about the world around us, and doing the most
 					amateur photography you've ever seen.
-					<br /><br />
-					<small>
-						<em>Side Note: The cards below are clickable.</em>
-					</small>
+					<br />
 				</p>
 			</div>
 			<div id="projects" class="projects-blurb">
 				<p class="p">
-					I've made a few projects so far. One of them is Monofont, a collection of monospaced
-					coding fonts for developers.
+					I've made a few projects so far. A few of my favorites are: Monofont, a collection of
+					monospaced coding fonts for developers; Weathery, an <abbr
+						data-title="Single Page Application">SPA</abbr
+					>
+					for working with the OpenWeatherMap
+					<abbr data-title="Application Programming Interface">API</abbr>, and Distractible Stats,
+					which I just made for fun for a podcast I listen to.
 				</p>
 				<br />
 				<div class="card monofont">
@@ -67,95 +147,27 @@
 					</div>
 				</div>
 				<br />
-				<p class="p">
-					A couple others include Distractible Stats, which I just made for fun for a podcast I
-					listen to, and Weathery, an <abbr data-title="Single Page Application">SPA</abbr> for
-					working with the OpenWeatherMap
-					<abbr data-title="Application Programming Interface">API</abbr>.
-				</p>
-				<br />
-				<p class="p">The one I'm working on right now is called Pagemark, a bookmarking web app.</p>
 			</div>
-			<section class="socials">
-				<h3 class="h3">Check me out on these websites</h3>
-				<a
-					href="https://github.com/matovius"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="card github"
-				>
-					<div class="bg-logo">
-						<GitHub />
-					</div>
-					<div class="card-body content">
-						<h5 class="h5">Github</h5>
-						<span class="p1">@matovius</span>
-					</div>
-				</a>
-				<a
-					href="https://mastodon.social/@matovius"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="card mastodon"
-				>
-					<div class="bg-logo">
-						<Mastodon />
-					</div>
-					<div class="card-body content">
-						<h5 class="h5">Mastodon</h5>
-						<span class="p1">@matovius</span>
-					</div>
-				</a>
-				<a
-					href="https://threads.net/@matovius"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="card threads"
-				>
-					<div class="bg-logo">
-						<Threads />
-					</div>
-					<div class="card-body content">
-						<h5 class="h5">Threads</h5>
-						<span class="p1">@matovius</span>
-					</div>
-				</a>
-
-				<a
-					href="https://read.cv/matovius"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="card read-cv"
-				>
-					<div class="bg-logo">
-						<ReadCv />
-					</div>
-					<div class="card-body content">
-						<h5 class="h5">Read.cv</h5>
-						<span class="p1">@matovius</span>
-					</div>
-				</a>
-				<a
-					href="https://hashnode.com/matovius"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="card hashnode"
-				>
-					<div class="bg-logo">
-						<div class="virtual-circle" />
-						<Hashnode />
-					</div>
-					<div class="card-body content">
-						<h5 class="h5">Hashnode</h5>
-						<span class="p1">@matovius</span>
-					</div>
-				</a>
-			</section>
-		</div>
+		</section>
 	</div>
 </main>
 
 <style>
+	.main {
+		width: 100%;
+		padding-bottom: 2.25rem /* 36px */;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& > div {
+			width: 100%;
+			max-width: 53.75rem /* 860px */;
+			padding-top: 5rem;
+			padding-left: 1.5rem /* 24px */;
+			padding-right: 1.5rem /* 24px */;
+		}
+	}
 	.profile {
 		width: 100%;
 		display: flex;
@@ -210,7 +222,7 @@
 
 	.profile-image {
 		width: 100%;
-		max-width: 15rem /* 240px */;
+		max-width: 11.25rem;
 		aspect-ratio: 1;
 	}
 
@@ -225,7 +237,6 @@
 
 		& > div {
 			width: 100%;
-			max-width: 30rem;
 		}
 	}
 
@@ -262,108 +273,112 @@
 		/*max-width: 30rem /* 480px */
 		display: flex;
 		flex-direction: row;
-		justify-content: center;
+		justify-content: start;
 		align-items: center;
 		gap: 1.5rem /* 24px */;
 		flex-wrap: wrap;
+		padding-top: 2.25rem;
 
 		& .card {
 			width: 100%;
 			max-width: 20rem /* 320px */;
+			& > .card-body {
+				padding: 0.5rem;
+
+				& > div {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					gap: 0.75rem;
+				}
+			}
+		}
+		& > .social-button {
+			width: fit-content;
 			text-decoration: none;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			& .bg-logo {
-				height: 150%;
-				aspect-ratio: 1;
+			border-radius: 0.75rem;
+			outline-offset: 0.125rem;
+			& .logo-wrapper {
+				width: 1.5rem;
+				height: 1.5rem;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				transform: rotate(-15deg);
-				position: absolute;
-				top: -25%;
-				bottom: -25%;
-				opacity: 0.2;
-				z-index: -1;
+				position: relative;
 			}
 
-			& > .content {
-				max-width: 100%;
+			&.github,
+			&.threads,
+			&.read-cv {
+				color: hsl(0, 0%, 0%, 0.9);
+				background: hsl(0, 0%, 0%, 0.05);
+				border-color: hsl(0, 0%, 0%, 0.1);
+
+				&:hover {
+					color: hsl(0, 0%, 100%);
+					background: hsl(0, 0%, 0%);
+					border-color: hsl(0, 0%, 0%);
+				}
+
+				&:focus {
+					outline-color: hsl(0, 0%, 0%);
+				}
 			}
-		}
-	}
 
-	.github,
-	.threads,
-	.read-cv {
-		color: hsl(0, 0%, 0%, 0.9);
-		background: hsl(0, 0%, 0%, 0.05);
-		border-color: hsl(0, 0%, 0%, 0.1);
+			&.mastodon {
+				color: hsl(252, 59%, 51%, 0.9);
+				background: hsl(252, 59%, 51%, 0.05);
+				border-color: hsl(252, 59%, 51%, 0.1);
 
-		&:hover {
-			color: hsl(0, 0%, 100%);
-			background: hsl(0, 0%, 0%);
-			border-color: hsl(0, 0%, 0%);
-		}
+				&:hover {
+					color: hsl(0, 0%, 100%);
+					background: hsl(252, 59%, 51%);
+					border-color: hsl(252, 59%, 51%);
+				}
 
-		&:focus {
-			outline-color: hsl(0, 0%, 0%);
-		}
-	}
+				&:focus {
+					outline-color: hsl(252, 59%, 51%);
+				}
+			}
 
-	.read-cv {
-		background: hsl(0, 0%, 100%, 0.4);
-	}
+			&.hashnode {
+				color: hsl(224, 100%, 58%, 0.9);
+				background: hsl(224, 100%, 58%, 0.05);
+				border-color: hsl(224, 100%, 58%, 0.2);
 
-	.mastodon {
-		color: hsl(252, 59%, 51%, 0.9);
-		background: hsl(252, 59%, 51%, 0.05);
-		border-color: hsl(252, 59%, 51%, 0.1);
+				&:hover {
+					color: hsl(0, 0%, 100%);
+					background: hsl(224, 100%, 58%);
+					border-color: hsl(224, 100%, 58%);
+				}
 
-		&:hover {
-			color: hsl(0, 0%, 100%);
-			background: hsl(252, 59%, 51%);
-			border-color: hsl(252, 59%, 51%);
-		}
+				&:focus {
+					outline-color: hsl(224, 100%, 58%);
+				}
 
-		&:focus {
-			outline-color: hsl(252, 59%, 51%);
-		}
-	}
+				/* 
+				This ".virtual-circle" element is just here to make the Hashnode logo
+				look as usual when it's hovered over. I don't have the energy to code
+				some way for the circle in the actual logo to change colors dynamically.
+				*/
+				& .virtual-circle {
+					width: 33%;
+					height: 33%;
+					aspect-ratio: 1;
+					border-radius: 9999rem;
+					background: hsl(0, 0%, 100%);
+					position: absolute;
+				}
 
-	.hashnode {
-		color: hsl(224, 100%, 58%, 0.9);
-		background: hsl(224, 100%, 58%, 0.05);
-		border-color: hsl(224, 100%, 58%, 0.2);
-
-		&:hover {
-			color: hsl(0, 0%, 100%);
-			background: hsl(224, 100%, 58%);
-			border-color: hsl(224, 100%, 58%);
-		}
-
-		&:focus {
-			outline-color: hsl(224, 100%, 58%);
-		}
-
-		/* 
-		This ".virtual-circle" element is just here to make the Hashnode logo
-		look as usual when it's hovered over. I don't have the energy to code
-		some way for the circle in the actual logo to change colors dynamically.
-		*/
-		& .virtual-circle {
-			width: 33%;
-			height: 33%;
-			aspect-ratio: 1;
-			border-radius: 9999rem;
-			background: hsl(0, 0%, 100%);
-			position: absolute;
-		}
-
-		&:hover .virtual-circle {
-			background: hsl(224, 100%, 58%);
+				&:hover .virtual-circle {
+					background: hsl(224, 100%, 58%);
+				}
+			}
 		}
 	}
 </style>

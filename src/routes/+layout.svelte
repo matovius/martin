@@ -13,7 +13,7 @@
 </script>
 
 <div id="root" class="app">
-	<header class="header">
+	<header class="header" style="display: none;">
 		<div>
 			<div class="nav-wrapper">
 				<nav class="navigation">

@@ -131,18 +131,20 @@
 					which I just made for fun for a podcast I listen to.
 				</p>
 				<br />
-				<div class="card monofont">
-					<div
-						class="card-image"
-						style="min-height: 8rem; aspect-ratio: 3/1; background: hsl(0, 0%, 0%, 0.1)"
-					/>
-					<div class="card-body">
-						<h5 class="h5">Monofont</h5>
-					</div>
-					<div class="card-footer">
-						<div>
-							<button class="button">Source Code</button>
-							<button class="button">Live Demo</button>
+				<div class="card-wrapper">
+					<div class="card monofont">
+						<div
+							class="card-image"
+							style="min-height: 8rem; aspect-ratio: 3/1; background: hsl(0, 0%, 0%, 0.1)"
+						/>
+						<div class="card-body">
+							<h5 class="h5">Monofont</h5>
+						</div>
+						<div class="card-footer">
+							<div>
+								<button class="button">Source Code</button>
+								<button class="button">Live Demo</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -380,5 +382,9 @@
 				}
 			}
 		}
+	}
+
+	.card-wrapper {
+		max-width: 22.5rem;
 	}
 </style>

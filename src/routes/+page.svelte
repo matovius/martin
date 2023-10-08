@@ -16,16 +16,16 @@
 	<div>
 		<section class="profile">
 			<div>
-				<span class="p1">Hi, my name is</span>
+				<span class="p">Hi, my name is</span>
 				<h1 class="h1 font-rubik">Martin Matovu</h1>
 				<div class="descriptors">
-					<span class="p1">Pixel Pusher</span>
+					<span class="p">Pixel Pusher</span>
 					<hr />
-					<span class="p1">Browser Charmer</span>
+					<span class="p">Browser Charmer</span>
 					<hr />
-					<span class="p1">API Whisperer</span>
+					<span class="p">API Whisperer</span>
 				</div>
-				<p class="p1">
+				<p class="p">
 					Commonly known as a
 					<strong style="color: hsl(216, 90%, 46%);">web developer</strong>.
 				</p>
@@ -114,7 +114,7 @@
 		</section>
 		<section class="about">
 			<div id="personal" class="personal-blurb">
-				<p class="p1">
+				<p class="p">
 					I love making beautiful websites, learning about the world around us, and doing the most
 					amateur photography you've ever seen.
 					<br />
@@ -196,7 +196,7 @@
 			}
 		}
 
-		& p.p1 {
+		& p.p {
 			padding-top: 1.5rem /* 24px */;
 		}
 	}

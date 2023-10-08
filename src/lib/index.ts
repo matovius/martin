@@ -9,4 +9,3 @@ export * from './components/icons/Home.svelte';
 export * from './components/icons/MicroBuilds.svelte';
 export * from './components/icons/Projects.svelte';
 export * from './components/icons/Hashnode.svelte';
-export * from './assets/profile-photo.png';

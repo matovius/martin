@@ -59,13 +59,18 @@
 			</div>
 		</div>
 	</header>
+
 	<slot />
+
 	<footer class="footer">
 		<div>
 			<small class="small copyright-statement">Made with Svelte and CSS Nesting.</small>
-			<small class="small copyright-statement"
-				>&copy; Copyright {CurrentDate} <span>&CenterDot;</span> Martin Matovu</small
-			>
+
+			<small class="small copyright-statement">
+				&copy; Copyright {CurrentDate}
+				<span>&CenterDot;</span>
+				Martin Matovu
+			</small>
 		</div>
 	</footer>
 </div>

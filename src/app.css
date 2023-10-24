@@ -1,229 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	transition: all 0.2s ease;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-family: 'Inter Variable', sans-serif;
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-	height: 100vh;
-	overflow: hidden;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-	display: block;
-	max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-	font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	overflow-wrap: break-word;
+	@apply transition-all text-black/80;
 }
 
 .h1 {
-	font-size: clamp(3rem, 1vw, 3.75rem);
-	line-height: 1;
-	font-weight: 700;
+	@apply font-rubik text-6xl font-bold;
 }
 
 .h2 {
-	font-size: clamp(2.25rem, 1vw, 3rem);
-	line-height: 1;
-	font-weight: 600;
+	@apply font-rubik text-5xl font-bold;
 }
 
 .h3 {
-	font-size: 2.25rem;
-	line-height: 2.5rem;
-	font-weight: 600;
+	@apply font-rubik text-4xl font-semibold;
 }
 
 .h4 {
-	font-size: 1.875rem;
-	line-height: 2.25rem;
-	font-weight: 600;
+	@apply font-rubik text-3xl font-semibold;
 }
 
 .h5 {
-	font-size: 1.5rem;
-	line-height: 2rem;
-	font-weight: 600;
+	@apply font-rubik text-2xl font-semibold;
 }
 
 .h6 {
-	font-size: 1.25rem;
-	line-height: 1.75rem;
-	font-weight: 600;
+	@apply font-rubik text-xl font-semibold;
 }
 
 .p {
-	font-size: 1rem;
-	line-height: 1.5rem;
-	font-weight: 400;
+	@apply font-inter text-base font-normal;
 }
 
 .small {
-	font-size: 0.75rem;
-	line-height: 1;
-	font-weight: 700;
+	@apply font-inter text-xs font-medium;
 }
-
-#root,
-#__next {
-	isolation: isolate;
-	height: 100%;
-	overflow-y: auto;
-	overflow-x: hidden;
-	background: hsla(0, 0%, 0%, 0.1);
-	color: hsla(0, 0%, 0%, 0.9);
-}
-/*
-@media (prefers-color-scheme: light) {
-	#root.app {
-		background: hsla(0, 0%, 0%, 0.1);
-		color: hsla(0, 0%, 0%, 0.9);
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	#root.app {
-		background: hsla(0, 0%, 0%, 0.9);
-		color: hsla(0, 0%, 100%, 0.9);
-	}
-}
-*/
-
-abbr {
-	text-decoration: 2px underline dotted hsl(216, 90%, 46%);
-	position: relative;
-	cursor: pointer;
-
-	&::after {
-		content: attr(data-title);
-		position: absolute;
-		top: 120%;
-		left: 0;
-		z-index: 1000;
-		padding: 0.75rem;
-		border-radius: 0.75rem /* 12px */;
-		border: 1px solid hsla(0, 0%, 0%, 0.1);
-		background: hsl(0, 0%, 100%, 0.4);
-		backdrop-filter: blur(8px);
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	@media (hover: hover) {
-		&:hover::after {
-			opacity: 1;
-		}
-	}
-	&:focus::after {
-		opacity: 1;
-	}
-}
-
 .button {
-	appearance: none;
-	text-decoration: none;
-	font-size: 1rem;
-	line-height: 1;
-	font-weight: 600;
-	width: fit-content;
-	min-width: max-content;
-	padding: 0.5rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5rem;
-	border: 0.125rem solid transparent;
-	border-radius: 0.75rem;
-	outline: 0.125rem solid transparent;
-	outline-offset: 0.125rem;
-	background: transparent;
-	cursor: pointer;
-
-	&:hover {
-		transform: translateY(-0.125rem);
-	}
-
-	&:active {
-		transform: translateY(0);
-	}
+	@apply appearance-none no-underline font-inter text-base font-medium w-fit px-3 py-2 flex justify-center items-center gap-2 bg-transparent rounded-lg border border-solid border-black/10 outline-2 outline-transparent outline-offset-2 cursor-pointer hover:-translate-y-[2px] active:translate-y-0 focus-visible:outline-current;
 }
-
-.overlay {
-	position: fixed;
-	inset: 0;
-	width: 100vw;
-	height: 100vh;
-	background: hsla(0, 0%, 0%, 0.6);
-	backdrop-filter: blur(0.5rem);
-}
-
-.font-rubik {
-	font-family: 'Rubik Variable', sans-serif;
-}
-
-.font-inter {
-	font-family: 'Inter Variable', sans-serif;
-}
-
 .card {
-	border-radius: 1.5rem;
-	border: 1px solid transparent;
-	background: hsla(0, 0%, 100%, 0.2);
-	backdrop-filter: blur(8px);
-	position: relative;
-	overflow: hidden;
-	isolation: isolate;
-	outline: 1px solid transparent;
-	outline-offset: 4px;
-
-	& > .card-header,
-	> .card-body,
-	> .card-footer {
-		padding: 1.5rem;
-	}
-
-	& > .card-header {
-		border-bottom: 1px solid transparent;
-	}
-
-	& > .card-footer {
-		border-top: 1px solid transparent;
-	}
-
-	& > .card-image {
-		width: 100%;
-	}
+	@apply border border-solid border-black/10 relative isolate;
 }
 
 .icon {
-	width: 100%;
-	height: 100%;
+	@apply w-full h-full;
 }

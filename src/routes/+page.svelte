@@ -33,7 +33,7 @@
 					</div>
 					<span class="p">More commonly known as a <strong>web developer</strong></span>
 				</div>
-				<div class="w-[12.5rem] h-[12.5rem] aspect-square">
+				<div class="w-52 h-52 aspect-square">
 					<img
 						src={profileImage}
 						alt="Me looking sternly into the camera"
@@ -136,7 +136,7 @@
 		</section>
 	</main>
 	<footer
-		class="w-full flex justify-center items-center px-3 tablet:px-6 py-6 border-t border-black/10"
+		class="w-full flex justify-center items-center px-3 tablet:px-6 py-6 border-t border-black/10 dark:border-white/10"
 	>
 		<div id="footer-text" class="w-full max-w-[53.75rem] flex flex-row justify-center item-center">
 			<small class="small">© Copyright 2023 · Martin Matovu</small>

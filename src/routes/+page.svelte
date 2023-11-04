@@ -1,7 +1,8 @@
 <script lang="ts">
 	import profileImage from '$lib/assets/profile-photo.png';
 	import tildeLogo from '$lib/assets/Tilde-Logo.png';
-	import { Codepen, Dribbble, Github, Instagram, Linkedin } from 'lucide-svelte';
+	import theWebwareWorkshop from '$lib/assets/TheWebwareWorkshopLogo.png';
+	import { ArrowUpRight, Codepen, Dribbble, Github, Instagram, Linkedin } from 'lucide-svelte';
 
 	const date: Date = new Date();
 	let CurrentDate = date.getFullYear();
@@ -14,7 +15,7 @@
 <div class="w-full max-w-full flex flex-col">
 	<main class="w-full h-full flex flex-col justify-center items-center">
 		<section
-			class="w-full max-w-[53.75rem] flex flex-col justify-center items-center gap-12 px-3 tablet:px-6 pt-[60px] pb-6"
+			class="w-full max-w-[40rem] flex flex-col justify-center items-center gap-12 px-3 tablet:px-6 pt-[60px] pb-6"
 		>
 			<div
 				id="hero-lead"
@@ -92,7 +93,7 @@
 			</div>
 		</section>
 		<section
-			class="w-full max-w-[53.75rem] flex justify-center items-start px-3 tablet:px-6 pt-6 pb-12"
+			class="w-full max-w-[40rem] flex justify-center items-start px-3 tablet:px-6 pt-6 pb-12"
 		>
 			<div id="about-me-text" class="w-full flex flex-col justify-start items-start gap-6">
 				<p class="p">
@@ -107,24 +108,30 @@
 			</div>
 		</section>
 		<section
-			class="w-full max-w-[53.75rem] flex flex-col justify-start items-center gap-6 px-3 tablet:px-6 py-12"
+			class="w-full max-w-[40rem] flex flex-col justify-start items-center gap-6 px-3 tablet:px-6 pb-12"
 		>
-			<h2 class="h3 w-full">Some of my favorite projects</h2>
-			<div id="featured-projects" class="w-full flex flex-row justify-start items-start gap-6">
-				<a
-					href="https://tilde-editor.pages.dev"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="card w-full tablet:max-w-[22.5rem] rounded-3xl p-6"
+			<div
+				class="card w-full rounded-3xl p-6 flex flex-col tablet:flex-row justify-between items-center gap-6"
+			>
+				<div
+					class="w-full tablet:w-fit flex flex-row justify-center tablet:justify-start items-center gap-6"
 				>
-					<div class="w-[3.75rem] h-[3.75rem] aspect-square">
-						<img src={tildeLogo} alt="Tilde logo" class="icon" />
+					<div class="w-12 h-12 aspect-square">
+						<img src={theWebwareWorkshop} alt="The Webware Workshop's Logo" class="icon" />
 					</div>
-					<div class="w-full">
-						<h5 class="h5 w-full">Tilde</h5>
-						<p class="p w-full">A nice little rich text editor using the Tiptap headless editor</p>
-					</div>
-				</a>
+					<h2 class="h5">The Webware Workshop</h2>
+				</div>
+				<div class="w-full tablet:w-fit">
+					<a
+						href="https://the-www.pages.dev/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button w-full tablet:w-fit"
+					>
+						<span>Check it out</span>
+						<ArrowUpRight />
+					</a>
+				</div>
 			</div>
 		</section>
 	</main>

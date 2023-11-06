@@ -42,9 +42,7 @@
 				</div>
 			</div>
 			<div id="hero-trail" class="w-full flex-col justify-start items-center">
-				<div
-					class="w-full flex flex-row justify-start tablet:justify-center items-start gap-2 flex-wrap"
-				>
+				<div class="w-full flex flex-row justify-center items-center gap-2 flex-wrap">
 					<a
 						href="https://github.com/matovius"
 						target="_blank"
@@ -110,7 +108,7 @@
 			</div>
 		</section>
 		<section
-			class="w-full max-w-[40rem] flex flex-col justify-start items-center gap-6 px-3 tablet:px-6 pb-24"
+			class="w-full max-w-[40rem] flex flex-col justify-start items-center gap-6 px-3 tablet:px-6 pb-12 tablet:pb-24"
 		>
 			<div
 				class="card w-full rounded-3xl p-6 flex flex-col tablet:flex-row justify-between items-center gap-6"

@@ -15,7 +15,7 @@
 <div class="w-full max-w-full flex flex-col">
 	<main class="w-full h-full flex flex-col justify-center items-center">
 		<section
-			class="w-full max-w-[40rem] flex flex-col justify-center items-center gap-12 px-3 tablet:px-6 pt-[60px] pb-6"
+			class="w-full max-w-[40rem] flex flex-col justify-center items-center gap-12 px-6 pt-[60px] pb-6"
 		>
 			<div
 				id="hero-lead"
@@ -92,9 +92,7 @@
 				</div>
 			</div>
 		</section>
-		<section
-			class="w-full max-w-[40rem] flex justify-center items-start px-3 tablet:px-6 pt-12 pb-12"
-		>
+		<section class="w-full max-w-[40rem] flex justify-center items-start px-6 pt-12 pb-12">
 			<div id="about-me-text" class="w-full flex flex-col justify-start items-start gap-6">
 				<p class="p">
 					I love making beautiful websites, learning about the world around us, and doing the most
@@ -108,7 +106,7 @@
 			</div>
 		</section>
 		<section
-			class="w-full max-w-[40rem] flex flex-col justify-start items-center gap-6 px-3 tablet:px-6 pb-12 tablet:pb-24"
+			class="w-full max-w-[40rem] flex flex-col justify-start items-center gap-6 px-6 pb-12 tablet:pb-24"
 		>
 			<div
 				class="card w-full rounded-3xl p-6 flex flex-col tablet:flex-row justify-between items-center gap-6"
@@ -135,7 +133,7 @@
 			</div>
 		</section>
 	</main>
-	<footer class="w-full flex justify-center items-center px-3 tablet:px-6 py-6">
+	<footer class="w-full flex justify-center items-center p-6">
 		<div id="footer-text" class="w-full max-w-[53.75rem] flex flex-row justify-center item-center">
 			<small class="small">© Copyright 2023 · Martin Matovu</small>
 		</div>

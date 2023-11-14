@@ -2,6 +2,7 @@
 	import profileImage from '$lib/assets/profile-photo.png';
 	import tildeLogo from '$lib/assets/Tilde-Logo.png';
 	import theWebwareWorkshop from '$lib/assets/TheWebwareWorkshopLogo.png';
+	import TildeLogo from '$lib/assets/Tilde-Logo.png';
 	import { ArrowUpRight, Codepen, Dribbble, Github, Instagram, Linkedin } from 'lucide-svelte';
 
 	const date: Date = new Date();
@@ -115,13 +116,16 @@
 					class="w-full tablet:w-fit flex flex-row justify-center tablet:justify-start items-center gap-6"
 				>
 					<div class="w-12 h-12 aspect-square">
-						<img src={theWebwareWorkshop} alt="The Webware Workshop's Logo" class="icon" />
+						<img src={TildeLogo} alt="The Webware Workshop's Logo" class="icon" />
 					</div>
-					<h2 class="h5">The Webware Workshop</h2>
+					<div>
+						<h2 class="h5">Tilde</h2>
+						<span class="p text-white/60">Your Favorite Online Text Editor</span>
+					</div>
 				</div>
 				<div class="w-full tablet:w-fit">
 					<a
-						href="https://the-www.pages.dev/"
+						href="https://tilde-editor.pages.dev/"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="button w-full tablet:w-fit"

@@ -9,3 +9,7 @@ export * from './components/icons/Home.svelte';
 export * from './components/icons/MicroBuilds.svelte';
 export * from './components/icons/Projects.svelte';
 export * from './components/icons/Hashnode.svelte';
+
+export * from './components/Logo.svelte';
+export * from './components/Header.svelte';
+export * from './components/Footer.svelte';

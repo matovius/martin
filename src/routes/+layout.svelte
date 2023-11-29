@@ -4,7 +4,6 @@
 
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import '@fontsource-variable/inter';
 </script>
 
 <div id="root" class="root">

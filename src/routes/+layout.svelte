@@ -1,12 +1,23 @@
 <script lang="ts">
 	import '../app.css';
-	import '@fontsource-variable/inter';
 	import '@fontsource-variable/rubik';
+
+	import Footer from '$lib/components/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import '@fontsource-variable/inter';
 </script>
 
-<div
-	id="root"
-	class="isolate relative w-[100dvw] h-full bg-white text-black/80 dark:bg-black/90 dark:text-white/80"
->
+<div id="root" class="root">
+	<Header />
 	<slot />
+	<Footer />
 </div>
+
+<style>
+	.root {
+		isolation: isolate;
+		position: relative;
+		background-color: hsl(0, 0%, 100%);
+		color: hsl(0, 0%, 0%, 0.8);
+	}
+</style>

@@ -87,8 +87,13 @@ html {
 	&:focus-visible {
 		outline-color: currentColor;
 	}
+
+	&:visited {
+		color: unset;
+	}
 }
 
 .icon {
-	@apply w-full h-full;
+	width: 100%;
+	height: 100%;
 }

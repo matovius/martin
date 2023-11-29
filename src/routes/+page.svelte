@@ -22,22 +22,42 @@
 			</button>
 		</div>
 		<div class="social-buttons">
-			<button class="button github">
+			<a
+				href="https://github.com/matovius"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="button github"
+			>
 				<Github />
 				<span>GitHub</span>
-			</button>
-			<button class="button dribbble">
+			</a>
+			<a
+				href="https://dribbble.com/matovius"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="button dribbble"
+			>
 				<Dribbble />
 				<span>Dribbble</span>
-			</button>
-			<button class="button instagram">
+			</a>
+			<a
+				href="https://instagram.com/matovius_"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="button instagram"
+			>
 				<Instagram />
 				<span>Instagram</span>
-			</button>
-			<button class="button linkedin">
+			</a>
+			<a
+				href="https://linkedin.com/in/martin-matovu"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="button linkedin"
+			>
 				<Linkedin />
 				<span>LinkedIn</span>
-			</button>
+			</a>
 		</div>
 	</section>
 	<section id="about" class="about">

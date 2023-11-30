@@ -70,16 +70,6 @@
 </main>
 
 <style>
-	.hero#hero {
-		& > h1.h1 {
-			width: 100%;
-		}
-
-		& > p.p {
-			width: 100%;
-		}
-	}
-
 	.projects#projects {
 		gap: 3rem; /* 48px */
 	}

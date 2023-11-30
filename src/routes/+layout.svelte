@@ -16,7 +16,6 @@
 	.root {
 		isolation: isolate;
 		position: relative;
-		background-color: hsl(0, 0%, 100%);
-		color: hsl(0, 0%, 0%, 0.8);
+		min-height: 100dvh;
 	}
 </style>

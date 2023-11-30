@@ -87,6 +87,14 @@
 			border-radius: 0.75rem; /* 12px */
 			border: 2px solid hsl(0, 0%, 100%, 0.1);
 			background-color: hsl(0, 0%, 100%, 0.1);
+
+			@media (min-width: 480px) {
+				aspect-ratio: 24 / 9;
+			}
+
+			@media (min-width: 640px) {
+				aspect-ratio: 32 / 9;
+			}
 		}
 
 		& > .details {

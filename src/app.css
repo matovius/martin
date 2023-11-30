@@ -149,7 +149,7 @@ body {
 	}
 
 	&:visited {
-		color: unset;
+		color: hsl(216, 90%, 46%);
 	}
 }
 

@@ -72,8 +72,9 @@
 			especially with elements that require user interaction.
 		</p>
 		<p class="p">
-			While I've worked on a few things, that doesn't mean I don't know how to <a href="#" class="a"
-				>play</a
+			While I've worked on a few things, that doesn't mean I don't know how to <a
+				href="/play"
+				class="a">play</a
 			>. Sometimes, I even make <a href="#" class="a">wallpapers</a> too.
 		</p>
 		<p class="p">

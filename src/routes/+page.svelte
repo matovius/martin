@@ -62,43 +62,29 @@
 	</section>
 	<section id="about" class="about">
 		<p class="p">
-			I love making the web more beautiful, learning about the world around us, and doing the most
-			amateur photography you'll ever see.
+			I love making the web more beautiful and accessible, learning about the world around us, and
+			doing the most amateur photography you'll ever see.
 		</p>
 		<p class="p">
-			I've worked on quite a few things, but that doesn't mean I don't know how to play. Sometimes,
-			I even make wallpapers too.
+			In my <a href="/work" class="a">work</a>, I tend to go for simplicity in order to not
+			overwhelm users with information. I'm also a big advocate for accessibility wherever possible,
+			especially with elements that require user interaction.
 		</p>
 		<p class="p">
-			I also have a little blog where I share some of my thoughts and details about the projects I
-			work on. I don't write very often, but I try to write when I can. But you can check it out
-			nonetheless.
+			While I've worked on a few things, that doesn't mean I don't know how to <a href="#" class="a"
+				>play</a
+			>. Sometimes, I even make <a href="#" class="a">wallpapers</a> too.
+		</p>
+		<p class="p">
+			I also have a little <a href="#" class="a">blog</a> where I share some of my thoughts and details
+			about the projects I work on. I don't write very often, but I try to write when I can.
 		</p>
 	</section>
 </main>
 
 <style>
-	.main {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
-
-		& > section {
-			width: 100%;
-			max-width: 40rem; /* 640px */
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: center;
-			gap: 24px; /* 24px */
-			padding: 1.5rem; /* 24px */
-		}
-
-		& > .hero#hero {
-			gap: 3rem; /* 48px */
-		}
+	.hero#hero {
+		gap: 3rem; /* 48px */
 	}
 
 	.headline {
@@ -112,7 +98,7 @@
 		}
 
 		& > h2.h2 {
-			color: hsl(0, 0%, 0%, 0.6);
+			color: hsl(0, 0%, 100%);
 		}
 	}
 
@@ -146,7 +132,7 @@
 					position: absolute;
 					left: calc(100% + 0.75rem);*/
 					font-size: var(--font-size-small);
-					color: hsl(0, 0%, 0%, 0.8);
+					color: hsl(0, 0%, 100%, 0.8);
 					transform: translateX(80%);
 				}
 
@@ -159,7 +145,7 @@
 				}
 
 				&[data-available='false'] {
-					background-color: hsl(0, 0%, 0%, 0.4);
+					background-color: hsl(0, 0%, 100%, 0.4);
 
 					&::after {
 						content: 'Not Available';
@@ -189,12 +175,12 @@
 		gap: 0.5rem; /* 8px */
 
 		& > .github {
-			border-color: hsl(0, 0%, 0%, 0.1);
-			color: hsl(0, 0%, 0%);
+			border-color: hsl(0, 0%, 100%, 0.1);
+			color: hsl(0, 0%, 100%);
 
 			&:hover {
-				color: hsl(0, 0%, 100%);
-				background-color: hsl(0, 0%, 0%);
+				color: hsl(0, 0%, 0%);
+				background-color: hsl(0, 0%, 100%);
 			}
 		}
 

@@ -45,6 +45,15 @@ body {
 		align-items: center;
 		gap: 24px; /* 24px */
 		padding: 1.5rem; /* 24px */
+
+		& > h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		p {
+			width: 100%;
+		}
 	}
 }
 

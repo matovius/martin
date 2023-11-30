@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowRight, Dribbble, Github, Instagram, Linkedin } from 'lucide-svelte';
+	import { ArrowDown, Dribbble, Github, Instagram, Linkedin } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -16,10 +16,10 @@
 			<div class="availability">
 				<div class="indicator" data-available="true" />
 			</div>
-			<button class="button">
+			<a href="#contact" class="button">
 				<span>Get In Touch</span>
-				<ArrowRight />
-			</button>
+				<ArrowDown />
+			</a>
 		</div>
 		<div class="social-buttons">
 			<a
@@ -61,6 +61,7 @@
 		</div>
 	</section>
 	<section id="about" class="about">
+		<h2 class="h3">A little about me</h2>
 		<p class="p">
 			I love making the web more beautiful and accessible, learning about the world around us, and
 			doing the most amateur photography you'll ever see.
@@ -78,6 +79,13 @@
 		<p class="p">
 			I also have a little <a href="#" class="a">blog</a> where I share some of my thoughts and details
 			about the projects I work on. I don't write very often, but I try to write when I can.
+		</p>
+	</section>
+	<section id="contact" class="contact">
+		<h2 class="h3">How to get in touch with me</h2>
+		<p class="p">
+			You can get in touch with me on Dribbble, Instagram or LinkedIn with the links up above, or
+			send me an email to <a href="mailto:matovius@proton.me" class="a">matovius@proton.me</a>
 		</p>
 	</section>
 </main>

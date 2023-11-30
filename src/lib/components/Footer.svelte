@@ -26,7 +26,7 @@
 			align-items: center;
 
 			& > .small {
-				color: hsl(0, 0%, 0%, 0.4);
+				color: hsl(0, 0%, 100%, 0.4);
 			}
 		}
 	}

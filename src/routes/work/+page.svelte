@@ -1,6 +1,10 @@
 <script lang="ts">
 </script>
 
+<svelte:head>
+	<title>My Work - Martin Matovu</title>
+</svelte:head>
+
 <main class="main">
 	<section id="hero" class="hero">
 		<h1 class="h1">Work</h1>

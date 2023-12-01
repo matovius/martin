@@ -1,4 +1,7 @@
 <script lang="ts">
+	import TildePrez from '$lib/assets/Tilde-Project-Presentation.png';
+	import WorkLouderPrez from '$lib/assets/Work-Louder-Project-Presentation.png';
+	import ColorspacePrez from '$lib/assets/Colorspace-Project-Presentation.png';
 </script>
 
 <svelte:head>
@@ -15,14 +18,14 @@
 
 	<section id="projects" class="projects">
 		<div id="project-tilde" class="project tilde">
-			<div class="image" />
+			<div class="image" style={`background-image: url(${TildePrez});`} />
 			<div class="details">
 				<h2 class="h3">Tilde</h2>
 				<small class="small">Design & Development</small>
 				<p class="p">
 					This was a personal project, but I had a lot of fun designing the UI and building the
 					logic for the app. I made it as simple and minimalistic as I could while keeping as much
-					of the functionality as I could.
+					of the functionality as possible.
 				</p>
 			</div>
 			<div class="ctas">
@@ -32,7 +35,7 @@
 		</div>
 
 		<div id="project-work-louder" class="project work-louder">
-			<div class="image" />
+			<div class="image" style={`background-image: url(${WorkLouderPrez});`} />
 			<div class="details">
 				<h2 class="h3">Work Louder</h2>
 				<small class="small">Design & Development</small>
@@ -51,7 +54,7 @@
 		</div>
 
 		<div id="project-colorspace" class="project colorspace">
-			<div class="image" />
+			<div class="image" style={`background-image: url(${ColorspacePrez});`} />
 			<div class="details">
 				<h2 class="h3">Colorspace</h2>
 				<small class="small">Design</small>
@@ -85,8 +88,10 @@
 			width: 100%;
 			aspect-ratio: 16 / 9;
 			border-radius: 0.75rem; /* 12px */
-			border: 2px solid hsl(0, 0%, 100%, 0.1);
 			background-color: hsl(0, 0%, 100%, 0.1);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
 
 			@media (min-width: 480px) {
 				aspect-ratio: 24 / 9;

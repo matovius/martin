@@ -103,11 +103,11 @@
 		gap: 1.5rem; /* 24px */
 
 		& > h1.h1 {
-			color: hsl(216, 90%, 46%);
+			color: var(--clr-primary-100);
 		}
 
 		& > h2.h2 {
-			color: hsl(0, 0%, 100%);
+			color: var(--clr-white-100);
 		}
 	}
 
@@ -154,7 +154,7 @@
 				}
 
 				&[data-available='false'] {
-					background-color: hsl(0, 0%, 100%, 0.4);
+					background-color: var(--clr-white-40);
 
 					&::after {
 						content: 'Not Available';
@@ -164,12 +164,12 @@
 		}
 
 		& > .button {
-			border-color: hsl(216, 90%, 46%, 0.2);
-			color: hsl(216, 90%, 46%);
+			border-color: var(--clr-primary-20);
+			color: var(--clr-primary-100);
 
 			&:hover {
-				color: hsl(0, 0%, 100%);
-				background-color: hsl(216, 90%, 46%);
+				color: var(--clr-white-100);
+				background-color: var(--clr-primary-100);
 			}
 		}
 	}

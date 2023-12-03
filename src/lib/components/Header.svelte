@@ -53,7 +53,7 @@
 			width: 48px; /* 48px */
 			height: 48px; /* 48px */
 			aspect-ratio: 1;
-			color: hsl(216, 90%, 46%);
+			color: var(--clr-primary-100);
 
 			@media (min-width: 480px) {
 				width: 6rem; /* 96px */

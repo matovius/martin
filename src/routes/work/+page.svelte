@@ -88,7 +88,7 @@
 			width: 100%;
 			aspect-ratio: 16 / 9;
 			border-radius: 0.75rem; /* 12px */
-			background-color: hsl(0, 0%, 100%, 0.1);
+			background-color: var(--clr-white-10);
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -110,7 +110,7 @@
 			gap: 0.75rem; /* 12px */
 
 			& > small.small {
-				color: hsl(0, 0%, 100%, 0.4);
+				color: var(--clr-white-40);
 			}
 		}
 

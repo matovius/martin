@@ -10,11 +10,11 @@
 	<section id="hero" class="section hero">
 		<div class="container">
 			<div class="headline">
-				<h1 class="heading">Hi, I'm Martin Matovu</h1>
-				<h2 class="subheading">
+				<h1 class="h1 heading">Hi, I'm Martin Matovu</h1>
+				<h2 class="h4 subheading">
 					Renowned pixel pusher, apparent browser charmer, and touted API whisperer
 				</h2>
-				<p class="text">
+				<p class="p text">
 					I'm a web designer and developer with a main focus on the frontend. I love making great
 					web experiences and learning about the universe. I also do freelance work.
 				</p>
@@ -100,8 +100,8 @@
 	<section id="projects" class="section projects">
 		<div class="container">
 			<div class="headline">
-				<h1 class="heading">Previous projects</h1>
-				<p class="text">These are some of my best (and favorite) projects that I've worked on.</p>
+				<h3 class="h3 heading">Previous projects</h3>
+				<p class="p text">These are some of my best (and favorite) projects that I've worked on.</p>
 			</div>
 
 			<div class="featured-projects">
@@ -168,19 +168,6 @@
 
 				& > .heading {
 					color: hsl(var(--clr-primary));
-					font-size: 60px;
-					font-weight: 700;
-					line-height: 1;
-				}
-
-				& > .subheading {
-					font-size: 30px;
-					font-weight: 400;
-					line-height: 1;
-				}
-
-				& > .text {
-					font-size: 16px;
 				}
 			}
 
@@ -238,13 +225,6 @@
 
 				& > .heading {
 					color: hsl(var(--clr-primary));
-					font-size: 40px;
-					font-weight: 400;
-					line-height: 1;
-				}
-
-				& > .text {
-					font-size: 16px;
 				}
 			}
 

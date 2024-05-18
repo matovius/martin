@@ -1,11 +1,23 @@
 <script lang="ts">
-	const date: Date = new Date();
-	let CurrentDate = date.getFullYear();
+	import { onMount } from 'svelte';
+
+	let Footer: HTMLElement;
+
+	let date: Date;
+	let CurrentDate: number;
+
+	onMount(() => {
+		date = new Date();
+		CurrentDate = date.getFullYear();
+		setTimeout(() => {
+			Footer.style.opacity = '1';
+		}, 50);
+	});
 </script>
 
-<footer class="footer">
+<footer class="footer" bind:this={Footer}>
 	<div class="container">
-		<small class="small">Copyright {CurrentDate} · Martin Matovu</small>
+		<small class="small">{CurrentDate} - Martin Matovu</small>
 	</div>
 </footer>
 
@@ -15,6 +27,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		opacity: 0;
 
 		& > .container {
 			width: 100%;
@@ -26,7 +39,7 @@
 			align-items: center;
 
 			& > .small {
-				color: var(--clr-white-40);
+				color: hsl(var(--clr-text), 0.5);
 			}
 		}
 	}

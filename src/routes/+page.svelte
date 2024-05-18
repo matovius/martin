@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Martin Matovu</title>
+	<title>Martin Matovu - Welcome to my Home</title>
 </svelte:head>
 
 <main class="main">

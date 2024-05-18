@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowDown, Dribbble, Github, Instagram, Linkedin } from 'lucide-svelte';
+	import FeaturedProjectCard from '$lib/components/FeaturedProjectCard.svelte';
 </script>
 
 <svelte:head>
@@ -7,218 +7,264 @@
 </svelte:head>
 
 <main class="main">
-	<section id="hero" class="hero">
-		<div class="headline">
-			<h1 class="h1">I'm Martin Matovu</h1>
-			<h2 class="h2">A freelance web designer and developer</h2>
-		</div>
-		<div class="contact-cta">
-			<div class="availability">
-				<div class="indicator" data-available="true" />
+	<section id="hero" class="section hero">
+		<div class="container">
+			<div class="headline">
+				<h1 class="heading">Hi, I'm Martin Matovu</h1>
+				<h2 class="subheading">
+					Renowned pixel pusher, apparent browser charmer, and touted API whisperer
+				</h2>
+				<p class="text">
+					I'm a web designer and developer with a main focus on the frontend. I love making great
+					web experiences and learning about the universe. I also do freelance work.
+				</p>
 			</div>
-			<a href="#contact" class="button">
-				<span>Get In Touch</span>
-				<ArrowDown />
-			</a>
-		</div>
-		<div class="social-buttons">
-			<a
-				href="https://github.com/matovius"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="button github"
-			>
-				<Github />
-				<span>GitHub</span>
-			</a>
-			<a
-				href="https://dribbble.com/matovius"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="button dribbble"
-			>
-				<Dribbble />
-				<span>Dribbble</span>
-			</a>
-			<a
-				href="https://instagram.com/matovius_"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="button instagram"
-			>
-				<Instagram />
-				<span>Instagram</span>
-			</a>
-			<a
-				href="https://linkedin.com/in/martin-matovu"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="button linkedin"
-			>
-				<Linkedin />
-				<span>LinkedIn</span>
-			</a>
+
+			<div class="main-cta">
+				<a href="/contact" class="button talk-to-me">
+					<div class="front">
+						<span>Talk to me</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="socials">
+				<h5 class="heading">Or check me out elsewhere:</h5>
+
+				<div class="list">
+					<a
+						href="https://github.com/matovius"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button github"
+					>
+						<div class="front">
+							<span>GitHub</span>
+						</div>
+					</a>
+					<a
+						href="https://dribbble.com/matovius"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button dribbble"
+					>
+						<div class="front">
+							<span>Dribbble</span>
+						</div>
+					</a>
+					<a
+						href="https://threads.net/matovius_"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button threads"
+					>
+						<div class="front">
+							<span>Threads</span>
+						</div>
+					</a>
+					<a
+						href="https://read.cv/matovius"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button instagram"
+					>
+						<div class="front">
+							<span>Read.cv</span>
+						</div>
+					</a>
+					<a
+						href="https://instagram.com/matovius_"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button instagram"
+					>
+						<div class="front">
+							<span>Instagram</span>
+						</div>
+					</a>
+					<a
+						href="https://linkedin.com/in/martin-matovu"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button linkedin"
+					>
+						<div class="front">
+							<span>LinkedIn</span>
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
 	</section>
-	<section id="about" class="about">
-		<h2 class="h3">A little about me</h2>
-		<p class="p">
-			I love making the web more beautiful and accessible, learning about the world around us, and
-			doing the most amateur photography you'll ever see.
-		</p>
-		<p class="p">
-			In my <a href="/work" class="a">work</a>, I tend to go for simplicity in order to not
-			overwhelm users with information. I'm also a big advocate for accessibility wherever possible,
-			especially with elements that require user interaction.
-		</p>
-		<p class="p">
-			While I've worked on a few things, that doesn't mean I don't know how to <a
-				href="/play"
-				class="a">play</a
-			>. Sometimes, I even make <a href="#" class="a">wallpapers</a> too.
-		</p>
-		<p class="p">
-			I also have a little <a href="#" class="a">blog</a> where I share some of my thoughts and details
-			about the projects I work on. I don't write very often, but I try to write when I can.
-		</p>
-	</section>
-	<section id="contact" class="contact">
-		<h2 class="h3">How to get in touch with me</h2>
-		<p class="p">
-			You can get in touch with me on Dribbble, Instagram or LinkedIn with the links up above, or
-			send me an email to <a href="mailto:matovius@proton.me" class="a">matovius@proton.me</a>
-		</p>
+
+	<section id="projects" class="section projects">
+		<div class="container">
+			<div class="headline">
+				<h1 class="heading">Previous projects</h1>
+				<p class="text">These are some of my best (and favorite) projects that I've worked on.</p>
+			</div>
+
+			<div class="featured-projects">
+				<FeaturedProjectCard
+					heading="Colorspace"
+					details="Save, convert and generate colors in this modern color app."
+					url="https://example.com"
+				/>
+				<FeaturedProjectCard
+					heading="Built By"
+					details="For when you want some cretive adjectives for your project footers."
+					url="https://example.com"
+				/>
+				<FeaturedProjectCard
+					heading="Moments"
+					details="Put down all your thoughts in this ultra-simplistic chat-style interface."
+					url="https://example.com"
+				/>
+				<FeaturedProjectCard
+					heading="Pagemark"
+					details="A convenient place to keep all your bookmarks easily."
+					url="https://example.com"
+				/>
+			</div>
+
+			<div class="cta">
+				<button class="button talk-to-me">
+					<div class="front">
+						<span>See more projects</span>
+					</div>
+				</button>
+			</div>
+		</div>
 	</section>
 </main>
 
 <style>
-	.hero#hero {
-		gap: 3rem; /* 48px */
-	}
-
-	.headline {
+	.main {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem; /* 24px */
-
-		& > h1.h1 {
-			color: var(--clr-primary-100);
-		}
-
-		& > h2.h2 {
-			color: var(--clr-white-100);
-		}
-	}
-
-	.contact-cta {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
+		justify-content: center;
 		align-items: center;
-		gap: 24px; /* 1.5rem */
+		padding-inline: 20px;
+		padding-block: 120px 40px;
 
-		& > .availability {
-			width: 90px;
+		& > .section {
+			width: 100%;
 			display: flex;
-			justify-content: flex-start;
+			flex-direction: column;
+			justify-content: center;
 			align-items: center;
-			gap: 0.75rem; /* 12px */
+		}
+	}
 
-			& > .indicator {
-				width: 12px;
-				height: 12px;
-				aspect-ratio: 1;
+	.hero {
+		& > .container {
+			padding-bottom: 40px;
+
+			& > .headline {
 				display: flex;
-				justify-content: center;
-				align-items: center;
-				border-radius: 9999rem;
-				position: relative;
+				flex-direction: column;
+				gap: 20px;
 
-				&::after {
-					/*
-					position: absolute;
-					left: calc(100% + 0.75rem);*/
-					font-size: var(--font-size-small);
-					color: hsl(0, 0%, 100%, 0.8);
-					transform: translateX(80%);
+				& > .heading {
+					color: hsl(var(--clr-primary));
+					font-size: 60px;
+					font-weight: 700;
+					line-height: 1;
 				}
 
-				&[data-available='true'] {
-					background-color: hsl(111, 73%, 43%);
+				& > .subheading {
+					font-size: 30px;
+					font-weight: 400;
+					line-height: 1;
+				}
 
-					&::after {
-						content: 'Available';
+				& > .text {
+					font-size: 16px;
+				}
+			}
+
+			& > .main-cta {
+				padding-top: 20px;
+
+				& > .talk-to-me {
+					width: 100%;
+					display: inline-block;
+
+					& > .front {
+						padding-inline: 96px;
+						background: hsl(var(--clr-secondary));
 					}
-				}
 
-				&[data-available='false'] {
-					background-color: var(--clr-white-40);
-
-					&::after {
-						content: 'Not Available';
+					@media screen and (min-width: 480px) {
+						width: fit-content;
 					}
 				}
 			}
-		}
 
-		& > .button {
-			border-color: var(--clr-primary-20);
-			color: var(--clr-primary-100);
+			& > .socials {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				padding-top: 20px;
 
-			&:hover {
-				color: var(--clr-white-100);
-				background-color: var(--clr-primary-100);
+				& > .heading {
+					color: hsl(var(--clr-primary));
+					font-size: 20px;
+					font-weight: 600;
+					line-height: 1.5;
+				}
+
+				& > .list {
+					width: 100%;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					gap: 5px;
+					padding-top: 20px;
+				}
 			}
 		}
 	}
 
-	.social-buttons {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		align-items: center;
-		gap: 0.5rem; /* 8px */
+	.projects {
+		& > .container {
+			padding-block: 40px;
 
-		& > .github {
-			border-color: hsl(0, 0%, 100%, 0.1);
-			color: hsl(0, 0%, 100%);
+			& > .headline {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
 
-			&:hover {
-				color: hsl(0, 0%, 0%);
-				background-color: hsl(0, 0%, 100%);
+				& > .heading {
+					color: hsl(var(--clr-primary));
+					font-size: 40px;
+					font-weight: 400;
+					line-height: 1;
+				}
+
+				& > .text {
+					font-size: 16px;
+				}
 			}
-		}
 
-		& > .dribbble {
-			border-color: hsl(313, 40%, 49%, 0.2);
-			color: hsl(313, 40%, 49%);
-			&:hover {
-				color: hsl(0, 0%, 100%);
-				background-color: hsl(313, 40%, 49%);
+			& > .featured-projects {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				padding-top: 20px;
 			}
-		}
 
-		& > .instagram {
-			border-color: hsl(28, 97%, 54%, 0.2);
-			color: hsl(28, 97%, 54%);
+			& > .cta {
+				padding-top: 20px;
 
-			&:hover {
-				color: hsl(0, 0%, 100%);
-				background-color: hsl(28, 97%, 54%);
-			}
-		}
-
-		& > .linkedin {
-			border-color: hsla(221, 89%, 42%, 0.2);
-			color: hsl(221, 89%, 42%);
-
-			&:hover {
-				color: hsl(0, 0%, 100%);
-				background-color: hsl(221, 89%, 42%);
+				& > .talk-to-me {
+					& > .front {
+						padding-inline: 40px;
+						background: hsl(var(--clr-secondary));
+					}
+				}
 			}
 		}
 	}

@@ -1,7 +1,14 @@
 <script lang="ts">
+	export let fillColor: string = '--clr-primary';
 </script>
 
-<svg class="icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+	class="icon"
+	style={`--fill-color: var(${fillColor})`}
+	viewBox="0 0 500 500"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<path
 		d="M315.795 265.881C343.48 265.881 366.897 289.361 355.171 314.441C336.744 353.854 296.58 381.178 250 381.178C203.42 381.178 163.256 353.854 144.829 314.441C133.103 289.361 156.52 265.881 184.205 265.881H315.795Z"
 	/>
@@ -16,7 +23,7 @@
 <style>
 	.icon {
 		& > path {
-			fill: hsl(var(--clr-primary));
+			fill: hsl(var(--fill-color));
 		}
 	}
 </style>

@@ -9,9 +9,10 @@
 	onMount(() => {
 		date = new Date();
 		CurrentDate = date.getFullYear();
+
 		setTimeout(() => {
 			Footer.style.opacity = '1';
-		}, 50);
+		}, 500);
 	});
 </script>
 

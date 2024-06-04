@@ -10,6 +10,8 @@
 				breath.
 			</h2>
 			<p class="p">In the meantime...</p>
+		</div>
+		<div class="cta">
 			<button
 				class="button exorcism"
 				title="I cast thee back to whence thou hath comest"
@@ -45,6 +47,25 @@
 
 				& > .heading {
 					color: hsl(var(--clr-primary));
+				}
+			}
+
+			& > .cta {
+				width: 100%;
+				padding-top: 40px;
+
+				& > .exorcism {
+					width: 100%;
+					display: inline-block;
+
+					& > .front {
+						padding-inline: 96px;
+						background: hsl(var(--clr-secondary));
+					}
+
+					@media screen and (min-width: 480px) {
+						width: fit-content;
+					}
 				}
 			}
 		}

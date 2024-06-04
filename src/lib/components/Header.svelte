@@ -73,7 +73,7 @@
 			<div
 				class="backdrop animated"
 				bind:this={MenuDialogBackdrop}
-				transition:fade={{ duration: 200, easing: quadInOut }}
+				transition:fade={{ duration: 500, easing: quadInOut }}
 			/>
 		{/if}
 
@@ -81,7 +81,7 @@
 			<div
 				class="menu"
 				bind:this={MenuDialogMenu}
-				transition:scale={{ duration: 200, easing: quadInOut, start: 0.95, opacity: 0 }}
+				transition:scale={{ duration: 500, easing: quadInOut, start: 0.98, opacity: 0 }}
 			>
 				<header class="menu-header">
 					<div class="container">

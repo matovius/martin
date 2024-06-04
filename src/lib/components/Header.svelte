@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import CoolFaceLogo from './CoolFaceLogo.svelte';
 	import Modal from '$lib/components/Modal.svelte';
+	import { fade, scale } from 'svelte/transition';
+	import { quadInOut } from 'svelte/easing';
 
 	let isMenuOpen: boolean = false;
 
@@ -55,9 +57,6 @@
 				class="button menu-toggle"
 				on:click={() => {
 					isMenuOpen = true;
-					setTimeout(() => {
-						animateMenu();
-					}, 10);
 				}}
 			>
 				<div class="front">
@@ -70,56 +69,71 @@
 
 <Modal bind:isOpen={isMenuOpen}>
 	<div class="menu-wrapper">
-		<div class="backdrop animated" bind:this={MenuDialogBackdrop} />
+		{#if isMenuOpen}
+			<div
+				class="backdrop animated"
+				bind:this={MenuDialogBackdrop}
+				transition:fade={{ duration: 200, easing: quadInOut }}
+			/>
+		{/if}
 
-		<div class="menu" bind:this={MenuDialogMenu}>
-			<header class="menu-header">
-				<div class="container">
-					<div class="corner corner-left">
-						<div class="logo-wrapper">
-							<CoolFaceLogo />
+		{#if isMenuOpen}
+			<div
+				class="menu"
+				bind:this={MenuDialogMenu}
+				transition:scale={{ duration: 200, easing: quadInOut, start: 0.95, opacity: 0 }}
+			>
+				<header class="menu-header">
+					<div class="container">
+						<div class="corner corner-left">
+							<div class="logo-wrapper">
+								<CoolFaceLogo />
+							</div>
+						</div>
+
+						<div class="close-menu-wrapper">
+							<button
+								class="button menu-toggle"
+								on:click={() => {
+									isMenuOpen = false;
+								}}
+							>
+								<div class="front">
+									<span>Close</span>
+								</div>
+							</button>
 						</div>
 					</div>
+				</header>
 
-					<div class="close-menu-wrapper">
-						<button
-							class="button menu-toggle"
-							on:click={() => {
-								isMenuOpen = false;
-								setTimeout(() => {
-									deAnimateMenu();
-								}, 10);
-							}}
-						>
-							<div class="front">
-								<span>Close</span>
-							</div>
-						</button>
-					</div>
-				</div>
-			</header>
-
-			<main class="menu-main">
-				<nav class="container">
-					<ul class="nav-list">
-						<li class="nav-item">
-							<a href="/" class={`h1 nav-link ${$page.url.pathname === '/' ? 'current' : ''}`}
-								>Home</a
-							>
-						</li>
-						{#each SiteLinks as link}
+				<main class="menu-main">
+					<nav class="container">
+						<ul class="nav-list">
 							<li class="nav-item">
 								<a
-									href={link.url}
-									class={`h1 nav-link ${$page.url.pathname.includes(link.url) ? 'current' : ''}`}
-									>{link.name}</a
+									href="/"
+									class={`h1 nav-link ${$page.url.pathname === '/' ? 'current' : ''}`}
+									on:click={() => {
+										isMenuOpen = false;
+									}}>Home</a
 								>
 							</li>
-						{/each}
-					</ul>
-				</nav>
-			</main>
-		</div>
+							{#each SiteLinks as link}
+								<li class="nav-item">
+									<a
+										href={link.url}
+										class={`h1 nav-link ${$page.url.pathname.includes(link.url) ? 'current' : ''}`}
+										on:click={() => {
+											isMenuOpen = false;
+										}}>{link.name}</a
+									>
+								</li>
+							{/each}
+						</ul>
+					</nav>
+				</main>
+			</div>
+		{/if}
 	</div>
 </Modal>
 

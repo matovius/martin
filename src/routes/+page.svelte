@@ -101,29 +101,18 @@
 		<div class="container">
 			<div class="headline">
 				<h3 class="h3 heading">Previous projects</h3>
-				<p class="p text">These are some of my best (and favorite) projects that I've worked on.</p>
+				<p class="p text">
+					These are some of my best (and favorite) projects that I've worked on. (It's currently
+					just one because it's the only good one I've deployed. But I'm working on more stuff to
+					have it here too)
+				</p>
 			</div>
 
 			<div class="featured-projects">
 				<FeaturedProjectCard
-					heading="Colorspace"
-					details="Save, convert and generate colors in this modern color app."
-					url="https://example.com"
-				/>
-				<FeaturedProjectCard
 					heading="Built By"
 					details="For when you want some cretive adjectives for your project footers."
-					url="https://example.com"
-				/>
-				<FeaturedProjectCard
-					heading="Moments"
-					details="Put down all your thoughts in this ultra-simplistic chat-style interface."
-					url="https://example.com"
-				/>
-				<FeaturedProjectCard
-					heading="Pagemark"
-					details="A convenient place to keep all your bookmarks easily."
-					url="https://example.com"
+					url="https://built-by.pages.dev"
 				/>
 			</div>
 
@@ -237,6 +226,7 @@
 			}
 
 			& > .cta {
+				display: none;
 				padding-top: 20px;
 
 				& > .talk-to-me {

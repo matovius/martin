@@ -41,6 +41,10 @@
 		{
 			name: 'Extras',
 			url: '/extras'
+		},
+		{
+			name: 'Contact',
+			url: '/contact'
 		}
 	];
 </script>

@@ -10,20 +10,6 @@
 	let MenuDialogBackdrop: HTMLElement;
 	let MenuDialogMenu: HTMLElement;
 
-	function animateMenu() {
-		MenuDialogBackdrop.style.transform = 'translateY(0)';
-		setTimeout(() => {
-			MenuDialogMenu.style.opacity = '1';
-		}, 200);
-	}
-
-	function deAnimateMenu() {
-		MenuDialogMenu.style.opacity = '0';
-		setTimeout(() => {
-			MenuDialogBackdrop.style.transform = 'translateY(-100%)';
-		}, 200);
-	}
-
 	type Link = {
 		name: string;
 		url: string;

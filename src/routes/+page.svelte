@@ -1,131 +1,147 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { quadInOut } from 'svelte/easing';
+	import { fade, fly } from 'svelte/transition';
 	import FeaturedProjectCard from '$lib/components/FeaturedProjectCard.svelte';
+
+	let showPage: boolean = false;
+
+	onMount(() => {
+		setTimeout(() => {
+			showPage = true;
+		}, 200);
+	});
 </script>
 
 <svelte:head>
 	<title>Martin Matovu - Welcome to my Home</title>
 </svelte:head>
+{#if showPage}
+	<main
+		class="main"
+		in:fly={{ duration: 200, easing: quadInOut, x: 0, y: 50, opacity: 0 }}
+		out:fade={{ duration: 200, easing: quadInOut }}
+	>
+		<section id="hero" class="section hero">
+			<div class="container">
+				<div class="headline">
+					<h1 class="h1 heading">Hi, I'm Martin Matovu</h1>
+					<h2 class="h4 subheading">
+						Renowned pixel pusher, apparent browser charmer, and touted API whisperer
+					</h2>
+					<p class="p text">
+						I'm a web designer and developer with a main focus on the frontend. I love making great
+						web experiences and learning about the universe. I also do freelance work.
+					</p>
+				</div>
 
-<main class="main">
-	<section id="hero" class="section hero">
-		<div class="container">
-			<div class="headline">
-				<h1 class="h1 heading">Hi, I'm Martin Matovu</h1>
-				<h2 class="h4 subheading">
-					Renowned pixel pusher, apparent browser charmer, and touted API whisperer
-				</h2>
-				<p class="p text">
-					I'm a web designer and developer with a main focus on the frontend. I love making great
-					web experiences and learning about the universe. I also do freelance work.
-				</p>
-			</div>
-
-			<div class="main-cta">
-				<a href="/contact" class="button talk-to-me">
-					<div class="front">
-						<span>Talk to me</span>
-					</div>
-				</a>
-			</div>
-
-			<div class="socials">
-				<h5 class="heading">Or check me out elsewhere:</h5>
-
-				<div class="list">
-					<a
-						href="https://github.com/matovius"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button github"
-					>
+				<div class="main-cta">
+					<a href="/contact" class="button talk-to-me">
 						<div class="front">
-							<span>GitHub</span>
-						</div>
-					</a>
-					<a
-						href="https://dribbble.com/matovius"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button dribbble"
-					>
-						<div class="front">
-							<span>Dribbble</span>
-						</div>
-					</a>
-					<a
-						href="https://threads.net/matovius_"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button threads"
-					>
-						<div class="front">
-							<span>Threads</span>
-						</div>
-					</a>
-					<a
-						href="https://read.cv/matovius"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button instagram"
-					>
-						<div class="front">
-							<span>Read.cv</span>
-						</div>
-					</a>
-					<a
-						href="https://instagram.com/matovius_"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button instagram"
-					>
-						<div class="front">
-							<span>Instagram</span>
-						</div>
-					</a>
-					<a
-						href="https://linkedin.com/in/martin-matovu"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button linkedin"
-					>
-						<div class="front">
-							<span>LinkedIn</span>
+							<span>Talk to me</span>
 						</div>
 					</a>
 				</div>
-			</div>
-		</div>
-	</section>
 
-	<section id="projects" class="section projects">
-		<div class="container">
-			<div class="headline">
-				<h3 class="h3 heading">Previous projects</h3>
-				<p class="p text">
-					These are some of my best (and favorite) projects that I've worked on. (It's currently
-					just one because it's the only good one I've deployed. But I'm working on more stuff to
-					have it here too)
-				</p>
-			</div>
+				<div class="socials">
+					<h5 class="heading">Or check me out elsewhere:</h5>
 
-			<div class="featured-projects">
-				<FeaturedProjectCard
-					heading="Built By"
-					details="For when you want some cretive adjectives for your project footers."
-					url="https://built-by.pages.dev"
-				/>
-			</div>
-
-			<div class="cta">
-				<button class="button talk-to-me">
-					<div class="front">
-						<span>See more projects</span>
+					<div class="list">
+						<a
+							href="https://github.com/matovius"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button github"
+						>
+							<div class="front">
+								<span>GitHub</span>
+							</div>
+						</a>
+						<a
+							href="https://dribbble.com/matovius"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button dribbble"
+						>
+							<div class="front">
+								<span>Dribbble</span>
+							</div>
+						</a>
+						<a
+							href="https://threads.net/matovius_"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button threads"
+						>
+							<div class="front">
+								<span>Threads</span>
+							</div>
+						</a>
+						<a
+							href="https://read.cv/matovius"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button instagram"
+						>
+							<div class="front">
+								<span>Read.cv</span>
+							</div>
+						</a>
+						<a
+							href="https://instagram.com/matovius_"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button instagram"
+						>
+							<div class="front">
+								<span>Instagram</span>
+							</div>
+						</a>
+						<a
+							href="https://linkedin.com/in/martin-matovu"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button linkedin"
+						>
+							<div class="front">
+								<span>LinkedIn</span>
+							</div>
+						</a>
 					</div>
-				</button>
+				</div>
 			</div>
-		</div>
-	</section>
-</main>
+		</section>
+
+		<section id="projects" class="section projects">
+			<div class="container">
+				<div class="headline">
+					<h3 class="h3 heading">Previous projects</h3>
+					<p class="p text">
+						These are some of my best (and favorite) projects that I've worked on. (It's currently
+						just one because it's the only good one I've deployed. But I'm working on more stuff to
+						have it here too)
+					</p>
+				</div>
+
+				<div class="featured-projects">
+					<FeaturedProjectCard
+						heading="Built By"
+						details="For when you want some cretive adjectives for your project footers."
+						url="https://built-by.pages.dev"
+					/>
+				</div>
+
+				<div class="cta">
+					<button class="button talk-to-me">
+						<div class="front">
+							<span>See more projects</span>
+						</div>
+					</button>
+				</div>
+			</div>
+		</section>
+	</main>
+{/if}
 
 <style>
 	.main {

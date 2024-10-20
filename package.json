@@ -12,28 +12,28 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.2.1",
-		"@sveltejs/kit": "^2.5.10",
-		"@sveltejs/vite-plugin-svelte": "^3.1.1",
+		"@sveltejs/adapter-auto": "^3.2.5",
+		"@sveltejs/kit": "^2.7.2",
+		"@sveltejs/vite-plugin-svelte": "^3.1.2",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
-		"eslint": "^8.57.0",
+		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^8.10.0",
-		"eslint-plugin-svelte": "^2.39.0",
+		"eslint-plugin-svelte": "^2.45.1",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
-		"svelte": "^4.2.17",
-		"svelte-check": "^3.8.0",
-		"tslib": "^2.6.2",
-		"typescript": "^5.4.5",
-		"vite": "^5.2.12"
+		"svelte": "^4.2.19",
+		"svelte-check": "^3.8.6",
+		"tslib": "^2.8.0",
+		"typescript": "^5.6.3",
+		"vite": "^5.4.9"
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource-variable/inter": "^5.0.18",
-		"@fontsource-variable/jetbrains-mono": "^5.0.21",
-		"@fontsource-variable/rubik": "^5.0.22",
-		"@fontsource/passion-one": "^5.0.20",
+		"@fontsource-variable/inter": "^5.1.0",
+		"@fontsource-variable/jetbrains-mono": "^5.1.1",
+		"@fontsource-variable/rubik": "^5.1.0",
+		"@fontsource/passion-one": "^5.1.0",
 		"lucide-svelte": "^0.288.0"
 	}
 }

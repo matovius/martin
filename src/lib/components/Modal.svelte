@@ -1,13 +1,19 @@
 <script lang="ts">
 	export let isOpen: boolean = false;
-
 	let Modal: HTMLDialogElement;
 
-	$: if (!isOpen && Modal) {
-		setTimeout(() => {
-			Modal.close();
-			document.body.style.removeProperty('overflow');
-		}, 500);
+	$: {
+		if (Modal) {
+			if (isOpen) {
+				Modal.showModal();
+				document.body.style.overflow = 'hidden';
+			} else {
+				setTimeout(() => {
+					Modal.close();
+					document.body.style.removeProperty('overflow');
+				}, 500);
+			}
+		}
 	}
 
 	$: if (isOpen && Modal) {

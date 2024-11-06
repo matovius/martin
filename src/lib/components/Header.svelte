@@ -1,14 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import Menu from './Menu.svelte';
 	import CoolFaceLogo from './CoolFaceLogo.svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import { fade, scale } from 'svelte/transition';
-	import { quadInOut } from 'svelte/easing';
-
-	let isMenuOpen: boolean = false;
-
-	let MenuDialogBackdrop: HTMLElement;
-	let MenuDialogMenu: HTMLElement;
 
 	type Link = {
 		name: string;
@@ -35,221 +27,70 @@
 	];
 </script>
 
-<header class="header">
+<header class="main-header">
 	<div class="container">
-		<div class="corner corner-left">
-			<div class="logo-wrapper">
-				<CoolFaceLogo />
-			</div>
-		</div>
-		<div class="corner corner-right">
-			<button
-				class="button menu-toggle"
-				on:click={() => {
-					isMenuOpen = true;
-				}}
-			>
-				<div class="front">
-					<span>Menu</span>
+		<div class="corner start">
+			<a href="/" class="home-link" aria-label="Go to homepage">
+				<div aria-hidden="true">
+					<CoolFaceLogo />
 				</div>
-			</button>
+			</a>
+		</div>
+		<div class="corner end">
+			<Menu />
 		</div>
 	</div>
 </header>
 
-<Modal bind:isOpen={isMenuOpen}>
-	<div class="menu-wrapper">
-		{#if isMenuOpen}
-			<div
-				class="backdrop animated"
-				bind:this={MenuDialogBackdrop}
-				transition:fade={{ duration: 500, easing: quadInOut }}
-			/>
-		{/if}
-
-		{#if isMenuOpen}
-			<div
-				class="menu"
-				bind:this={MenuDialogMenu}
-				transition:scale={{ duration: 500, easing: quadInOut, start: 0.98, opacity: 0 }}
-			>
-				<header class="menu-header">
-					<div class="container">
-						<div class="corner corner-left">
-							<div class="logo-wrapper">
-								<CoolFaceLogo />
-							</div>
-						</div>
-
-						<div class="close-menu-wrapper">
-							<button
-								class="button menu-toggle"
-								on:click={() => {
-									isMenuOpen = false;
-								}}
-							>
-								<div class="front">
-									<span>Close</span>
-								</div>
-							</button>
-						</div>
-					</div>
-				</header>
-
-				<main class="menu-main">
-					<nav class="container">
-						<ul class="nav-list">
-							<li class="nav-item">
-								<a
-									href="/"
-									class={`h1 nav-link ${$page.url.pathname === '/' ? 'current' : ''}`}
-									on:click={() => {
-										isMenuOpen = false;
-									}}>Home</a
-								>
-							</li>
-							{#each SiteLinks as link}
-								<li class="nav-item">
-									<a
-										href={link.url}
-										class={`h1 nav-link ${$page.url.pathname.includes(link.url) ? 'current' : ''}`}
-										on:click={() => {
-											isMenuOpen = false;
-										}}>{link.name}</a
-									>
-								</li>
-							{/each}
-						</ul>
-					</nav>
-				</main>
-			</div>
-		{/if}
-	</div>
-</Modal>
-
 <style>
-	.header {
-		width: 100%;
+	header.main-header {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		padding-inline: 20px;
 		background: var(--clr-base);
-		position: sticky;
+		position: fixed;
 		top: 0;
-		z-index: 500;
+		inset-inline: 0;
+		z-index: 1000;
 
-		& > .container {
-			max-width: 1200px;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-			padding-block: 20px;
-
-			& > .corner-right {
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				gap: 10px;
-			}
-		}
-	}
-
-	.menu-wrapper {
-		width: 100%;
-		height: 100%;
-		position: relative;
-		top: 0;
-		left: 0;
-
-		& > .backdrop {
-			width: 100%;
-			height: 100%;
-			background: var(--clr-base);
-			z-index: -1;
-			position: absolute;
-			inset: 0;
-		}
-
-		& > .menu {
-			width: 100%;
-			height: 100%;
-			overflow-y: auto;
-		}
-	}
-
-	.menu-header {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-inline: 20px;
-		position: sticky;
-		top: 0;
-
-		& > .container {
-			max-width: 1200px;
+		& > div.container {
+			max-width: 1280px;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
 			padding-block: 20px;
 		}
-	}
 
-	.menu-main {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
-		padding-inline: 20px;
-		padding-block: 40px 20px;
-
-		& > .container {
+		& .corner {
 			display: flex;
-			flex-direction: column;
-		}
-	}
+			flex-direction: row;
+			align-items: center;
+			gap: 10px;
 
-	.nav-list {
-		list-style: none;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		align-items: center;
-		gap: 1em;
-
-		& .nav-link {
-			font-family: var(--font-passion-one);
-			color: var(--clr-text), 0.5;
-			text-decoration: none;
-			padding-inline: 20px;
-			border-radius: 9999rem;
-			outline: 2px solid transparent;
-			outline-offset: 4px;
-			position: relative;
-
-			&:is(:hover, :focus) {
-				color: var(--clr-text);
+			&.start {
+				justify-content: flex-start;
 			}
-
-			&:focus-visible {
-				outline-color: var(--clr-primary);
-			}
-
-			&.current {
-				color: var(--clr-primary);
+			&.end {
+				justify-content: flex-end;
 			}
 		}
 	}
 
-	.logo-wrapper {
-		width: 30px;
-		height: 30px;
-		aspect-ratio: 1;
+	a.home-link {
+		border-radius: 20px;
+		outline: 2px solid transparent;
+		outline-offset: 6px;
+
+		&:focus-visible {
+			outline-color: var(--clr-primary);
+		}
+
+		& > div {
+			width: 30px;
+			height: 30px;
+			aspect-ratio: 1;
+		}
 	}
 </style>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let isOpen: boolean = false;
+	export let closingDelay: number = 400;
 	let Modal: HTMLDialogElement;
 
 	$: {
@@ -11,7 +12,7 @@
 				setTimeout(() => {
 					Modal.close();
 					document.body.style.removeProperty('overflow');
-				}, 500);
+				}, closingDelay);
 			}
 		}
 	}

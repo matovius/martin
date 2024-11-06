@@ -35,15 +35,15 @@
 		}
 
 		&:is(:hover, :focus) {
-			background: hsl(var(--clr-text), 0.1);
+			background: color-mix(in oklab, var(--clr-text), transparent 90%);
 
 			& > .heading {
-				color: hsl(var(--clr-primary));
+				color: var(--clr-primary);
 			}
 		}
 
 		&:focus-visible {
-			outline-color: hsl(var(--clr-primary));
+			outline-color: var(--clr-primary);
 		}
 	}
 </style>

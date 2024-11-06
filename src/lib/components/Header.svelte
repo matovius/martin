@@ -134,7 +134,7 @@
 		justify-content: center;
 		align-items: center;
 		padding-inline: 20px;
-		background: hsl(var(--clr-base));
+		background: var(--clr-base);
 		position: sticky;
 		top: 0;
 		z-index: 500;
@@ -167,7 +167,7 @@
 		& > .backdrop {
 			width: 100%;
 			height: 100%;
-			background: hsl(var(--clr-base));
+			background: var(--clr-base);
 			z-index: -1;
 			position: absolute;
 			inset: 0;
@@ -225,7 +225,7 @@
 
 		& .nav-link {
 			font-family: var(--font-passion-one);
-			color: hsl(var(--clr-text), 0.5);
+			color: var(--clr-text), 0.5;
 			text-decoration: none;
 			padding-inline: 20px;
 			border-radius: 9999rem;
@@ -234,15 +234,15 @@
 			position: relative;
 
 			&:is(:hover, :focus) {
-				color: hsl(var(--clr-text));
+				color: var(--clr-text);
 			}
 
 			&:focus-visible {
-				outline-color: hsl(var(--clr-primary));
+				outline-color: var(--clr-primary);
 			}
 
 			&.current {
-				color: hsl(var(--clr-primary));
+				color: var(--clr-primary);
 			}
 		}
 	}

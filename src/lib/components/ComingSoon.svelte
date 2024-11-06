@@ -46,7 +46,7 @@
 				gap: 20px;
 
 				& > .heading {
-					color: hsl(var(--clr-primary));
+					color: var(--clr-primary);
 				}
 			}
 
@@ -60,7 +60,7 @@
 
 					& > .front {
 						padding-inline: 96px;
-						background: hsl(var(--clr-secondary));
+						background: var(--clr-secondary);
 					}
 
 					@media screen and (min-width: 480px) {

@@ -23,7 +23,7 @@
 <style>
 	.icon {
 		& > path {
-			fill: hsl(var(--fill-color));
+			fill: var(--fill-color);
 		}
 	}
 </style>

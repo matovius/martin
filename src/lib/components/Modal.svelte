@@ -34,6 +34,7 @@
 
 		&::backdrop {
 			background: transparent;
+			opacity: 0;
 		}
 
 		& > .container {

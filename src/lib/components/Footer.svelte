@@ -40,7 +40,7 @@
 			align-items: center;
 
 			& > .small {
-				color: hsl(var(--clr-text), 0.5);
+				color: var(--clr-text);
 			}
 		}
 	}

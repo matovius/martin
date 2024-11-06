@@ -17,6 +17,5 @@
 <style>
 	.root {
 		isolation: isolate;
-		width: 100dvw;
 	}
 </style>

@@ -16,11 +16,15 @@
 		}
 	}
 
-	$: if (isOpen && Modal) {
-		Modal.showModal();
-		document.body.style.overflow = 'hidden';
+	function handleKeydown(ev: KeyboardEvent) {
+		if (ev.key === 'Escape') {
+			ev.preventDefault();
+			isOpen = false;
+		}
 	}
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <dialog class="modal" bind:this={Modal}>
 	<div class="container">

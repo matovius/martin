@@ -27,34 +27,22 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <dialog class="modal" bind:this={Modal}>
-	<div class="container">
-		<slot />
-	</div>
+	<slot />
 </dialog>
 
 <style>
 	.modal {
-		isolation: isolate;
 		width: 0;
 		height: 0;
 		padding: 0;
 		border: 0;
 		margin: 0;
+		outline: none;
 		overflow: visible;
 
 		&::backdrop {
 			background: transparent;
 			opacity: 0;
-		}
-
-		& > .container {
-			width: 100dvw;
-			max-width: none;
-			height: 100dvh;
-			background: transparent;
-			position: fixed;
-			inset: 0;
-			overflow: hidden;
 		}
 	}
 </style>

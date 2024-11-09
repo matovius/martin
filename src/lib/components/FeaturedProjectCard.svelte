@@ -1,44 +1,61 @@
 <script lang="ts">
 	export let heading: string = 'Heading';
-	export let details: string = 'Details go here';
+	export let year: number = 1970;
 	export let url: string = 'https://example.com';
 </script>
 
 <a href={url} target="_blank" rel="noopener noreferrer" class="card">
-	<h5 class="heading">
+	<h5 class="h5">
 		{heading}
 	</h5>
-	<p class="details">
-		{details}
-	</p>
+	<p class="p">{year}</p>
 </a>
 
 <style>
-	.card {
+	a.card {
 		appearance: none;
 		color: unset;
 		text-decoration: none;
+		isolation: isolate;
 		width: 100%;
+		height: 40px;
 		display: flex;
-		flex-direction: column;
-		padding: 20px;
-		border-radius: 20px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 9999rem;
 		outline: 2px solid transparent;
-		outline-offset: 4px;
+		outline-offset: 2px;
+		position: relative;
+		overflow: hidden;
 
-		& > .heading {
-			font-size: 30px;
-			font-weight: 400;
-			line-height: 1.5;
-			text-decoration: 2px solid underline;
-			text-underline-offset: 4px;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: var(--clr-primary);
+			transform: translateX(-100%);
+		}
+
+		& > * {
+			position: absolute;
+		}
+		& > h5 {
+			inset-inline-start: 0;
+		}
+		& > p {
+			inset-inline-end: 20px;
 		}
 
 		&:is(:hover, :focus) {
-			background: color-mix(in oklab, var(--clr-text), transparent 90%);
+			color: var(--clr-base);
 
-			& > .heading {
-				color: var(--clr-primary);
+			&::before {
+				transform: translateX(0);
+				transition-delay: 200ms;
+			}
+
+			& > h5 {
+				transform: translateX(20px);
 			}
 		}
 

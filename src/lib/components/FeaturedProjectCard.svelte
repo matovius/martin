@@ -27,6 +27,7 @@
 		outline-offset: 2px;
 		position: relative;
 		overflow: hidden;
+		user-select: none;
 
 		&::before {
 			content: '';

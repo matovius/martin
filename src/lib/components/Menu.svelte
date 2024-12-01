@@ -5,10 +5,10 @@
 	import { blur, fade, scale } from 'svelte/transition';
 	import { quadInOut, quadOut } from 'svelte/easing';
 
-	let isMenuOpen: boolean = false;
+	let isMenuOpen: boolean = $state(false);
 
 	let MenuDialogBackdrop: HTMLElement;
-	let MenuDialogMenu: HTMLElement;
+	let MenuDialogMenu: HTMLElement = $state();
 
 	type Link = {
 		name: string;
@@ -42,7 +42,7 @@
 <button
 	class="button menu-toggle"
 	aria-label="Open menu"
-	on:click={() => {
+	onclick={() => {
 		isMenuOpen = true;
 	}}
 >
@@ -58,7 +58,7 @@
 				class="backdrop"
 				in:fade={{ duration: 200, easing: quadOut }}
 				out:fade={{ delay: 200, duration: 200, easing: quadOut }}
-			/>
+			></div>
 			<div class="surface">
 				<header
 					in:fade={{ duration: 200, easing: quadOut }}
@@ -66,7 +66,7 @@
 				>
 					<button
 						class="button close-menu"
-						on:click={() => {
+						onclick={() => {
 							isMenuOpen = false;
 						}}
 					>
@@ -86,7 +86,7 @@
 								<a
 									href="/"
 									class="h1 nav-link {$page.url.pathname === '/' ? 'current' : ''}"
-									on:click={closeMenu}>Home</a
+									onclick={closeMenu}>Home</a
 								>
 							</li>
 
@@ -95,7 +95,7 @@
 									<a
 										href={link.url}
 										class="h1 nav-link {$page.url.pathname.includes(link.url) ? 'current' : ''}"
-										on:click={closeMenu}>{link.name}</a
+										onclick={closeMenu}>{link.name}</a
 									>
 								</li>
 							{/each}
@@ -123,7 +123,7 @@
 						<div class="close-menu-wrapper">
 							<button
 								class="button menu-toggle"
-								on:click={() => {
+								onclick={() => {
 									isMenuOpen = false;
 								}}
 							>
@@ -142,7 +142,7 @@
 								<a
 									href="/"
 									class={`h1 nav-link ${$page.url.pathname === '/' ? 'current' : ''}`}
-									on:click={() => {
+									onclick={() => {
 										isMenuOpen = false;
 									}}>Home</a
 								>
@@ -152,7 +152,7 @@
 									<a
 										href={link.url}
 										class={`h1 nav-link ${$page.url.pathname.includes(link.url) ? 'current' : ''}`}
-										on:click={() => {
+										onclick={() => {
 											isMenuOpen = false;
 										}}>{link.name}</a
 									>
@@ -219,7 +219,7 @@
 			outline-offset: 4px;
 			position: relative;
 
-			&:is(:hover, :focus) {
+			&:is(:global(:hover, :focus)) {
 				color: var(--clr-text);
 			}
 

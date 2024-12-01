@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let heading: string = 'Heading';
-	export let year: number = 1970;
-	export let url: string = 'https://example.com';
+	interface Props {
+		heading?: string;
+		year?: number;
+		url?: string;
+	}
+
+	let { heading = 'Heading', year = 1970, url = 'https://example.com' }: Props = $props();
 </script>
 
 <a href={url} target="_blank" rel="noopener noreferrer" class="card">
@@ -47,7 +51,7 @@
 			inset-inline-end: 20px;
 		}
 
-		&:is(:hover, :focus) {
+		&:is(:global(:hover, :focus)) {
 			color: var(--clr-base);
 
 			&::before {

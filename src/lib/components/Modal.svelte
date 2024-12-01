@@ -1,9 +1,14 @@
 <script lang="ts">
-	export let isOpen: boolean = false;
-	export let closingDelay: number = 400;
-	let Modal: HTMLDialogElement;
+	interface Props {
+		isOpen?: boolean;
+		closingDelay?: number;
+		children: any;
+	}
 
-	$: {
+	let { isOpen = $bindable(false), closingDelay = 400, children }: Props = $props();
+	let Modal: HTMLDialogElement = $state();
+
+	$effect(() => {
 		if (Modal) {
 			if (isOpen) {
 				Modal.showModal();
@@ -15,7 +20,7 @@
 				}, closingDelay);
 			}
 		}
-	}
+	});
 
 	function handleKeydown(ev: KeyboardEvent) {
 		if (ev.key === 'Escape') {
@@ -25,10 +30,10 @@
 	}
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 <dialog class="modal" bind:this={Modal}>
-	<slot />
+	{@render children()}
 </dialog>
 
 <style>

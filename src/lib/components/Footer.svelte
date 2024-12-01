@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let Footer: HTMLElement;
+	let Footer: HTMLElement = $state();
 
 	let date: Date;
-	let CurrentDate: number;
+	let CurrentDate: number = $state();
 
 	onMount(() => {
 		date = new Date();

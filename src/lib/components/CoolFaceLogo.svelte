@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let fillColor: string = '--clr-primary';
+	interface Props {
+		fillColor?: string;
+	}
+
+	let { fillColor = '--clr-primary' }: Props = $props();
 </script>
 
 <svg

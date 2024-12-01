@@ -15,7 +15,7 @@
 			<button
 				class="button exorcism"
 				title="I cast thee back to whence thou hath comest"
-				on:click={() => {
+				onclick={() => {
 					history.back();
 				}}
 			>

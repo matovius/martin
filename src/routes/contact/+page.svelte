@@ -4,7 +4,7 @@
 	import { fade, fly } from 'svelte/transition';
 	import ComingSoon from '$lib/components/ComingSoon.svelte';
 
-	let showPage: boolean = false;
+	let showPage: boolean = $state(false);
 
 	onMount(() => {
 		setTimeout(() => {

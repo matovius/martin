@@ -5,7 +5,7 @@
 	import Hero from './Hero.svelte';
 	import FeaturedProjects from './FeaturedProjects.svelte';
 
-	let showPage: boolean = false;
+	let showPage: boolean = $state(false);
 
 	onMount(() => {
 		setTimeout(() => {

@@ -6,11 +6,19 @@
 
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
+	
+	interface Props {
+		children: any;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 <div id="root" class="root">
 	<Header />
-	<slot />
+
+	{@render children()}
+
 	<Footer />
 </div>
 

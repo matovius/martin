@@ -7,13 +7,13 @@
 	--font-passion-one: 'Passion One', sans-serif;
 	--font-inter: 'Inter Variable', sans-serif;
 
-	--font-size-h1: 60px;
-	--font-size-h2: 50px;
-	--font-size-h3: 40px;
-	--font-size-h4: 30px;
-	--font-size-h5: 20px;
-	--font-size-p: 16px;
-	--font-size-small: 12px;
+	--fs-h1: 60px;
+	--fs-h2: 50px;
+	--fs-h3: 40px;
+	--fs-h4: 30px;
+	--fs-h5: 20px;
+	--fs-p: 16px;
+	--fs-small: 12px;
 
 	/* COLORS */
 	--clr-white: hsl(0, 0%, 100%);
@@ -104,47 +104,61 @@ h6 {
 
 .container {
 	width: 100%;
-	max-width: 700px;
+	max-width: 720px;
 }
 
+h1,
 .h1 {
-	font-size: var(--font-size-h1);
+	font-size: var(--fs-h1);
 	font-weight: 700;
 	line-height: 1;
 }
 
+h2,
 .h2 {
-	font-size: var(--font-size-h2);
+	font-size: var(--fs-h2);
 	font-weight: 700;
 	line-height: 1;
 }
 
+h3,
 .h3 {
-	font-size: var(--font-size-h3);
+	font-size: var(--fs-h3);
 	font-weight: 400;
 	line-height: 1.2;
 }
 
+h4,
 .h4 {
-	font-size: var(--font-size-h4);
+	font-size: var(--fs-h4);
 	font-weight: 400;
 	line-height: 1.2;
 }
 
+h5,
 .h5 {
-	font-size: var(--font-size-h5);
+	font-size: var(--fs-h5);
 	font-weight: 400;
 	line-height: 1.2;
 }
 
-.p {
-	font-size: var(--font-size-p);
+h6,
+.h6 {
+	font-size: var(--fs-p);
 	font-weight: 400;
 	line-height: 1.5;
 }
 
+p,
+.p {
+	font-size: var(--fs-p);
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+small,
 .small {
-	font-size: var(--font-size-small);
+	font-size: var(--fs-small);
 	font-weight: 500;
 	line-height: 1.5;
 }

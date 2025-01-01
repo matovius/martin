@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let Footer: HTMLElement = $state();
+	let Footer: HTMLElement;
 
 	let date: Date;
-	let CurrentDate: number = $state();
+	let currentDate: number = $state(2025);
 
 	onMount(() => {
 		date = new Date();
-		CurrentDate = date.getFullYear();
+		currentDate = date.getFullYear();
 
 		setTimeout(() => {
 			Footer.style.opacity = '1';
@@ -18,7 +18,7 @@
 
 <footer class="footer" bind:this={Footer}>
 	<div class="container">
-		<small class="small">{CurrentDate} - Martin Matovu</small>
+		<small class="small">{currentDate} - Martin Matovu</small>
 	</div>
 </footer>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { socials } from '$lib/scripts/socials';
 </script>
 
 <section id="hero" class="hero">
@@ -26,74 +27,18 @@
 			<h5 class="heading">Or check me out elsewhere:</h5>
 
 			<div class="list">
-				<a
-					href="https://github.com/matovius"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="button github"
-				>
-					<div class="front">
-						<span>GitHub</span>
-					</div>
-				</a>
-
-				<!-- <a
-          href="https://dribbble.com/matovius"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button dribbble"
-        >
-          <div class="front">
-            <span>Dribbble</span>
-          </div>
-        </a> -->
-
-				<a href="https://read.cv/matovius" target="_blank" rel="noopener noreferrer" class="button">
-					<div class="front">
-						<span>Read.cv</span>
-					</div>
-				</a>
-				<a
-					href="https://linkedin.com/in/martin-matovu"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="button"
-				>
-					<div class="front">
-						<span>LinkedIn</span>
-					</div>
-				</a>
-				<a
-					href="https://mastodon.social/matovius"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="button"
-				>
-					<div class="front">
-						<span>Mastodon</span>
-					</div>
-				</a>
-				<a
-					href="https://threads.net/matovius_"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="button"
-				>
-					<div class="front">
-						<span>Threads</span>
-					</div>
-				</a>
-
-				<!-- <a
-          href="https://instagram.com/matovius_"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button instagram"
-        >
-          <div class="front">
-            <span>Instagram</span>
-          </div>
-        </a> -->
+				{#each socials as link}
+					<a
+						href={link.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button social"
+					>
+						<div class="front">
+							<span>{link.name}</span>
+						</div>
+					</a>
+				{/each}
 			</div>
 		</div>
 	</div>

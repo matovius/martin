@@ -6,13 +6,16 @@
 	<div class="container">
 		<div class="headline">
 			<h1 class="h1 heading">Hi, I'm Martin Matovu</h1>
-			<h2 class="h4 subheading">Frontend engineer, Svelte deity, Accessibility acolyte</h2>
+			<h2 class="h4 subheading">Frontend engineer + Accessibility acolyte</h2>
+			<!-- TODO: replace all spans in this paragraph with links to the appropriate locations -->
 			<p class="p text">
-				I make websites do my bidding for my enjoyment, otherwise I dabble in CSS button theft, <span
-					>generative art</span
-				>
-				and amateur photography.
+				I make websites do my bidding for my enjoyment<span class="footnote-mark">*</span>, otherwise I dabble in CSS button theft and
+				<span>rust programming</span>.
+				Also check out my <span>lab</span>, where I do random stuff in Svelte.
 			</p>
+			<small class="footnote">
+				<span class="footnote-mark">*</span> - sometimes it's a little grueling to beat Web APIs into submission, but it's enjoyable overall.
+			</small>
 		</div>
 
 		<div class="main-cta">
@@ -61,6 +64,13 @@
 				gap: 20px;
 
 				& > .heading {
+					color: var(--clr-primary);
+				}
+
+				& .footnote {
+					color: color-mix(in oklab, var(--clr-text), transparent 40%);
+				}
+				& span.footnote-mark {
 					color: var(--clr-primary);
 				}
 			}

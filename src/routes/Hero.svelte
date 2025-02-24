@@ -11,7 +11,7 @@
 			<p class="p text">
 				I make websites do my bidding for my enjoyment<span class="footnote-mark">*</span>, otherwise I dabble in CSS button theft and
 				<span>rust programming</span>.
-				Also check out my <span>lab</span>, where I do random stuff in Svelte.
+				<!-- Also check out my <span>lab</span>, where I do random stuff in Svelte. -->
 			</p>
 			<small class="footnote">
 				<span class="footnote-mark">*</span> - sometimes it's a little grueling to beat Web APIs into submission, but it's enjoyable overall.
@@ -111,7 +111,7 @@
 					display: flex;
 					flex-direction: row;
 					flex-wrap: wrap;
-					gap: 5px;
+					gap: 10px;
 					padding-top: 20px;
 				}
 			}

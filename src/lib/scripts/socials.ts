@@ -4,20 +4,12 @@ export const socials = [
 		url: 'https://github.com/matovius'
 	},
 	{
-		name: 'Read.cv',
-		url: 'https://read.cv/matovius'
+		name: 'Codepen',
+		url: 'https://codepen.io/matovius'
 	},
 	{
 		name: 'Mastodon',
 		url: 'https://mastodon.social/matovius'
-	},
-	{
-		name: 'Bluesky',
-		url: 'https://bsky.app/matovius'
-	},
-	{
-		name: 'Threads',
-		url: 'https://threads.net/matovius_'
 	},
 	{
 		name: 'LinkedIn',

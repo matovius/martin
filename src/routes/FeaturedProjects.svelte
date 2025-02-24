@@ -11,7 +11,9 @@
 
 		<div class="featured-projects">
 			{#each projects as project}
-				<FeaturedProjectCard heading={project.name} year={project.year} url={project.url} />
+				{#if project.isFeatured}
+					<FeaturedProjectCard heading={project.name} year={project.year} url={project.url} />
+				{/if}
 			{/each}
 		</div>
 

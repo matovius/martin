@@ -17,7 +17,7 @@
 			url: '/projects'
 		},
 		{
-			name: 'Blog',
+			name: 'Blog (coming soon)',
 			url: '/blog'
 		}
 	];

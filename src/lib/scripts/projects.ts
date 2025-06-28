@@ -2,38 +2,50 @@ import { type Project } from '$lib/scripts/types';
 
 export const projects: Project[] = [
 	{
+		name: 'Micronote',
+		year: 2025,
+		soundbite: 'Nuevo personal thought collector, a work in progress',
+		description:
+			'A delightful micro-journaling app that expands on bullet journaling and encourages you to write more',
+		url: 'https://micronote.pages.dev',
+		isFeatured: true
+	},
+	{
 		name: 'Webware Studio',
 		year: 2025,
-		description: 'An upstart web design and development studio founded by me and my friend.',
+		soundbite: 'Website-making studio',
+		description: 'An upstart web design and development studio founded by me and my friend',
 		url: 'https://webware.studio'
 	},
 	{
 		name: 'Moments',
 		year: 2024,
+		soundbite: 'Personal thought collector, now defunct, improved into Micronote',
 		description:
-			'A relatively simple journaling app for taking unstructured notes and keeping track of your life.',
+			'A relatively simple journaling app for taking unstructured notes and keeping track of your life',
 		url: 'https://moments-app.pages.dev',
-		isOngoing: true,
 		isFeatured: true
 	},
 	{
 		name: 'Forgotten',
 		year: 2024,
-		description: 'A micro todo list app for recording ephemeral tasks.',
+		soundbite: 'Ephemeral task tracker',
+		description: 'A micro todo list app for recording ephemeral tasks',
 		url: 'https://forgotten.pages.dev',
 		isFeatured: true
 	},
 	{
 		name: 'psswrds',
 		year: 2024,
-		description: 'A simple password generator that uses sweet animations to reveal them.',
+		soundbite: 'Password formation engine',
+		description: 'A simple password generator that uses sweet animations to reveal them',
 		url: 'https://psswrds.pages.dev',
 		isFeatured: true
 	},
 	{
 		name: 'Built By',
-		year: 2024,
-		description: 'For when you want some cretive adjectives for your project footers.',
+		year: 2023,
+		description: 'Creative adjectives for project footers',
 		url: 'https://built-by.pages.dev'
 	}
 ];

@@ -3,7 +3,7 @@
 		fillColor?: string;
 	}
 
-	let { fillColor = '--clr-primary' }: Props = $props();
+	let { fillColor = '--color-primary' }: Props = $props();
 </script>
 
 <svg

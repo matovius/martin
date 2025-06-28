@@ -1,36 +1,43 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import CoolFaceLogo from './CoolFaceLogo.svelte';
+	import { page } from '$app/state';
 	import Modal from '$lib/components/Modal.svelte';
-	import { blur, fade, scale } from 'svelte/transition';
-	import { quadInOut, quadOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
+	import { quadOut } from 'svelte/easing';
 
 	let isMenuOpen: boolean = $state(false);
-
-	let MenuDialogBackdrop: HTMLElement;
-	let MenuDialogMenu: HTMLElement = $state();
 
 	type Link = {
 		name: string;
 		url: string;
 	};
-
+	// SITE LINKS
 	const SiteLinks: Link[] = [
 		{
 			name: 'Projects',
 			url: '/projects'
 		},
 		{
-			name: 'Writing',
-			url: '/writing'
+			name: 'Blog',
+			url: '/blog'
+		}
+	];
+	// SOCIAL LINKS
+	const SocialLinks: Link[] = [
+		{
+			name: 'GitHub',
+			url: 'https://github.com/matovius'
 		},
 		{
-			name: 'Extras',
-			url: '/extras'
+			name: 'Codepen',
+			url: 'https://codepen.io/matovius'
 		},
 		{
-			name: 'Contact',
-			url: '/contact'
+			name: 'Mastodon',
+			url: 'https://mastodon.social/@matovius'
+		},
+		{
+			name: 'LinkedIn',
+			url: 'https://linkedin.com/in/martin-matovu'
 		}
 	];
 
@@ -40,18 +47,14 @@
 </script>
 
 <button
-	class="button menu-toggle"
-	aria-label="Open menu"
+	class="btn menu-toggle"
+	aria-label="Menu"
 	onclick={() => {
 		isMenuOpen = true;
 	}}
->
-	<div class="front">
-		<span>Menu</span>
-	</div>
-</button>
+></button>
 
-<Modal bind:isOpen={isMenuOpen}>
+<Modal bind:open={isMenuOpen}>
 	{#if isMenuOpen}
 		<div class="menu-modal">
 			<div
@@ -60,176 +63,161 @@
 				out:fade={{ delay: 200, duration: 200, easing: quadOut }}
 			></div>
 			<div class="surface">
-				<header
+				<!-- Close CTA -->
+				<div
+					class="close-cta"
 					in:fade={{ duration: 200, easing: quadOut }}
 					out:fade={{ delay: 200, duration: 200, easing: quadOut }}
 				>
 					<button
-						class="button close-menu"
+						class="btn close-menu"
+						aria-label="Close"
 						onclick={() => {
 							isMenuOpen = false;
 						}}
-					>
-						<div class="front">
-							<span>Close</span>
-						</div>
-					</button>
-				</header>
+					></button>
+				</div>
 
-				<main
-					in:blur={{ delay: 200, duration: 400, easing: quadOut, amount: 48, opacity: 0 }}
-					out:blur={{ duration: 200, easing: quadOut, amount: 48, opacity: 0 }}
+				<!-- Nav Menu -->
+				<nav
+					in:fade={{ delay: 200, duration: 400, easing: quadOut }}
+					out:fade={{ duration: 200, easing: quadOut }}
 				>
-					<nav>
-						<ul class="nav-list">
+					<ul class="nav-list">
+						<li>
+							<a
+								href="/"
+								class="h1 nav-link {page.url.pathname === '/' ? 'current' : ''}"
+								data-sveltekit-noscroll="false"
+								onclick={closeMenu}>Home</a
+							>
+						</li>
+
+						{#each SiteLinks as link}
 							<li>
 								<a
-									href="/"
-									class="h1 nav-link {$page.url.pathname === '/' ? 'current' : ''}"
-									onclick={closeMenu}>Home</a
+									href={link.url}
+									class="h1 nav-link {page.url.pathname.includes(link.url) ? 'current' : ''}"
+									data-sveltekit-noscroll="false"
+									onclick={closeMenu}>{link.name}</a
 								>
 							</li>
+						{/each}
+					</ul>
+				</nav>
 
-							{#each SiteLinks as link}
-								<li>
-									<a
-										href={link.url}
-										class="h1 nav-link {$page.url.pathname.includes(link.url) ? 'current' : ''}"
-										onclick={closeMenu}>{link.name}</a
-									>
-								</li>
-							{/each}
-						</ul>
-					</nav>
-				</main>
+				<!-- Socials -->
+				<div
+					class="socials"
+					in:fade={{ delay: 200, duration: 400, easing: quadOut }}
+					out:fade={{ duration: 200, easing: quadOut }}
+				>
+					<h5 class="heading">Socials</h5>
+
+					<div class="list">
+						{#each SocialLinks as link}
+							<a
+								href={link.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="btn {link.name.toLowerCase()}"
+								aria-label={link.name}
+							></a>
+						{/each}
+					</div>
+				</div>
 			</div>
 		</div>
 	{/if}
-	<div class="menu-wrapper" style="display: none;">
-		{#if isMenuOpen}
-			<div
-				class="menu"
-				bind:this={MenuDialogMenu}
-				transition:scale={{ duration: 500, easing: quadInOut, start: 0.98, opacity: 0 }}
-			>
-				<header class="menu-header">
-					<div class="container">
-						<div class="corner corner-left">
-							<div class="logo-wrapper">
-								<CoolFaceLogo />
-							</div>
-						</div>
-
-						<div class="close-menu-wrapper">
-							<button
-								class="button menu-toggle"
-								onclick={() => {
-									isMenuOpen = false;
-								}}
-							>
-								<div class="front">
-									<span>Close</span>
-								</div>
-							</button>
-						</div>
-					</div>
-				</header>
-
-				<main class="menu-main">
-					<nav class="container">
-						<ul class="nav-list">
-							<li class="nav-item">
-								<a
-									href="/"
-									class={`h1 nav-link ${$page.url.pathname === '/' ? 'current' : ''}`}
-									onclick={() => {
-										isMenuOpen = false;
-									}}>Home</a
-								>
-							</li>
-							{#each SiteLinks as link}
-								<li class="nav-item">
-									<a
-										href={link.url}
-										class={`h1 nav-link ${$page.url.pathname.includes(link.url) ? 'current' : ''}`}
-										onclick={() => {
-											isMenuOpen = false;
-										}}>{link.name}</a
-									>
-								</li>
-							{/each}
-						</ul>
-					</nav>
-				</main>
-			</div>
-		{/if}
-	</div>
 </Modal>
 
 <style>
 	div.menu-modal {
 		isolation: isolate;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		padding-inline: 20px;
 		position: fixed;
 		inset: 0;
 
 		& > div.backdrop {
-			background: var(--clr-base);
+			background: var(--color-base);
 			position: absolute;
 			inset: 0;
+			z-index: -1;
 		}
 
 		& > .surface {
 			width: 100%;
-			max-width: 1280px;
+			max-width: 62.5rem /* 1000px */;
 			height: 100%;
-			max-height: 100%;
 			overflow-y: auto;
+			margin-inline: auto;
+			position: relative;
 		}
 	}
 
-	header {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: center;
-		padding-block: 20px;
+	.close-cta {
+		position: absolute;
+		inset-inline-end: 0;
+		inset-block-start: 1.25rem /* 20px */;
 	}
 
 	.nav-list {
 		list-style: none;
 		width: 100%;
+		max-width: 43.75rem /* 700px */;
 		display: flex;
 		flex-direction: column;
-		justify-content: start;
-		align-items: center;
 		gap: 1em;
+		padding-block-start: 5rem /* 80px */;
+		margin-inline: auto;
 
 		& .nav-link {
 			font-family: var(--font-passion-one);
-			color: var(--clr-text), 0.5;
+			color: color-mix(in oklab, var(--color-text), transparent 50%);
 			text-decoration: none;
-			padding-inline: 20px;
+			padding-inline: 1.25rem /* 20px */;
 			border-radius: 9999rem;
 			outline: 2px solid transparent;
 			outline-offset: 4px;
 			position: relative;
 
-			&:is(:global(:hover, :focus)) {
-				color: var(--clr-text);
+			&:is(:hover, :focus) {
+				color: var(--color-text);
 			}
 
 			&:focus-visible {
-				outline-color: var(--clr-primary);
+				outline-color: var(--color-primary);
 			}
 
 			&.current {
-				color: var(--clr-primary);
+				color: var(--color-primary);
 			}
+		}
+	}
+
+	.socials {
+		width: 100%;
+		max-width: 43.75rem /* 700px */;
+		display: flex;
+		flex-direction: column;
+		padding-block-start: 5rem /* 80px */;
+		padding-inline-start: 1.25rem /* 20px */;
+		margin-inline: auto;
+
+		& > .heading {
+			color: color-mix(in oklab, var(--color-text), transparent 50%);
+			font-size: 1.25rem /* 20px */;
+			font-weight: 600;
+			line-height: 1.5;
+		}
+
+		& > .list {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0.625rem /* 10px */;
+			padding-block: 1.25rem /* 20px */;
 		}
 	}
 </style>

@@ -3,6 +3,7 @@
  */
 export type Project = {
 	name: string;
+	soundbite?: string;
 	description: string;
 	year: number;
 	url: string;

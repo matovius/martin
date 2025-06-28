@@ -1,96 +1,76 @@
 <script lang="ts">
 	import Menu from './Menu.svelte';
 	import CoolFaceLogo from './CoolFaceLogo.svelte';
-
-	type Link = {
-		name: string;
-		url: string;
-	};
-
-	const SiteLinks: Link[] = [
-		{
-			name: 'Projects',
-			url: '/projects'
-		},
-		{
-			name: 'Writing',
-			url: '/writing'
-		},
-		{
-			name: 'Extras',
-			url: '/extras'
-		},
-		{
-			name: 'Contact',
-			url: '/contact'
-		}
-	];
 </script>
 
-<header class="main-header">
+<header>
 	<div class="container">
-		<div class="corner start">
-			<a href="/" class="home-link" aria-label="Go to homepage">
+		<div class="side start">
+			<a href="/" class="home-link" data-sveltekit-noscroll="false" aria-label="Go to homepage">
 				<div aria-hidden="true">
 					<CoolFaceLogo />
 				</div>
 			</a>
 		</div>
-		<div class="corner end">
+
+		<div class="side end">
 			<Menu />
 		</div>
 	</div>
 </header>
 
 <style>
-	header.main-header {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-inline: 20px;
-		background: var(--clr-base);
+	header {
+		height: var(--header-height);
+		padding-inline: 1.25rem /* 20px */;
+		background: var(--color-base);
 		position: fixed;
 		top: 0;
 		inset-inline: 0;
-		z-index: 1000;
+		z-index: 5;
 
 		& > div.container {
-			max-width: 1280px;
+			max-width: 62.5rem /* 1000px */;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
-			padding-block: 20px;
+			padding-block: 1.25rem /* 20px */;
+			margin-inline: auto;
 		}
+	}
 
-		& .corner {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			gap: 10px;
+	.side {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.625rem /* 10px */;
 
-			&.start {
-				justify-content: flex-start;
-			}
-			&.end {
-				justify-content: flex-end;
-			}
+		&.start {
+			justify-content: flex-start;
+		}
+		&.end {
+			justify-content: flex-end;
 		}
 	}
 
 	a.home-link {
 		border-radius: 20px;
 		outline: 2px solid transparent;
-		outline-offset: 6px;
-
-		&:focus-visible {
-			outline-color: var(--clr-primary);
-		}
+		outline-offset: 8px;
 
 		& > div {
-			width: 30px;
-			height: 30px;
+			width: 1.5625rem /* 25px */;
+			height: 1.5625rem /* 25px */;
 			aspect-ratio: 1;
+		}
+
+		&:is(:hover, :focus) {
+			transform: scale(1.25);
+		}
+
+		&:focus-visible {
+			outline-color: var(--color-primary);
 		}
 	}
 </style>

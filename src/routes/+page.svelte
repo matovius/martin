@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProjectCard from '$lib/components/FeaturedProjectCard.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import { projects } from '$lib/scripts/projects';
 </script>
 
@@ -58,12 +58,14 @@
 
 <style>
 	main {
+		--_pblock: 2.5rem /* 40px */;
+		--_pblock-start: var(--_pblock);
 		padding-inline: 1.25rem /* 20px */;
-		padding-block: 3.75rem /* 60px*/ 2.5rem /* 40px */;
-		margin-block-start: var(--header-height);
+		padding-block: var(--_pblock);
+		padding-block-start: calc(var(--header-height) + var(--_pblock-start)) /* 40px */;
 
 		@media screen and (min-width: 37.5rem) /* 600px */ {
-			padding-block-start: 7.5rem /* 120px */;
+			--_pblock-start: 5rem /* 80px */;
 		}
 	}
 

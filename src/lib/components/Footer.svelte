@@ -1,24 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	let Footer: HTMLElement;
-
-	let date: Date;
-	let currentDate: number = $state(2025);
-
-	onMount(() => {
-		date = new Date();
-		currentDate = date.getFullYear();
-
-		setTimeout(() => {
-			Footer.style.opacity = '1';
-		}, 500);
-	});
 </script>
 
-<footer class="footer" bind:this={Footer}>
+<footer class="footer">
 	<div class="container">
-		<small class="small">{currentDate} - Martin Matovu</small>
+		<small class="copyright-statement">2025 - Martin Matovu</small>
 	</div>
 </footer>
 
@@ -28,19 +13,17 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		opacity: 0;
 
 		& > .container {
 			width: 100%;
-			max-width: 40rem; /* 640px */
-			padding: 24px;
+			padding: 1.875rem /* 30px */;
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
 
-			& > .small {
-				color: var(--clr-text);
+			& > small.copyright-statement {
+				color: color-mix(in oklab, var(--color-text), transparent 50%);
 			}
 		}
 	}

@@ -3,7 +3,7 @@
 
 <footer class="footer">
 	<div class="container">
-		<small class="copyright-statement">2025 - Martin Matovu</small>
+		<small class="copyright-statement">2025 <span>&centerdot;</span> Martin Matovu</small>
 	</div>
 </footer>
 

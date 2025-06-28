@@ -4,69 +4,56 @@
 <section id="coming-soon" class="coming-soon">
 	<div class="container">
 		<div class="headline">
-			<h1 class="h1 heading">Coming Soon</h1>
+			<h1 class="heading">Coming Soon</h1>
 			<h2 class="h4 subheading">
 				This page is currently under construction and will be coming soon, but don't hold your
 				breath.
 			</h2>
-			<p class="p">In the meantime...</p>
+			<p>In the meantime...</p>
 		</div>
 		<div class="cta">
 			<button
-				class="button exorcism"
+				class="btn exorcism"
+				aria-label="&larr; Go back"
 				title="I cast thee back to whence thou hath comest"
 				onclick={() => {
 					history.back();
 				}}
-			>
-				<div class="front">
-					<span>Go back</span>
-				</div>
-			</button>
+			></button>
 		</div>
 	</div>
 </section>
 
 <style>
 	.coming-soon {
+		--_pblock: 2.5rem /* 40px */;
+		--_pblock-start: var(--_pblock);
 		width: 100%;
-		height: calc(90dvh - 70px);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding-inline: 20px;
+		height: 100svh;
+		padding-inline: 1.25rem /* 20px */;
+		padding-block: var(--_pblock);
+		padding-block-start: calc(var(--header-height) + var(--_pblock-start)) /* 40px */;
+
+		@media screen and (min-width: 37.5rem) /* 600px */ {
+			--_pblock-start: 5rem /* 80px */;
+		}
 
 		& > .container {
-			padding-bottom: 40px;
+			padding-block-end: 2.5rem /* 40px */;
 
 			& > .headline {
 				display: flex;
 				flex-direction: column;
-				gap: 20px;
+				gap: 1.25rem /* 20px */;
 
 				& > .heading {
-					color: var(--clr-primary);
+					color: var(--color-primary);
 				}
 			}
 
 			& > .cta {
 				width: 100%;
-				padding-top: 40px;
-
-				& > .exorcism {
-					width: 100%;
-					display: inline-block;
-
-					& > .front {
-						padding-inline: 96px;
-						background: var(--clr-secondary);
-					}
-
-					@media screen and (min-width: 480px) {
-						width: fit-content;
-					}
-				}
+				padding-block-start: 2.5rem /* 40px */;
 			}
 		}
 	}

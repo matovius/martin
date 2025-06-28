@@ -1,31 +1,33 @@
 <script lang="ts">
 	interface Props {
-		isOpen?: boolean;
+		open?: boolean;
 		closingDelay?: number;
-		children: any;
+		children: import('svelte').Snippet;
 	}
 
-	let { isOpen = $bindable(false), closingDelay = 400, children }: Props = $props();
-	let Modal: HTMLDialogElement = $state();
+	let { open = $bindable(false), closingDelay = 400, children }: Props = $props();
+	let Modal: HTMLDialogElement | null = $state(null);
 
 	$effect(() => {
 		if (Modal) {
-			if (isOpen) {
+			if (open) {
 				Modal.showModal();
-				document.body.style.overflow = 'hidden';
-			} else {
-				setTimeout(() => {
-					Modal.close();
-					document.body.style.removeProperty('overflow');
-				}, closingDelay);
+				return;
 			}
+
+			setTimeout(() => {
+				if (Modal) {
+					Modal.close();
+					return;
+				}
+			}, closingDelay);
 		}
 	});
 
 	function handleKeydown(ev: KeyboardEvent) {
 		if (ev.key === 'Escape') {
 			ev.preventDefault();
-			isOpen = false;
+			open = false;
 		}
 	}
 </script>

@@ -25,18 +25,12 @@
 </section>
 
 <style>
-	.coming-soon {
-		--_pblock: 2.5rem /* 40px */;
-		--_pblock-start: var(--_pblock);
+	section.coming-soon {
 		width: 100%;
-		height: 100svh;
-		padding-inline: 1.25rem /* 20px */;
-		padding-block: var(--_pblock);
-		padding-block-start: calc(var(--header-height) + var(--_pblock-start)) /* 40px */;
-
-		@media screen and (min-width: 37.5rem) /* 600px */ {
-			--_pblock-start: 5rem /* 80px */;
-		}
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
 		& > .container {
 			padding-block-end: 2.5rem /* 40px */;

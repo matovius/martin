@@ -7,6 +7,15 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+
+	interface BlogPost {
+		title: string;
+		description: string;
+		date: string;
+		categories: string[];
+		slug: string;
+		published: boolean;
+	}
 }
 
 export {};

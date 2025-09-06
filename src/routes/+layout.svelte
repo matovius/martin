@@ -2,6 +2,7 @@
 	import '@fontsource/passion-one';
 	import '@fontsource-variable/inter';
 	import '@fontsource-variable/jetbrains-mono';
+	import '@fontsource-variable/bitcount-single';
 	import '../app.css';
 
 	import Footer from '$lib/components/Footer.svelte';

@@ -5,6 +5,10 @@
 	let { data }: PageProps = $props();
 </script>
 
+<svelte:head>
+	<title>{data.meta.title} - Martin Matovu</title>
+</svelte:head>
+
 <main>
 	<article class="blog-post">
 		<hgroup>
@@ -85,6 +89,48 @@
 		}
 		& :global(h6) {
 			margin-block: 1em 0.5em;
+		}
+
+		& :global(code) {
+			font-size: var(--text-sm);
+			font-weight: 500;
+			line-height: 1;
+			color: var(--color-primary);
+			display: inline-block;
+			padding-block: 0.3125rem /* 5px */;
+			padding-inline: 0.3125rem /* 5px */;
+			border-radius: 0.3125rem /* 5px */;
+			border: 1px solid color-mix(in oklab, var(--color-primary), transparent 80%);
+			background: color-mix(in oklab, var(--color-secondary), transparent 80%);
+		}
+
+		& :global(pre:has(code)) {
+			display: block;
+			border-radius: 20px /* 20px */;
+			/* border: 1px solid color-mix(in oklab, var(--color-primary), transparent 80%); */
+			background: color-mix(in oklab, var(--color-secondary), transparent 80%);
+			overflow-x: clip;
+
+			& > :global(code) {
+				font-size: var(--text-sm);
+				font-weight: 500;
+				line-height: 1.5;
+				color: unset;
+				min-width: 100%;
+				max-width: 100%;
+				padding: 20px;
+				border-radius: 0;
+				border: none;
+				background: transparent;
+				overflow-x: auto;
+			}
+		}
+
+		& :global(hr) {
+			height: 0px;
+			border-block: 1px solid color-mix(in oklab, var(--color-text), transparent 80%);
+			border-inline: 1px solid color-mix(in oklab, var(--color-text), transparent 80%);
+			background-color: transparent;
 		}
 	}
 </style>

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/bitcount-single':
+        specifier: ^5.2.1
+        version: 5.2.1
       '@fontsource-variable/inter':
         specifier: ^5.2.6
         version: 5.2.6
@@ -459,6 +462,9 @@ packages:
   '@fastify/busboy@2.1.1':
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
+
+  '@fontsource-variable/bitcount-single@5.2.1':
+    resolution: {integrity: sha512-GKM0clGptzLdHrNzkDcWlYf/PWPV1YaWf6YywVRb+YuLPsO6AkkFUtRwh/ZBhBx6bWw9f6k3CP7iLsiGmTlesg==}
 
   '@fontsource-variable/inter@5.2.6':
     resolution: {integrity: sha512-jks/bficUPQ9nn7GvXvHtlQIPudW7Wx8CrlZoY8bhxgeobNxlQan8DclUJuYF2loYRrGpfrhCIZZspXYysiVGg==}
@@ -1929,6 +1935,8 @@ snapshots:
   '@eslint/js@8.57.1': {}
 
   '@fastify/busboy@2.1.1': {}
+
+  '@fontsource-variable/bitcount-single@5.2.1': {}
 
   '@fontsource-variable/inter@5.2.6': {}
 

@@ -1,21 +1,30 @@
-<script lang="ts">
-	import type { Project } from '$lib/scripts/types';
+<script>
+	import Link from '$lib/components/Link.svelte';
 
-	interface Props {
-		project: Project;
-	}
+	/**
+	 * @typedef Project
+	 * @prop {string} name
+	 * @prop {string} description
+	 * @prop {number} year
+	 * @prop {string} url
+	 * @prop {string | null} soundbite
+	 * @prop {boolean} isOngoing
+	 * @prop {boolean} isFeatured
+	 */
 
-	let { project }: Props = $props();
+	/**
+	 * @typedef Props
+	 * @prop {Project} project
+	 */
+
+	/**
+	 * @type {Props}
+	 */
+	let { project } = $props();
 </script>
 
-<a
-	href={project.url}
-	target="_blank"
-	rel="noopener noreferrer"
-	class="card"
-	aria-label="{project.name}; made in {project.year}"
->
-	<div class="h4" aria-hidden="true">{project.name}</div>
+<article class="card">
+	<h3>{project.name}</h3>
 
 	{#if project.soundbite}
 		<p>{project.soundbite}</p>
@@ -23,55 +32,30 @@
 		<p>{project.description}</p>
 	{/if}
 
-	<small aria-hidden="true">
-		{project.year}
-	</small>
-</a>
+	<div class="ctas">
+		<Link as="outbound" url={project.url} id="project-demo-link">Live demo</Link>
+	</div>
+</article>
 
 <style>
-	a.card {
-		appearance: none;
-		color: unset;
-		text-decoration: none;
+	.card {
 		isolation: isolate;
 		width: 100%;
-		padding: 1.25rem /* 20px */;
 		display: flex;
 		flex-direction: column;
-		gap: 0.3125rem /* 5px */;
-		border-radius: 1.5625rem /* 25px */;
+		gap: 0.625rem /* 10px */;
 		outline: 2px solid transparent;
 		outline-offset: 2px;
-		position: relative;
-		user-select: none;
+		margin-block: 5em;
+		text-align: center;
 
-		&::before {
-			content: '';
-			border-radius: inherit;
-			position: absolute;
-			inset: 0.625rem; /* 10px */
-			background: var(--color-primary);
-			z-index: -1;
-			opacity: 0;
-		}
-		& > .h4 {
-			font-family: var(--font-passion-one);
-		}
-		& > small {
-			opacity: 0.6;
-		}
-
-		&:is(:hover, :focus) {
-			color: var(--color-base);
-
-			&::before {
-				inset: 0;
-				opacity: 1;
-			}
-		}
-
-		&:focus-visible {
-			outline-color: var(--color-primary);
+		& > .ctas {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			gap: 0.625rem /* 10px */;
+			flex-wrap: wrap;
 		}
 	}
 </style>

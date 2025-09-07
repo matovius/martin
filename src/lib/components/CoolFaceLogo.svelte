@@ -1,17 +1,12 @@
-<script lang="ts">
-	interface Props {
-		fillColor?: string;
-	}
-
-	let { fillColor = '--color-primary' }: Props = $props();
+<script>
 </script>
 
 <svg
-	class="icon"
-	style={`--fill-color: var(${fillColor})`}
+	class="icon cool-face"
 	viewBox="0 0 500 500"
-	fill="none"
+	fill="currentcolor"
 	xmlns="http://www.w3.org/2000/svg"
+	aria-hidden="true"
 >
 	<path
 		d="M315.795 265.881C343.48 265.881 366.897 289.361 355.171 314.441C336.744 353.854 296.58 381.178 250 381.178C203.42 381.178 163.256 353.854 144.829 314.441C133.103 289.361 156.52 265.881 184.205 265.881H315.795Z"
@@ -23,11 +18,3 @@
 		d="M457.41 118C485.095 118 508.511 141.444 497 166.623C478.671 206.714 438.376 234.55 391.615 234.55C344.854 234.55 304.559 206.714 286.23 166.623C274.719 141.444 298.135 118 325.82 118H457.41Z"
 	/>
 </svg>
-
-<style>
-	.icon {
-		& > path {
-			fill: var(--fill-color);
-		}
-	}
-</style>

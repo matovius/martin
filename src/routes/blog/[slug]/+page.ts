@@ -1,5 +1,10 @@
 import type { ServerLoadEvent } from '@sveltejs/kit';
 import type { PageServerLoad } from '../$types';
+import type { EntryGenerator } from './$types';
+
+export const entries: EntryGenerator = () => {
+	return [{ slug: 'first-post' }, { slug: 'sample' }];
+};
 
 export const load: PageServerLoad = async ({ params }: ServerLoadEvent) => {
 	const post = await import(`../../../posts/${params.slug}.svx`);
@@ -8,8 +13,6 @@ export const load: PageServerLoad = async ({ params }: ServerLoadEvent) => {
 		content: post.default,
 		meta: post.metadata
 	};
-	// try {
-	// } catch (error) {
-	// 	throw error(404, `Could not find ${params.slug}.`);
-	// }
 };
+
+export const prerender = true;

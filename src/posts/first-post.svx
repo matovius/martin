@@ -1,0 +1,29 @@
+---
+title: "My First Blog Post"
+description: "The first ever blog post on my new-fangled blog on my own website"
+date: "2025-07-01"
+categories:
+  - post
+  - update
+published: true
+---
+
+Hi, my name is Martin Matovu, a web developer hailing from a small landlocked African country called Uganda.
+
+If this is your first time on my website, welcome! It's lovely to have you. Hope you like it here. There's barely anything for now, but I hope this place becomes a hub for sharing my interests and thoughts.
+
+This is the first blog post, of hopefully many more to come (as long as I don't do the thing where I rapidly lose interest like a deflating balloon). It's just an introduction, and a hopeful look at what might be coming next on this blog.
+
+## What's this blog about?
+
+Great question! I have no idea.
+
+I'm hoping to write about all my interests here, from web dev to science. Anything that I find interesting, I'll probably be writing about here.
+
+It's gonna be mostly web dev stuff, and how I use Svelte as my framework of choice, but hopefully even more than that. Otherwise it's gonna be science and technology commentary that's hopefully not gonna lead to bad stuff (i.e. *mis-* and *dis-* information).
+
+But I hope to share more constructive and creative ideas and thoughts on this blog here. If you're interested, be sure to tune in whenever I decide to write something, because I don't have a set schedule or anything. I'm just trying to get something set here, but we'll see where it all goes.
+
+So thank you for reading, I appreciate your eyeballs and your brain. Glad to have entertained you for a couple minutes that you'll never regain in your life.
+
+Take care ✌

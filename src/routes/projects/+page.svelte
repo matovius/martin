@@ -1,15 +1,6 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
+<script>
 	import { projects } from '$lib/scripts/projects';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
-
-	let showPage: boolean = $state(false);
-
-	onMount(() => {
-		setTimeout(() => {
-			showPage = true;
-		}, 200);
-	});
 </script>
 
 <svelte:head>
@@ -17,16 +8,26 @@
 </svelte:head>
 
 <main class="main">
-	<section id="all-projects" class="all-projects">
+	<section id="hero" class="hero-section">
 		<div class="container">
-			<div class="headline">
-				<h1 class="heading">Projects</h1>
+			<hgroup>
+				<h1>Projects</h1>
 				<p>
-					I specialize in making the simplest, most <em>littlest</em> tools imaginable, and also do freelance
-					work through Webware Studio.
+					I specialize in making the simplest, most <em>littlest</em> tools imaginable, and also do
+					freelance work through
+					<a
+						href="https://webware.studio"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="link external">Webware Studio</a
+					>.
 				</p>
-			</div>
+			</hgroup>
+		</div>
+	</section>
 
+	<section id="all-projects" class="all-projects-section">
+		<div class="container">
 			<ul class="projects-list">
 				{#each projects as project}
 					<li>
@@ -39,41 +40,31 @@
 </main>
 
 <style>
-	.main {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding-inline: 20px;
-		padding-block: 120px 40px;
+	main {
+		padding-inline: 1.25rem /* 20px */;
 	}
 
 	section {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		padding-block: 2.5rem /* 40px */;
+	}
 
-		& > .container {
-			padding-block-end: 40px;
+	.hero-section hgroup {
+		text-align: center;
 
-			& > .headline {
-				display: flex;
-				flex-direction: column;
-				gap: 20px;
-
-				& > .heading {
-					color: var(--color-primary);
-				}
-			}
+		& > h1 {
+			color: var(--color-primary);
+		}
+		& > p:not(.h5) {
+			margin-block-start: 2em;
 		}
 	}
 
 	ul.projects-list {
 		list-style: none;
 		display: grid;
-		padding-block-start: 3.75rem; /* 60px */
+	}
+
+	.all-projects-section {
+		padding: 0;
 	}
 </style>

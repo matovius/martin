@@ -1,24 +1,91 @@
-@layer reset, variables, base, utilities;
+@layer reset, variables, base, components, utilities;
 
 @layer reset {
 
+	/* Box sizing rules */
 	*,
 	*::before,
 	*::after {
 		padding: 0;
 		margin: 0;
 		box-sizing: border-box;
+		scroll-margin-block: 5ex;
+
+		/* Anything that has been anchored to should have extra scroll margin */
+		&:target {
+			scroll-margin-block: 5ex;
+		}
 	}
 
-	body {
+	/* Prevent font size inflation */
+	html {
+		-moz-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+		/* Use antialiasing and optimize text legibility */
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;
-		-webkit-text-size-adjust: none;
-		-moz-text-size-adjust: none;
-		text-size-adjust: none;
 	}
 
+	/* Remove default margin in favour of better control in authored CSS */
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	figure,
+	blockquote,
+	dl,
+	dd {
+		margin-block-end: 0;
+	}
+
+	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+	ul[role='list'],
+	ol[role='list'] {
+		list-style: none;
+	}
+
+	/* Set core body defaults */
+	body {
+		min-height: 100vh;
+		line-height: 1.5;
+
+		/* Anything that has been anchored to should have extra scroll margin */
+		& *:target {
+			scroll-margin-block: 5ex;
+		}
+	}
+
+	/* Set shorter line heights on headings and interactive elements */
+	h1,
+	h2,
+	h3,
+	h4,
+	button,
+	input,
+	label {
+		line-height: 1.1;
+	}
+
+	/* Balance text wrapping on headings */
+	h1,
+	h2,
+	h3,
+	h4 {
+		text-wrap: balance;
+	}
+
+	/* A elements that don't have a class get default styles */
+	a:not([class]) {
+		text-decoration-skip-ink: auto;
+		color: currentColor;
+	}
+
+	/* Make media content easier to work with */
 	img,
+	figure,
 	picture,
 	video,
 	canvas,
@@ -27,6 +94,7 @@
 		max-width: 100%;
 	}
 
+	/* Inherit fonts for inputs and buttons */
 	input,
 	button,
 	textarea,
@@ -34,6 +102,17 @@
 		font: inherit;
 	}
 
+	/* Make sure textareas without a rows attribute are not tiny */
+	textarea:not([rows]) {
+		min-height: 10em;
+	}
+
+	/* Anything that has been anchored to should have extra scroll margin */
+	:target {
+		scroll-margin-block: 5ex;
+	}
+
+	/* Add overflow-wrap to all major text pieces */
 	p,
 	h1,
 	h2,
@@ -49,11 +128,15 @@
 	:root {
 		/* TYPOGRAPHY */
 		/* Font families */
-		--font-sys: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		--font-sys:
+			system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+			'Open Sans', 'Helvetica Neue', sans-serif;
 		--font-mono: 'Courier New', Courier, monospace;
 		--font-jetbrains: 'JetBrains Mono Variable', var(--font-mono);
 		--font-passion-one: 'Passion One', var(--font-sys);
 		--font-inter: 'Inter Variable', var(--font-sys);
+		--font-roboto-flex: 'Roboto Flex Variable', var(--font-sys);
+		--font-bitcount-single: 'Bitcount Single Variable', var(--font-mono);
 		/* Typescale */
 		--text-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
 		--text-base: clamp(1rem, 0.36vi + 0.92rem, 1.19rem);
@@ -112,7 +195,7 @@
 
 	body {
 		color-scheme: light dark;
-		font-family: var(--font-inter);
+		font-family: var(--font-jetbrains);
 		line-height: 1.5;
 		color: var(--color-text);
 		background-color: var(--color-base);
@@ -128,41 +211,41 @@
 	h4,
 	h5,
 	h6 {
-		font-family: var(--font-passion-one);
+		font-family: var(--font-bitcount-single);
+		font-weight: 500;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		line-height: 1.1;
 	}
 
 	h1 {
 		font-size: var(--text-xxxl, 3.75rem);
-		font-weight: 700;
-		line-height: 1;
 	}
 
 	h2 {
 		font-size: var(--text-xxl, 3.125rem);
-		font-weight: 700;
-		line-height: 1;
 	}
 
 	h3 {
 		font-size: var(--text-xl, 2.5rem);
-		font-weight: 700;
-		line-height: 1.2;
 	}
 
 	h4 {
 		font-size: var(--text-lg, 1.875rem);
-		font-weight: 700;
-		line-height: 1.2;
 	}
 
 	h5 {
 		font-size: var(--text-md, 1.25rem);
-		font-weight: 700;
+		line-height: 1.4;
 	}
 
 	h6 {
 		font-size: var(--text-base, 1rem);
-		font-weight: 700;
+		line-height: 1.5;
 	}
 
 	p {
@@ -171,7 +254,7 @@
 	}
 
 	small {
-		font-size: var(--text-sm, .75rem);
+		font-size: var(--text-sm, 0.75rem);
 		font-weight: 500;
 	}
 
@@ -180,60 +263,9 @@
 	}
 }
 
-@layer utilities {
+@layer components {
 
-	.container {
-		width: 100%;
-		max-width: 50rem
-			/* 800px */
-		;
-		margin-inline: auto;
-	}
-
-	.h1 {
-		font-size: var(--text-xxxl, 3.75rem);
-		font-weight: 700;
-		line-height: 1;
-	}
-
-	.h2 {
-		font-size: var(--text-xxl, 3.125rem);
-		font-weight: 700;
-		line-height: 1;
-	}
-
-	.h3 {
-		font-size: var(--text-xl, 2.5rem);
-		font-weight: 700;
-		line-height: 1.2;
-	}
-
-	.h4 {
-		font-size: var(--text-lg, 1.875rem);
-		font-weight: 700;
-		line-height: 1.2;
-	}
-
-	.h5 {
-		font-size: var(--text-md, 1.25rem);
-		font-weight: 700;
-	}
-
-	.h6 {
-		font-size: var(--text-base, 1rem);
-		font-weight: 700;
-	}
-
-	.p {
-		font-size: var(--text-base, 1rem);
-		font-weight: 400;
-	}
-
-	.small {
-		font-size: var(--text-sm, .75rem);
-		font-weight: 500;
-	}
-
+	/* BUTTONS */
 	.btn {
 		isolation: isolate;
 		appearance: none;
@@ -256,7 +288,7 @@
 
 		&::after {
 			content: attr(aria-label);
-			padding: .625rem 1.25rem
+			padding: 0.625rem 1.25rem
 				/* 10px, 20px */
 			;
 			border-radius: inherit;
@@ -285,6 +317,7 @@
 		}
 	}
 
+	/* LINKS */
 	.link {
 		appearance: none;
 		text-decoration: 2px solid underline color-mix(in oklab, var(--color-text), transparent 70%);
@@ -298,7 +331,7 @@
 		border-radius: 4px;
 		background-color: transparent;
 		outline: 2px solid transparent;
-		outline-offset: .25rem
+		outline-offset: 0.25rem
 			/* 4px */
 		;
 		cursor: pointer;
@@ -306,7 +339,7 @@
 		&:is(:hover, :focus) {
 			color: var(--color-primary);
 			text-decoration-color: var(--color-primary);
-			text-underline-offset: .25rem
+			text-underline-offset: 0.25rem
 				/* 4px */
 			;
 		}
@@ -314,6 +347,58 @@
 		&:focus-visible {
 			outline-color: var(--color-primary);
 		}
+	}
+}
+
+@layer utilities {
+	.container {
+		width: 100%;
+		max-width: 50rem
+			/* 800px */
+		;
+		margin-inline: auto;
+	}
+
+	.h1 {
+		font-size: var(--text-xxxl);
+		font-weight: 500;
+	}
+
+	.h2 {
+		font-size: var(--text-xxl);
+		font-weight: 500;
+	}
+
+	.h3 {
+		font-size: var(--text-xl);
+		font-weight: 500;
+	}
+
+	.h4 {
+		font-size: var(--text-lg);
+		font-weight: 500;
+	}
+
+	.h5 {
+		font-size: var(--text-md);
+		font-weight: 500;
+		line-height: 1.4;
+	}
+
+	.h6 {
+		font-size: var(--text-base);
+		font-weight: 500;
+		line-height: 1.5;
+	}
+
+	.p {
+		font-size: var(--text-base);
+		font-weight: 400;
+	}
+
+	.small {
+		font-size: var(--text-sm);
+		font-weight: 500;
 	}
 
 	.icon {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Link2Icon } from 'lucide-svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	interface Props {
 		// TODO: Potential refactor to turn this `level` prop's evals into
@@ -18,35 +18,35 @@
 		<h2 id={id || labelBasedId} class="heading">
 			<span>{label}</span>
 			<a href="#{id || labelBasedId}" class="link inline">
-				<Link2Icon aria-hidden size={20} />
+				<Icon name="link-simple" width={20} height={20} />
 			</a>
 		</h2>
 	{:else if level === '3'}
 		<h3 id={id || labelBasedId} class="heading">
 			<span>{label}</span>
 			<a href="#{id || labelBasedId}" class="link inline">
-				<Link2Icon aria-hidden size={20} />
+				<Icon name="link-simple" width={20} height={20} />
 			</a>
 		</h3>
 	{:else if level === '4'}
 		<h4 id={id || labelBasedId} class="heading">
 			<span>{label}</span>
 			<a href="#{id || labelBasedId}" class="link inline">
-				<Link2Icon aria-hidden size={20} />
+				<Icon name="link-simple" width={20} height={20} />
 			</a>
 		</h4>
 	{:else if level === '5'}
 		<h5 id={id || labelBasedId} class="heading">
 			<span>{label}</span>
 			<a href="#{id || labelBasedId}" class="link inline">
-				<Link2Icon aria-hidden size={20} />
+				<Icon name="link-simple" width={20} height={20} />
 			</a>
 		</h5>
 	{:else if level === '6'}
 		<h6 id={id || labelBasedId} class="heading">
 			<span>{label}</span>
 			<a href="#{id || labelBasedId}" class="link inline">
-				<Link2Icon aria-hidden size={20} />
+				<Icon name="link-simple" width={20} height={20} />
 			</a>
 		</h6>
 	{/if}

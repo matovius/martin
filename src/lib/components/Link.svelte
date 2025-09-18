@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowUpRightIcon } from 'lucide-svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	interface Props {
 		children: any;
@@ -15,17 +15,9 @@
 {:else if as === 'outbound'}
 	<a href={url} target="_blank" rel="noopener noreferrer" {id} class="link">
 		{@render children()}
-		<!-- <ArrowUpRightIcon size={16} class="external-icon" /> -->
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			class="external-icon"
-			viewBox="0 0 256 256"
-			aria-hidden="true"
-		>
-			<path
-				d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"
-			></path>
-		</svg>
+		<span class="external-icon">
+			<Icon name="arrow-up-right" width="1em" height="1em" />
+		</span>
 	</a>
 {/if}
 
@@ -35,31 +27,18 @@
 		gap: 2px;
 
 		& .external-icon {
-			/* width: 0.9375rem /* 15px *;
-			height: 0.9375rem /* 15px *; */
-			width: 1em;
-			height: 1em;
-			aspect-ratio: 1;
-			display: inline-block;
-			fill: var(--color-primary);
+			color: var(--color-primary);
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		&:hover {
 			& .external-icon {
 				fill: color-mix(in oklab, var(--color-primary), transparent 50%);
 				/* animation: bounceTopRight 0.4s ease-in-out; */
-				transform: translate(2px, -2px) scale(0.9);
+				transform: translate(3px, -3px) scale(0.8);
 			}
-		}
-	}
-
-	@keyframes bounceTopRight {
-		0%,
-		100% {
-			transform: translate(0, 0);
-		}
-		50% {
-			transform: translate(2px, -2px);
 		}
 	}
 </style>

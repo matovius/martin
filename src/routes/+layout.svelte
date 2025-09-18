@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '@fontsource/passion-one';
 	import '@fontsource-variable/inter';
 	import '@fontsource-variable/jetbrains-mono';
 	import '@fontsource-variable/bitcount-single';

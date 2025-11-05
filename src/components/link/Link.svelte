@@ -1,13 +1,15 @@
-<script lang="ts">
-	import Icon from '$lib/components/Icon.svelte';
+<script>
+	import Icon from '$components/icons/Icon.svelte';
+	/**
+	 * @typedef Props
+	 * @prop { import('svelte').Snippet } children
+	 * @prop { 'inbound' | 'outbound' } as Whether the link routes internally or externally
+	 * @prop { string } url Where the link routes to
+	 * @prop { string } [id] An id that could be used to reference the link on the page if needed
+	 */
 
-	interface Props {
-		children: any;
-		as: 'inbound' | 'outbound';
-		url: string;
-		id: string | undefined;
-	}
-	let { children, as, url, id }: Props = $props();
+	/** @type { Props } */
+	let { children, as, url, id } = $props();
 </script>
 
 {#if as === 'inbound'}
@@ -16,7 +18,7 @@
 	<a href={url} target="_blank" rel="noopener noreferrer" {id} class="link">
 		{@render children()}
 		<span class="external-icon">
-			<Icon name="arrow-up-right" width="1em" height="1em" />
+			<Icon name="arrow-up-right" size="1em" />
 		</span>
 	</a>
 {/if}

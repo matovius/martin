@@ -2,48 +2,48 @@
 
 /**
  * @typedef Project
- * @prop {string} name
- * @prop {string} description
- * @prop {number} year
- * @prop {string} url
- * @prop {string | null} soundbite
- * @prop {boolean} isOngoing
- * @prop {boolean} isFeatured
+ * @prop { string } name
+ * @prop { string } description
+ * @prop { number } year
+ * @prop { string } url
+ * @prop { string | null } soundbite
+ * @prop { boolean } isOngoing
+ * @prop { boolean } isFeatured
  */
 
 /**
- * @type {Project[]}
+ * @type { Project[] }
  */
 export const projects = [
-	{
-		name: 'Micronote',
-		description:
-			'A delightful micro-journaling app that expands on bullet journaling and encourages you to write more',
-		year: 2025,
-		url: 'https://micronote.pages.dev',
-		soundbite: 'Nuevo personal thought collector, a work in progress',
-		isOngoing: false,
-		isFeatured: true
-	},
-	{
-		name: 'Webware Studio',
-		description: 'An upstart web design and development studio founded by me and my friend',
-		year: 2025,
-		url: 'https://webware.studio',
-		soundbite: 'Website-making studio',
-		isOngoing: true,
-		isFeatured: false
-	},
-	{
-		name: 'Moments',
-		description:
-			'A relatively simple journaling app for taking unstructured notes and keeping track of your life',
-		year: 2024,
-		url: 'https://moments-app.pages.dev',
-		soundbite: 'Personal thought collector, now defunct, improved into Micronote',
-		isOngoing: false,
-		isFeatured: true
-	},
+	// {
+	// 	name: 'Micronote',
+	// 	description:
+	// 		'A delightful micro-journaling app that expands on bullet journaling and encourages you to write more',
+	// 	year: 2025,
+	// 	url: 'https://micronote.pages.dev',
+	// 	soundbite: 'Nuevo personal thought collector, a work in progress',
+	// 	isOngoing: false,
+	// 	isFeatured: true
+	// },
+	// {
+	// 	name: 'Webware Studio',
+	// 	description: 'An upstart web design and development studio founded by me and my friend',
+	// 	year: 2025,
+	// 	url: 'https://webware.studio',
+	// 	soundbite: 'Website-making studio',
+	// 	isOngoing: true,
+	// 	isFeatured: false
+	// },
+	// {
+	// 	name: 'Moments',
+	// 	description:
+	// 		'A relatively simple journaling app for taking unstructured notes and keeping track of your life',
+	// 	year: 2024,
+	// 	url: 'https://moments-app.pages.dev',
+	// 	soundbite: 'Personal thought collector, now defunct, improved into Micronote',
+	// 	isOngoing: false,
+	// 	isFeatured: true
+	// },
 	{
 		name: 'Forgotten',
 		description: 'A micro todo list app for recording ephemeral tasks',

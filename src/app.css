@@ -1,408 +1,505 @@
-@layer reset, variables, base, components, utilities;
+@layer variables, reset, base, components, utilities;
+
+@layer variables {
+  :root {
+    /* TYPOGRAPHY */
+    /* Font families */
+    --font-system: 'Courier New', Courier, monospace;
+    --font-jetbrains-mono: 'JetBrains Mono Variable', var(--font-system);
+    --font-google-mono: 'Google Sans Code Variable', var(--font-system);
+    --font-bitcount-single: 'Bitcount Single Variable', var(--font-system);
+    /* Typescale */
+    /* --text-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+    --text-base: clamp(1rem, 0.36vi + 0.92rem, 1.19rem);
+    --text-md: clamp(1.25rem, 0.63vi + 1.11rem, 1.58rem);
+    --text-lg: clamp(1.56rem, 1.04vi + 1.33rem, 2.11rem);
+    --text-xl: clamp(1.95rem, 1.64vi + 1.58rem, 2.81rem);
+    --text-xxl: clamp(2.44rem, 2.49vi + 1.88rem, 3.75rem);
+    --text-xxxl: clamp(3.05rem, 3.71vi + 2.22rem, 5rem); */
+    --text-sm: clamp(0.8rem, 0.22vi + 0.75rem, 0.93rem);
+    --text-base: clamp(1rem, 0.43vi + 0.9rem, 1.25rem);
+    --text-md: clamp(1.25rem, 0.76vi + 1.08rem, 1.69rem);
+    --text-lg: clamp(1.56rem, 1.24vi + 1.28rem, 2.28rem);
+    --text-xl: clamp(1.95rem, 1.95vi + 1.51rem, 3.08rem);
+    --text-xxl: clamp(2.44rem, 2.97vi + 1.77rem, 4.15rem);
+    --text-xxxl: clamp(3.05rem, 4.44vi + 2.05rem, 5.61rem);
+    --text-jumbo: clamp(3.81rem, 6.53vi + 2.35rem, 7.57rem);
+
+    /* COLORS */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    /* Electric Indigo: hsl(256, 100%, 54%), #5314FF, oklch(0.4936 0.2917 279) */
+    --color-electric-indigo: oklch(0.4936 0.2917 279);
+    /* Spring Bud: hsl(84, 100%, 54%), #A1FF14, oklch(0.9059 0.2465 131.54) */
+    --color-spring-bud: oklch(0.9059 0.2465 131.54);
+    /* Magnolia: hsl(256, 100%, 97%), #F4F0FF, oklch(0.9626 0.020359 298.1966) */
+    --color-magnolia: oklch(0.9626 0.020359 298.1966);
+    /* Dark Purple: hsl(256, 100%, 6%), #08001F, oklch(0.1241 0.0701 290.25) */
+    --color-dark-purple: oklch(0.1241 0.0701 290.25);
+    /* Crimson: hsl(351, 80%, 49%), #E11937, oklch(0.5816 0.2244 22.19) */
+    --color-crimson: oklch(0.5816 0.2244 22.19);
+    /* Canary: hsl(56, 100%, 54%), #FFEF14, oklch(0.9353 0.1957 104.57) */
+    --color-canary: oklch(0.9353 0.1957 104.57);
+
+    /* Utility Colors */
+    --color-primary: light-dark(var(--color-electric-indigo), var(--color-spring-bud));
+    --color-secondary: light-dark(var(--color-spring-bud), var(--color-electric-indigo));
+    --color-base: light-dark(var(--color-magnolia), var(--color-dark-purple));
+    --color-text: light-dark(var(--color-dark-purple), var(--color-magnolia));
+
+    /* Header Height */
+    --header-height: 5.4375rem
+      /* 87px */
+    ;
+  }
+}
 
 @layer reset {
 
-	/* Box sizing rules */
-	*,
-	*::before,
-	*::after {
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box;
-		scroll-margin-block: 5ex;
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-margin-block: 5ex;
 
-		/* Anything that has been anchored to should have extra scroll margin */
-		&:target {
-			scroll-margin-block: 5ex;
-		}
-	}
+    /* Anything that has been anchored to should have extra scroll margin */
+    &:target {
+      scroll-margin-block: 5ex;
+    }
+  }
 
-	/* Prevent font size inflation */
-	html {
-		-moz-text-size-adjust: none;
-		-webkit-text-size-adjust: none;
-		text-size-adjust: none;
-		/* Use antialiasing and optimize text legibility */
-		-webkit-font-smoothing: antialiased;
-		text-rendering: optimizeLegibility;
-	}
+  html {
+    /* Set baseline for text behavior */
+    font-family: var(--font-system);
+    hanging-punctuation: first allow-end last;
+    word-break: break-word;
+    /* Prevent font size inflation */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    /* Use antialiasing and optimize text legibility */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-	/* Remove default margin in favour of better control in authored CSS */
-	body,
-	h1,
-	h2,
-	h3,
-	h4,
-	p,
-	figure,
-	blockquote,
-	dl,
-	dd {
-		margin-block-end: 0;
-	}
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
 
-	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-	ul[role='list'],
-	ol[role='list'] {
-		list-style: none;
-	}
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    line-height: 1.5;
 
-	/* Set core body defaults */
-	body {
-		min-height: 100vh;
-		line-height: 1.5;
+    /* Anything that has been anchored to should have extra scroll margin */
+    & *:target {
+      scroll-margin-block: 5ex;
+    }
+  }
 
-		/* Anything that has been anchored to should have extra scroll margin */
-		& *:target {
-			scroll-margin-block: 5ex;
-		}
-	}
+  /* Balance text wrapping on headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
 
-	/* Set shorter line heights on headings and interactive elements */
-	h1,
-	h2,
-	h3,
-	h4,
-	button,
-	input,
-	label {
-		line-height: 1.1;
-	}
+  h5,
+  h6 {
+    text-wrap: pretty;
+  }
 
-	/* Balance text wrapping on headings */
-	h1,
-	h2,
-	h3,
-	h4 {
-		text-wrap: balance;
-	}
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+  }
 
-	/* A elements that don't have a class get default styles */
-	a:not([class]) {
-		text-decoration-skip-ink: auto;
-		color: currentColor;
-	}
+  /* Make media content easier to work with */
+  img,
+  figure,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
 
-	/* Make media content easier to work with */
-	img,
-	figure,
-	picture,
-	video,
-	canvas,
-	svg {
-		display: block;
-		max-width: 100%;
-	}
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
 
-	/* Inherit fonts for inputs and buttons */
-	input,
-	button,
-	textarea,
-	select {
-		font: inherit;
-	}
+  /* Make sure textareas without a rows attribute are not tiny */
+  textarea:not([rows]) {
+    min-height: 10em;
+  }
 
-	/* Make sure textareas without a rows attribute are not tiny */
-	textarea:not([rows]) {
-		min-height: 10em;
-	}
+  /* Anything that has been anchored to should have extra scroll margin */
+  :target {
+    scroll-margin-block: 5ex;
+  }
 
-	/* Anything that has been anchored to should have extra scroll margin */
-	:target {
-		scroll-margin-block: 5ex;
-	}
-
-	/* Add overflow-wrap to all major text pieces */
-	p,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		overflow-wrap: break-word;
-	}
-}
-
-@layer variables {
-	:root {
-		/* TYPOGRAPHY */
-		/* Font families */
-		--font-sys:
-			system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-			'Open Sans', 'Helvetica Neue', sans-serif;
-		--font-mono: 'Courier New', Courier, monospace;
-		--font-jetbrains: 'JetBrains Mono Variable', var(--font-mono);
-		--font-passion-one: 'Passion One', var(--font-sys);
-		--font-inter: 'Inter Variable', var(--font-sys);
-		--font-roboto-flex: 'Roboto Flex Variable', var(--font-sys);
-		--font-bitcount-single: 'Bitcount Single Variable', var(--font-mono);
-		/* Typescale */
-		--text-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
-		--text-base: clamp(1rem, 0.36vi + 0.92rem, 1.19rem);
-		--text-md: clamp(1.25rem, 0.63vi + 1.11rem, 1.58rem);
-		--text-lg: clamp(1.56rem, 1.04vi + 1.33rem, 2.11rem);
-		--text-xl: clamp(1.95rem, 1.64vi + 1.58rem, 2.81rem);
-		--text-xxl: clamp(2.44rem, 2.49vi + 1.88rem, 3.75rem);
-		--text-xxxl: clamp(3.05rem, 3.71vi + 2.22rem, 5rem);
-
-		/* COLORS */
-		--color-white: #ffffff;
-		--color-black: #000000;
-		/* Electric Indigo: hsl(256, 100%, 54%), #5314FF, oklch(0.4936 0.2917 279) */
-		--color-electric-indigo: oklch(0.4936 0.2917 279);
-		/* Spring Bud: hsl(84, 100%, 54%), #A1FF14, oklch(0.9059 0.2465 131.54) */
-		--color-spring-bud: oklch(0.9059 0.2465 131.54);
-		/* Magnolia: hsl(256, 100%, 97%), #F4F0FF, oklch(0.9626 0.020359 298.1966) */
-		--color-magnolia: oklch(0.9626 0.020359 298.1966);
-		/* Dark Purple: hsl(256, 100%, 6%), #08001F, oklch(0.1241 0.0701 290.25) */
-		--color-dark-purple: oklch(0.1241 0.0701 290.25);
-		/* Crimson: hsl(351, 80%, 49%), #E11937, oklch(0.5816 0.2244 22.19) */
-		--color-crimson: oklch(0.5816 0.2244 22.19);
-		/* Canary: hsl(56, 100%, 54%), #FFEF14, oklch(0.9353 0.1957 104.57) */
-		--color-canary: oklch(0.9353 0.1957 104.57);
-
-		/* Utility Colors */
-		--color-primary: light-dark(var(--color-electric-indigo), var(--color-spring-bud));
-		--color-secondary: light-dark(var(--color-spring-bud), var(--color-electric-indigo));
-		--color-base: light-dark(var(--color-magnolia), var(--color-dark-purple));
-		--color-text: light-dark(var(--color-dark-purple), var(--color-magnolia));
-
-		/* Header Height */
-		--header-height: 5.4375rem
-			/* 87px */
-		;
-	}
+  /* Add overflow-wrap to all major text pieces */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
 }
 
 @layer base {
 
-	*,
-	*::before,
-	*::after {
-		transition: all 200ms ease;
+  *,
+  *::before,
+  *::after {
+    transition: all 200ms ease;
 
-		&:not(:defined) {
-			opacity: 0;
-			visibility: hidden;
-		}
+    &:not(:defined) {
+      opacity: 0;
+      visibility: hidden;
+    }
 
-		&::selection {
-			background: var(--color-primary);
-			color: var(--color-base);
-		}
-	}
+    &::selection {
+      background: var(--color-primary);
+      color: var(--color-base);
+    }
+  }
 
-	body {
-		color-scheme: light dark;
-		font-family: var(--font-jetbrains);
-		line-height: 1.5;
-		color: var(--color-text);
-		background-color: var(--color-base);
+  body {
+    color-scheme: light dark;
+    font-family: var(--font-google-mono);
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-base);
 
-		&:has(dialog[open]) {
-			overflow: hidden;
-		}
-	}
+    &:has(dialog[open]) {
+      overflow: hidden;
+    }
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-family: var(--font-bitcount-single);
-		font-weight: 500;
-	}
+  h1,
+  h2 {
+    font-weight: 800;
+    line-height: 1.1;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4 {
-		line-height: 1.1;
-	}
+  h3,
+  h4 {
+    font-weight: 700;
+    line-height: 1.25;
+  }
 
-	h1 {
-		font-size: var(--text-xxxl, 3.75rem);
-	}
+  h5,
+  h6 {
+    font-weight: 600;
+    line-height: 1.4;
+  }
 
-	h2 {
-		font-size: var(--text-xxl, 3.125rem);
-	}
+  h1 {
+    font-size: var(--text-xxxl);
+  }
 
-	h3 {
-		font-size: var(--text-xl, 2.5rem);
-	}
+  h2 {
+    font-size: var(--text-xxl);
+  }
 
-	h4 {
-		font-size: var(--text-lg, 1.875rem);
-	}
+  h3 {
+    font-size: var(--text-xl);
+  }
 
-	h5 {
-		font-size: var(--text-md, 1.25rem);
-		line-height: 1.4;
-	}
+  h4 {
+    font-size: var(--text-lg);
+  }
 
-	h6 {
-		font-size: var(--text-base, 1rem);
-		line-height: 1.5;
-	}
+  h5 {
+    font-size: var(--text-md);
+  }
 
-	p {
-		font-size: var(--text-base, 1rem);
-		font-weight: 400;
-	}
+  h6 {
+    font-size: var(--text-base);
+  }
 
-	small {
-		font-size: var(--text-sm, 0.75rem);
-		font-weight: 500;
-	}
+  p {
+    font-size: var(--text-base);
+  }
 
-	span {
-		font: inherit;
-	}
+  small {
+    font-size: var(--text-sm);
+    font-weight: 500;
+  }
+
+  span {
+    font: inherit;
+  }
+
+  article {
+    & hgroup>h1 {
+      color: var(--color-primary);
+    }
+
+    & hgroup>p {
+      color: color-mix(in oklab, var(--color-text), transparent 50%);
+    }
+
+    & p {
+      margin-block: 1.5em;
+    }
+
+    & h1 {
+      margin-block: 1.5em 0.5em;
+    }
+
+    & h2 {
+      margin-block: 1em 0.5em;
+    }
+
+    & h3 {
+      margin-block: 1em 0.5em;
+    }
+
+    & h4 {
+      margin-block: 1em 0.5em;
+    }
+
+    & h5 {
+      margin-block: 1em 0.5em;
+    }
+
+    & h6 {
+      margin-block: 1em 0.5em;
+    }
+
+    & code {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      line-height: 1;
+      color: var(--color-primary);
+      display: inline-block;
+      padding-block: 0.3125rem
+        /* 5px */
+      ;
+      padding-inline: 0.3125rem
+        /* 5px */
+      ;
+      border-radius: 0.3125rem
+        /* 5px */
+      ;
+      border: 1px solid color-mix(in oklab, var(--color-primary), transparent 80%);
+      background: color-mix(in oklab, var(--color-secondary), transparent 80%);
+    }
+
+    & pre:has(code) {
+      display: block;
+      border-radius: 20px
+        /* 20px */
+      ;
+      /* border: 1px solid color-mix(in oklab, var(--color-primary), transparent 80%); */
+      background: color-mix(in oklab, var(--color-secondary), transparent 80%);
+      overflow-x: clip;
+
+      &>code {
+        font-size: var(--text-sm);
+        font-weight: 500;
+        line-height: 1.5;
+        color: unset;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        overflow-x: auto;
+      }
+    }
+
+    & hr {
+      height: 0px;
+      border-block: 1px solid color-mix(in oklab, var(--color-text), transparent 80%);
+      border-inline: 1px solid color-mix(in oklab, var(--color-text), transparent 80%);
+      background-color: transparent;
+    }
+  }
 }
 
 @layer components {
 
-	/* BUTTONS */
-	.btn {
-		isolation: isolate;
-		appearance: none;
-		text-decoration: none;
-		font-size: var(--text-base, 1rem);
-		font-family: var(--font-inter);
-		font-weight: 600;
-		color: var(--color-text);
-		min-width: max-content;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 9999rem;
-		border: none;
-		background: var(--color-text);
-		outline: 2px solid transparent;
-		outline-offset: 4px;
-		cursor: pointer;
-		user-select: none;
+  /* BUTTONS */
+  .btn {
+    isolation: isolate;
+    appearance: none;
+    text-decoration: none;
+    font-size: var(--text-base, 1rem);
+    font-family: var(--font-inter);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--color-text);
+    min-width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999rem;
+    border: none;
+    background: var(--color-text);
+    outline: 2px solid transparent;
+    outline-offset: 4px;
+    cursor: pointer;
+    user-select: none;
 
-		&::after {
-			content: attr(aria-label);
-			padding: 0.625rem 1.25rem
-				/* 10px, 20px */
-			;
-			border-radius: inherit;
-			border: 2px solid var(--color-text);
-			background: var(--color-base);
-			transform: translateY(-0.25rem)
-				/* -4px */
-			;
-		}
+    &::after {
+      content: attr(aria-label);
+      padding: 0.625rem 1.25rem
+        /* 10px, 20px */
+      ;
+      border-radius: inherit;
+      border: 2px solid var(--color-text);
+      background: var(--color-base);
+      transform: translateY(-0.25rem)
+        /* -4px */
+      ;
+    }
 
-		&:hover::after {
-			transform: translateY(-0.5rem)
-				/* -8px */
-			;
-		}
+    &.inline {
+      display: inline-flex;
 
-		&:active::after {
-			transform: translateY(-0.125rem)
-				/* -2px */
-			;
-			transition: transform 50ms ease-out;
-		}
+      &::after {
+        padding: 0.125em 0.75em;
+      }
+    }
 
-		&:focus-visible {
-			outline-color: var(--color-primary);
-		}
-	}
+    &:hover::after {
+      transform: translateY(-0.5rem)
+        /* -8px */
+      ;
+    }
 
-	/* LINKS */
-	.link {
-		appearance: none;
-		text-decoration: 2px solid underline color-mix(in oklab, var(--color-text), transparent 70%);
-		text-underline-offset: 2px;
-		color: var(--color-text);
-		width: fit-content;
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		gap: 8px;
-		border-radius: 4px;
-		background-color: transparent;
-		outline: 2px solid transparent;
-		outline-offset: 0.25rem
-			/* 4px */
-		;
-		cursor: pointer;
+    &:active::after {
+      transform: translateY(-0.125rem)
+        /* -2px */
+      ;
+      transition: transform 50ms ease-out;
+    }
 
-		&:is(:hover, :focus) {
-			color: var(--color-primary);
-			text-decoration-color: var(--color-primary);
-			text-underline-offset: 0.25rem
-				/* 4px */
-			;
-		}
+    &:focus-visible {
+      outline-color: var(--color-primary);
+    }
+  }
 
-		&:focus-visible {
-			outline-color: var(--color-primary);
-		}
-	}
+  /* LINKS */
+  .link {
+    appearance: none;
+    text-decoration: 2px solid underline color-mix(in oklab, var(--color-text), transparent 70%);
+    text-underline-offset: 2px;
+    color: var(--color-text);
+    width: fit-content;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: 2px solid transparent;
+    outline-offset: 0.25rem
+      /* 4px */
+    ;
+    cursor: pointer;
+
+    &:is(:hover, :focus) {
+      color: var(--color-primary);
+      text-decoration-color: var(--color-primary);
+      text-underline-offset: 0.25rem
+        /* 4px */
+      ;
+    }
+
+    &:focus-visible {
+      outline-color: var(--color-primary);
+    }
+  }
 }
 
 @layer utilities {
-	.container {
-		width: 100%;
-		max-width: 50rem
-			/* 800px */
-		;
-		margin-inline: auto;
-	}
+  .container {
+    width: 100%;
+    max-width: 50rem
+      /* 800px */
+    ;
+    margin-inline: auto;
+  }
 
-	.h1 {
-		font-size: var(--text-xxxl);
-		font-weight: 500;
-	}
+  .jumbotron {
+    font-weight: 800;
+    font-size: var(--text-jumbo);
+    line-height: 1;
+  }
 
-	.h2 {
-		font-size: var(--text-xxl);
-		font-weight: 500;
-	}
+  .h1,
+  .h2 {
+    font-weight: 800;
+    line-height: 1.1;
+  }
 
-	.h3 {
-		font-size: var(--text-xl);
-		font-weight: 500;
-	}
+  .h3,
+  .h4 {
+    font-weight: 700;
+    line-height: 1.25;
+  }
 
-	.h4 {
-		font-size: var(--text-lg);
-		font-weight: 500;
-	}
+  .h5,
+  .h6 {
+    font-weight: 600;
+    line-height: 1.4;
+  }
 
-	.h5 {
-		font-size: var(--text-md);
-		font-weight: 500;
-		line-height: 1.4;
-	}
+  .h1 {
+    font-size: var(--text-xxxl);
+  }
 
-	.h6 {
-		font-size: var(--text-base);
-		font-weight: 500;
-		line-height: 1.5;
-	}
+  .h2 {
+    font-size: var(--text-xxl);
+  }
 
-	.p {
-		font-size: var(--text-base);
-		font-weight: 400;
-	}
+  .h3 {
+    font-size: var(--text-xl);
+  }
 
-	.small {
-		font-size: var(--text-sm);
-		font-weight: 500;
-	}
+  .h4 {
+    font-size: var(--text-lg);
+  }
 
-	.icon {
-		width: 100%;
-		height: 100%;
-	}
+  .h5 {
+    font-size: var(--text-md);
+  }
+
+  .h6 {
+    font-size: var(--text-base);
+  }
+
+  .p {
+    font-size: var(--text-base);
+  }
+
+  .small {
+    font-size: var(--text-sm);
+    font-weight: 500;
+  }
+
+  .icon {
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -1,21 +1,22 @@
-<script lang="ts">
-	import '@fontsource-variable/inter';
-	import '@fontsource-variable/jetbrains-mono';
-	import '@fontsource-variable/bitcount-single';
+<script>
 	import '../app.css';
+	import favicon from '$lib/assets/favicon.svg';
+	import Header from '$components/header/Header.svelte';
+	import Footer from '$components/footer/Footer.svelte';
 
-	import Footer from '$lib/components/Footer.svelte';
-	import Header from '$lib/components/Header.svelte';
+	/**
+	 * @typedef Props
+	 * @prop { import('svelte').Snippet } children
+	 */
 
-	interface Props {
-		children: import('svelte').Snippet;
-	}
-
-	let { children }: Props = $props();
+	/** @type { Props } */
+	let { children } = $props();
 </script>
 
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
+
 <Header />
-
 {@render children()}
-
 <Footer />

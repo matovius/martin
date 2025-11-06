@@ -3,7 +3,7 @@ import '$lib/types';
 /** @type { () => import('./$types').EntryGenerator } */
 export function entries() {
 	/** @type { import('$app/types').RouteParams<any> } */
-	const routes = [{ slug: '/first-post' }];
+	const routes = [{ slug: 'first-post' }];
 	return routes;
 }
 

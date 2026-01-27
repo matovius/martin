@@ -4,7 +4,7 @@
 			<small class="copyright-statement">
 				<span>Hand-crafted by me</span>
 				<span>&centerdot;</span>
-				<span title="2025">MMXXV</span>
+				<span title="2026">MMXXVI</span>
 				<span>&centerdot;</span>
 				<span>I implore you to make your own website</span>
 			</small>

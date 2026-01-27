@@ -24,5 +24,7 @@
 			"pattern": "www.matovius.dev",
 			"custom_domain": true
 		}
-	]
+	],
+	"workers_dev": false,
+	"preview_urls": false
 }

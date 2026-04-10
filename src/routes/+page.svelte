@@ -32,45 +32,65 @@
 
 <main>
 	{@render HeroSection()}
-	{@render SocialsSection()}
+	<!-- {@render SocialsSection()} -->
 </main>
 
 {#snippet HeroSection()}
 	<section id="hero" class="hero-section">
 		<div class="container">
 			<hgroup>
-				<div class="p">Hi! my name is</div>
+				<!-- <div class="p">Hi! my name is</div> -->
 				<h1>Martin Matovu</h1>
-				<p>
+				<!-- <p>
 					Web developer && co-founder of
 					<Link as="outbound" url="https://webware.studio">Webware Studio</Link>
-				</p>
+				</p> -->
+				<p>Web developer.</p>
 			</hgroup>
 			<p>
-				I love making cool websites and tiny web-based tools that especially cater for personal
-				issues.
+				I love making cool websites and tiny web tools that especially cater for my own personal
+				issues or just for a joke.
 			</p>
-			<p>
+			<!-- <p>
 				So far, I have a few tools I've built, but I haven't yet integrated them into this website.
 				But when that's done you'll be able to find them
 				<Link as="inbound" url="/tools">here</Link>.
-			</p>
+			</p> -->
 			<p>
 				I'm intentionally keeping this website as simple as possible because I'm focusing more on
-				Webware Studio and the projects over there.
+				other stuff.
 			</p>
-			<p>
+			<!-- <p>
 				Oh, I also do
 				<Link as="inbound" url="/writing">write here</Link>
 				sometimes. Mostly about the things I make and other personal thoughts and feelings. The articles
 				are mostly short and to the point, although I can sometimes go overboard if I'm super passionate
 				and inspired.
+			</p> -->
+			<p>
+				I also exist on
+				<Link as="outbound" url="https://github.com/matovius">GitHub</Link> (<em>for now</em>) and
+				<Link as="outbound" url="https://mastodon.social/@matovius">Mastodon</Link>. My handle is
+				<span class="copy-button">
+					<button
+						class="btn inline"
+						aria-label="matovius"
+						onclick={() => {
+							copyText('matovius').then(() => {
+								isHandleCopied = true;
+							});
+						}}
+					></button>
+					{#if isHandleCopied}
+						<small transition:fly={{ duration: 150, y: -4, easing: quadOut }}>Copied</small>
+					{/if}
+				</span> on both.
 			</p>
 		</div>
 	</section>
 {/snippet}
 
-{#snippet SocialsSection()}
+<!-- {#snippet SocialsSection()}
 	<section id="socials" class="socials-section">
 		<div class="container">
 			<p>
@@ -95,7 +115,7 @@
 			</p>
 		</div>
 	</section>
-{/snippet}
+{/snippet} -->
 
 <style>
 	main {

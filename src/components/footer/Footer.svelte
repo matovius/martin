@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="side start">
 			<small class="copyright-statement">
-				<span>Hand-crafted by me</span>
+				<span>This website is hand-crafted by me</span>
 				<span>&centerdot;</span>
 				<span title="2026">MMXXVI</span>
 				<span>&centerdot;</span>

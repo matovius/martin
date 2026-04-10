@@ -1,5 +1,7 @@
 <script>
 	import '../app.css';
+	import '@fontsource-variable/google-sans-code';
+	import '@fontsource-variable/asap';
 	import favicon from '$lib/assets/favicon.svg';
 	import Header from '$components/header/Header.svelte';
 	import Footer from '$components/footer/Footer.svelte';

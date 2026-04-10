@@ -1,59 +1,61 @@
 <script>
 	import Logo from '$components/icons/Logo.svelte';
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 
 	/**
 	 * @typedef Link
-	 * @prop {string} name
-	 * @prop {string} url
+	 * @prop { string } name
+	 * @prop { string } url
+	 * @prop { number } id
 	 */
 
-	/**
-	 * @type {Link[]}
-	 */
-	const SiteLinks = [
-		{
-			name: 'Tools',
-			url: '/tools'
-		},
-		{
-			name: 'Writing',
-			url: '/writing'
-		}
-	];
+	// /** @type {Link[]} */
+	// const SiteLinks = [
+	// 	{
+	// 		name: 'Tools',
+	// 		url: '/tools',
+	// 		id: 0
+	// 	},
+	// 	{
+	// 		name: 'Writing',
+	// 		url: '/writing',
+	// 		id: 1
+	// 	}
+	// ];
 </script>
 
 <header>
 	<div class="container">
 		<div class="side start">
 			<a
-				href="/"
+				href={resolve('/')}
 				class="home-link {page.url.pathname === '/' ? 'at-home' : ''}"
 				aria-label="Go to homepage"
 			>
-				<Logo size={30} bg="currentColor" />
+				<Logo size={40} bg="currentColor" />
 			</a>
 			<!-- NAV LINKS -->
-			{@render NavLinks()}
+			<!-- {@render NavLinks()} -->
 		</div>
 		<!-- <div class="side end"></div> -->
 	</div>
 </header>
 
-{#snippet NavLinks()}
+<!-- {#snippet NavLinks()}
 	<nav>
 		<ul class="nav-list">
-			{#each SiteLinks as link}
-				<li>
+			{#each SiteLinks as link (link.id)}
+				<li data-id={link.id}>
 					<a
-						href={link.url}
+						href={resolve(link.url)}
 						class="nav-link {page.url.pathname.includes(link.url) ? 'current' : ''}">{link.name}</a
 					>
 				</li>
 			{/each}
 		</ul>
 	</nav>
-{/snippet}
+{/snippet} -->
 
 <style>
 	header {
@@ -87,97 +89,51 @@
 	}
 
 	a.home-link {
-		--_size: 0.625rem /* 10px */;
-		color: var(--color-text);
+		color: var(--color-ink);
 		text-decoration: none;
 		aspect-ratio: 1;
-		padding: 0.3125rem /* 5px */;
 		outline: 2px solid transparent;
 		outline-offset: 5px;
 		position: relative;
 
-		&.at-home {
-			color: var(--color-primary);
-		}
-
 		&:is(:hover, :focus) {
-			&::before {
-				transform: translate(calc(var(--_size) * -1 / 2), calc(var(--_size) * -1 / 2));
-				text-shadow: calc(40px + var(--_size)) 0 0 currentColor;
-			}
-
-			&::after {
-				transform: translate(calc(var(--_size) * -1 / 2), calc(var(--_size) / 2));
-				text-shadow: calc(40px + var(--_size)) 0 0 currentColor;
-			}
+			background-color: var(--color-primary-100);
 		}
 
-		&:active {
-			&::before {
-				transform: translate(calc(var(--_size) / 2), calc(var(--_size) / 2));
-				text-shadow: calc(40px - var(--_size)) 0 0 currentColor;
-			}
-
-			&::after {
-				transform: translate(calc(var(--_size) / 2), calc(var(--_size) * -1 / 2));
-				text-shadow: calc(40px - var(--_size)) 0 0 currentColor;
-			}
-		}
-
-		&::before,
-		&::after {
-			content: '+';
-			width: var(--_size);
-			height: var(--_size);
-			aspect-ratio: 1;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			position: absolute;
-			inset-inline-start: calc(var(--_size) * -1 / 2);
-			text-shadow: 40px 0 0 currentColor;
-		}
-
-		&::before {
-			inset-block-start: calc(var(--_size) * -1 / 2);
-		}
-
-		&::after {
-			inset-block-end: calc(var(--_size) * -1 / 2);
+		&.at-home {
+			color: var(--color-white);
+			background-color: var(--color-primary);
 		}
 
 		&:focus-visible {
 			outline-color: var(--color-primary);
-
-			&::before,
-			&::after {
-				opacity: 0;
-			}
 		}
 	}
 
-	ul.nav-list {
+	/*ul.nav-list {
 		list-style: none;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		gap: 0.625rem /* 10px */;
-		padding-inline-start: 1.25rem /* 20px */;
+		gap: 0.625rem;
+		padding-inline-start: 1.25rem;
 
 		& .nav-link {
-			font-family: var(--font-jetbrains);
-			color: color-mix(in oklab, var(--color-text), transparent 50%);
+			color: var(--color-ink);
 			text-decoration: none;
+			display: block;
 			padding-inline: 1em;
 			padding-block: 0.5em;
-			border-radius: 9999rem;
+			border: 2px solid var(--color-primary-200);
 			outline: 2px solid transparent;
 			outline-offset: 4px;
 			position: relative;
 
 			&:is(:hover, :focus) {
-				color: var(--color-text);
+				color: var(--color-ink);
+				border-color: var(--color-primary-500);
+				background: var(--color-primary-100);
 			}
 
 			&:focus-visible {
@@ -185,9 +141,10 @@
 			}
 
 			&.current {
-				color: var(--color-base);
-				background: var(--color-primary);
+				color: var(--color-white);
+				border-color: var(--color-primary-500);
+				background: var(--color-primary-500);
 			}
 		}
-	}
+	}*/
 </style>

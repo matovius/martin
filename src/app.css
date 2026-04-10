@@ -4,18 +4,13 @@
 	:root {
 		/* TYPOGRAPHY */
 		/* Font families */
-		--font-system: 'Courier New', Courier, monospace;
-		--font-jetbrains-mono: 'JetBrains Mono Variable', var(--font-system);
-		--font-google-mono: 'Google Sans Code Variable', var(--font-system);
-		--font-bitcount-single: 'Bitcount Single Variable', var(--font-system);
+		--font-system-mono: 'Courier New', Courier, monospace;
+		--font-system-sans:
+			system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+			'Open Sans', 'Helvetica Neue', sans-serif;
+		--font-asap: 'Asap Variable', var(--font-system-sans);
+		--font-google-mono: 'Google Sans Code Variable', var(--font-system-mono);
 		/* Typescale */
-		/* --text-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
-    --text-base: clamp(1rem, 0.36vi + 0.92rem, 1.19rem);
-    --text-md: clamp(1.25rem, 0.63vi + 1.11rem, 1.58rem);
-    --text-lg: clamp(1.56rem, 1.04vi + 1.33rem, 2.11rem);
-    --text-xl: clamp(1.95rem, 1.64vi + 1.58rem, 2.81rem);
-    --text-xxl: clamp(2.44rem, 2.49vi + 1.88rem, 3.75rem);
-    --text-xxxl: clamp(3.05rem, 3.71vi + 2.22rem, 5rem); */
 		--text-sm: clamp(0.8rem, 0.22vi + 0.75rem, 0.93rem);
 		--text-base: clamp(1rem, 0.43vi + 0.9rem, 1.25rem);
 		--text-md: clamp(1.25rem, 0.76vi + 1.08rem, 1.69rem);
@@ -33,23 +28,33 @@
 		--color-electric-indigo: oklch(0.492 0.29 277);
 		/* Spring Laser = #53FE0A = oklch(0.875 0.28 140) */
 		--color-spring-laser: oklch(0.875 0.28 140);
+		/* Jasmine = #FDDB7C = oklch(0.9 0.12 90) */
+		--color-jasmine: oklch(0.9 0.12 90);
+		/* Hot Fuschia = #FB3563 = oklch(0.65 0.23 14) */
+		--color-hot-fuschia: oklch(0.65 0.23 14);
 		/* Spring Bud: hsl(84, 100%, 54%), #A1FF14, oklch(0.9059 0.2465 131.54) */
 		--color-spring-bud: oklch(0.9059 0.2465 131.54);
-		--color-magnolia: color(from var(--color-electric-indigo) srgb 89% 89% b);
-		--color-dark-purple: color(from var(--color-electric-indigo) srgb 5% 5% 20%);
 
 		/* Utility Colors */
-		--color-primary: var(--color-electric-indigo);
-		--color-secondary: var(--color-spring-bud);
-		/*--color-base: light-dark(var(--color-magnolia), var(--color-dark-purple));*/
-		/*--color-text: light-dark(var(--color-dark-purple), var(--color-magnolia));*/
+		--color-primary: var(--color-hot-fuschia);
+		--color-secondary: var(--color-jasmine);
+		--color-ink: color-mix(in oklab, var(--color-primary), var(--color-white) 80%);
+		--color-body-bg: color-mix(var(--color-secondary), var(--color-black) 80%);
+		--color-selection-ink: var(--color-primary);
+		--color-selection-bg: var(--color-ink);
 
-		/*--color-ink: light-dark(var(--color-dark-purple), var(--color-magnolia));*/
-		--color-ink: var(--color-magnolia);
-		--color-surface: var(--color-dark-purple);
-		/*--color-surface: light-dark(var(--color-magnolia), var(--color-dark-purple));*/
-		--color-selection-ink: var(--color-magnolia);
-		--color-selection-bg: var(--color-dark-purple);
+		/* Color Palettes */
+		--color-primary-50: color-mix(in oklab, var(--color-primary), var(--color-white) 90%);
+		--color-primary-100: color-mix(in oklab, var(--color-primary), var(--color-white) 80%);
+		--color-primary-200: color-mix(in oklab, var(--color-primary), var(--color-white) 60%);
+		--color-primary-300: color-mix(in oklab, var(--color-primary), var(--color-white) 40%);
+		--color-primary-400: color-mix(in oklab, var(--color-primary), var(--color-white) 20%);
+		--color-primary-500: color-mix(in oklab, var(--color-primary), var(--color-white) 0%);
+		--color-primary-600: color-mix(in oklab, var(--color-primary), var(--color-black) 20%);
+		--color-primary-700: color-mix(in oklab, var(--color-primary), var(--color-black) 40%);
+		--color-primary-850: color-mix(in oklab, var(--color-primary), var(--color-black) 60%);
+		--color-primary-900: color-mix(in oklab, var(--color-primary), var(--color-black) 80%);
+		--color-primary-950: color-mix(in oklab, var(--color-primary), var(--color-black) 90%);
 
 		/* Header Height */
 		--header-height: 5.4375rem /* 87px */;
@@ -181,10 +186,10 @@
 	}
 
 	body {
-		font-family: var(--font-google-mono);
+		font-family: var(--font-asap);
 		line-height: 1.5;
 		color: var(--color-ink);
-		background-color: var(--color-electric-indigo);
+		background-color: var(--color-body-bg);
 
 		&:has(dialog[open]) {
 			overflow: hidden;
@@ -385,8 +390,8 @@
 	/* LINKS */
 	.link {
 		appearance: none;
-		text-decoration: 2px solid underline currentColor;
-		text-underline-offset: 0.25em;
+		text-decoration: 2px solid underline color-mix(in oklab, currentColor, transparent 80%);
+		text-underline-offset: 0.15em;
 		color: var(--color-ink);
 		font-weight: 600;
 		width: fit-content;
@@ -400,11 +405,13 @@
 		cursor: pointer;
 
 		&:is(:hover, :focus) {
-			color: var(--color-surface);
+			color: var(--color-black);
+			text-decoration-color: var(--color-primary-500);
+			text-underline-offset: 0.2em;
 		}
 
 		&:focus-visible {
-			outline-color: var(--color-surface);
+			outline-color: var(--color-ink);
 		}
 	}
 }
@@ -476,5 +483,9 @@
 	.icon {
 		width: 100%;
 		height: 100%;
+	}
+
+	.fix-z-index {
+		isolation: isolate;
 	}
 }

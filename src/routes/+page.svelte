@@ -3,7 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { copyText } from '$lib/utils';
 	import { quadOut } from 'svelte/easing';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 
 	/** @type { boolean } */
 	let isHandleCopied = $state(false);

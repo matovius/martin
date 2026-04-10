@@ -339,18 +339,23 @@
 		appearance: none;
 		text-decoration: none;
 		font-size: var(--text-base, 1rem);
-		font-family: var(--font-inter);
+		font-family: var(--font-asap);
 		font-weight: 600;
 		line-height: 1.1;
 		color: var(--color-ink);
-		color: color(srgb 255 255 255);
+		color: var(--color-white);
 		min-width: max-content;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-radius: 9999rem;
-		border: none;
-		background: var(--color-text);
+		border-radius: 0;
+		border: 2px solid var(--color-primary);
+		background: repeating-linear-gradient(
+			45deg,
+			var(--color-primary) 2px,
+			transparent 2px 6px,
+			var(--color-primary) 6px 8px
+		);
 		outline: 2px solid transparent;
 		outline-offset: 4px;
 		cursor: pointer;
@@ -358,27 +363,29 @@
 
 		&::after {
 			content: attr(aria-label);
-			padding: 0.625rem 1.25rem /* 10px, 20px */;
+			padding: 5px 10px;
 			border-radius: inherit;
-			border: 2px solid var(--color-text);
-			background: var(--color-base);
-			transform: translateY(-0.25rem) /* -4px */;
+			border: 2px solid var(--color-primary);
+			background: var(--color-body-bg);
+			transform: translateY(-2px);
+			/* This margin lines up this element to cover the button's border to the left and the right */
+			margin-inline: -2px;
 		}
 
 		&.inline {
 			display: inline-flex;
 
 			&::after {
-				padding: 0.125em 0.75em;
+				padding: 2px 5px;
 			}
 		}
 
 		&:hover::after {
-			transform: translateY(-0.5rem) /* -8px */;
+			transform: translateY(-5px) scale(1.05);
 		}
 
 		&:active::after {
-			transform: translateY(-0.125rem) /* -2px */;
+			transform: translateY(0) scale(0.98);
 			transition: transform 50ms ease-out;
 		}
 
@@ -392,7 +399,7 @@
 		appearance: none;
 		text-decoration: 2px solid underline color-mix(in oklab, currentColor, transparent 80%);
 		text-underline-offset: 0.15em;
-		color: var(--color-ink);
+		color: var(--color-white);
 		font-weight: 600;
 		width: fit-content;
 		display: inline-flex;
@@ -405,7 +412,7 @@
 		cursor: pointer;
 
 		&:is(:hover, :focus) {
-			color: var(--color-black);
+			color: var(--color-primary-500);
 			text-decoration-color: var(--color-primary-500);
 			text-underline-offset: 0.2em;
 		}

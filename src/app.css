@@ -251,7 +251,7 @@
 		font: inherit;
 	}
 
-	article {
+	article:where(.blog) {
 		& hgroup > h1 {
 			color: var(--color-primary);
 		}

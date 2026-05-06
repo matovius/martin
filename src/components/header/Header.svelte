@@ -35,10 +35,7 @@
 			>
 				<Logo size={40} bg="currentColor" />
 			</a>
-			<!-- NAV LINKS -->
-			<!-- {@render NavLinks()} -->
 		</div>
-		<!-- <div class="side end"></div> -->
 	</div>
 </header>
 

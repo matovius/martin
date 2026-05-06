@@ -181,7 +181,7 @@
 
 		&::selection {
 			background: var(--color-selection-bg);
-			color: var(--color-selection-ink);
+			color: color-mix(in oklab, var(--color-selection-ink), black 20%);
 		}
 	}
 

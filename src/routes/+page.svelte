@@ -23,9 +23,9 @@
 			url: 'https://protracted.website'
 		},
 		{
-			label: 'Umbo',
-			description: 'A simple yet robust email verification service',
-			url: 'https://umbo.email'
+			label: 'QuAr',
+			description: 'A QR code generator I made to share text from my computer to my phone',
+			url: 'https://qr.matovius.dev'
 		},
 		{
 			label: 'My Lab',
@@ -33,14 +33,14 @@
 			url: 'https://lab.matovius.dev'
 		},
 		{
-			label: 'QuAr',
-			description: 'A QR code generator I made to share text from my computer to my phone',
-			url: 'https://qr.matovius.dev'
-		},
-		{
-			label: 'Ototune',
+			label: 'Ototune (WIP)',
 			description: 'A web-based synth sound generator',
 			url: 'https://ototune.matovius.dev'
+		},
+		{
+			label: 'Umbo (WIP)',
+			description: 'A simple yet robust email verification service',
+			url: 'https://umbo.email'
 		}
 		// {
 		// 	label: 'My design gallery',
